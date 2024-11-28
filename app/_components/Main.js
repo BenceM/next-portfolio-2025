@@ -9,17 +9,20 @@ export default function Main() {
 					{/* md:grid-cols-12 */}
 					<div className="col-span-7 place-self-center  sm:text-left">
 						<h1 className=" mb-4 text-4xl sm:text-5xl xl:text-8xl xl:leading-normal font-extrabold">
-							Hi, I&apos;m Bence
+							<span className="text-transparent bg-gradient-to-br from-sky-800 via-cyan-800 to-teal-800 bg-clip-text">
+								Hi, I&apos;m
+							</span>
+							Bence
 						</h1>
 						<p className="text-stone-400 text-base lg:text-lg xl:text-xl mb-6 ">
 							This is my website. This is my website. This is my website This is
 							my website
 						</p>
-						<div className="flex flex-col md:flex-row gap-3 md:justify-start justify-center items-center">
-							<Button className="bg-stone-50  text-black hover:bg-stone-300 ">
+						<div className="flex flex-col md:flex-row gap-3 md:justify-start md:gap-4 justify-center items-center">
+							<Button className="bg-gradient-to-br from-sky-800  to-teal-800  hover:brightness-110  text-white shadow shadow-blue-200/0 hover:shadow-3xl">
 								Hire me
 							</Button>
-							<Button className="bg-transparent hover:bg-stone-800 text-stone-100 border border-stone-100">
+							<Button className="bg-[#121212] text-stone-100 relative flex items-center justify-center after:h-[107%] after:w-[102%] after:absolute after:bg-gradient-to-br after:from-sky-800 after:to-teal-800 after:rounded-full after:-z-10 hover:bg-[#1f1f1f]  hover:shadow-3xl  ">
 								Dowload CV
 							</Button>
 						</div>
