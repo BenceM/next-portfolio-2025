@@ -2,6 +2,7 @@ import Image from "next/image";
 import benceImage from "@/public/benceImage.png";
 import Button from "./Button";
 export default function Main() {
+	// make it first with the library then eventually switch to framer motion for text animations
 	return (
 		<main className="flex flex-col min-h-screen ">
 			<div className="w-full mx-auto py-4 px-12">
