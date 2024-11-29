@@ -1,6 +1,8 @@
+"use client";
 import Image from "next/image";
 import benceImage from "@/public/benceImage.png";
 import Button from "./Button";
+import AnimatedCursor from "./AnimatedCursor";
 export default function Main() {
 	// make it first with the library then eventually switch to framer motion for text animations
 	return (
@@ -15,6 +17,7 @@ export default function Main() {
 							</span>
 							Bence
 						</h1>
+						<AnimatedCursor />
 						<p className="text-stone-400 text-base lg:text-lg xl:text-xl mb-6 ">
 							This is my website. This is my website. This is my website This is
 							my website
