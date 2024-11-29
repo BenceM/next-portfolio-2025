@@ -1,9 +1,13 @@
-"use client";
 import Image from "next/image";
 import benceImage from "@/public/benceImage.png";
 import Button from "./Button";
-import AnimatedCursor from "./AnimatedCursor";
+
+import TypingAnimaton from "./TypingAnimaton";
 export default function Main() {
+	const text = {
+		baseText: "Bence",
+		altTexts: ["Web Developer", "Blockchain Developer"],
+	};
 	// make it first with the library then eventually switch to framer motion for text animations
 	return (
 		<main className="flex flex-col min-h-screen ">
@@ -11,13 +15,13 @@ export default function Main() {
 				<div className="grid grid-cols-1 md:grid-cols-12  ">
 					{/* md:grid-cols-12 */}
 					<div className="col-span-7 place-self-center  sm:text-left">
-						<h1 className=" mb-4 text-4xl sm:text-5xl xl:text-8xl xl:leading-normal font-extrabold">
+						<h1 className=" mb-4 text-4xl sm:text-5xl xl:text-8xl xl:leading-normal font-extrabold flex flex-col">
 							<span className="text-transparent bg-gradient-to-br from-sky-800 via-cyan-800 to-teal-800 bg-clip-text">
 								Hi, I&apos;m
 							</span>
-							Bence
+							<TypingAnimaton text={text} />
 						</h1>
-						<AnimatedCursor />
+
 						<p className="text-stone-400 text-base lg:text-lg xl:text-xl mb-6 ">
 							This is my website. This is my website. This is my website This is
 							my website
