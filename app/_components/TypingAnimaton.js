@@ -29,9 +29,9 @@ export default function TypingAnimaton({ texts }) {
 	}, [baseText, count, texts.baseText.length]);
 
 	return (
-		<span className=" inline-block">
-			<motion.span className="inline-block">{displayText}</motion.span>
-			<AnimatedCursor />
-		</span>
+		<div className="relative md:h-[288px] md:w-[680.18px] ">
+			<motion.span className="inline">{displayText}</motion.span>
+			<AnimatedCursor className="absolute" />
+		</div>
 	);
 }
