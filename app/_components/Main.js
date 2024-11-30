@@ -4,9 +4,8 @@ import Button from "./Button";
 
 import TypingAnimaton from "./TypingAnimaton";
 export default function Main() {
-	const text = {
-		baseText: "Bence",
-		altTexts: ["Web Developer", "Blockchain Developer"],
+	const texts = {
+		baseText: ["Bence", "Web Developer", "Blockchain Developer"],
 	};
 	// make it first with the library then eventually switch to framer motion for text animations
 	return (
@@ -19,7 +18,7 @@ export default function Main() {
 							<span className="text-transparent bg-gradient-to-br from-sky-800 via-cyan-800 to-teal-800 bg-clip-text">
 								Hi, I&apos;m
 							</span>
-							<TypingAnimaton text={text} />
+							<TypingAnimaton texts={texts} />
 						</h1>
 
 						<p className="text-stone-400 text-base lg:text-lg xl:text-xl mb-6 ">

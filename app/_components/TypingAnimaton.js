@@ -2,9 +2,10 @@
 import AnimatedCursor from "./AnimatedCursor";
 import * as motion from "motion/react-client";
 import { useMotionValue, useTransform, animate } from "motion/react";
-import { useEffect } from "react";
-export default function TypingAnimaton({ text }) {
-	const { baseText, altTexts } = text;
+import { useEffect, useState } from "react";
+export default function TypingAnimaton({ texts }) {
+	const [currentIndex, setCurrentIndex] = useState(0);
+	const baseText = texts.baseText[currentIndex];
 	const count = useMotionValue(0);
 	const rounded = useTransform(count, (latest) => Math.round(latest));
 	const displayText = useTransform(rounded, (latest) =>
@@ -17,12 +18,19 @@ export default function TypingAnimaton({ text }) {
 			duration: 1,
 			ease: "easeInOut",
 		});
-		return controls.stop;
-	}, [count, baseText.length]);
+		controls.then(() => {
+			setTimeout(() => {
+				setCurrentIndex((prevIndex) => (prevIndex + 1) % texts.baseText.length);
+				count.set(0);
+			}, 1000);
+		});
+
+		return () => controls.stop();
+	}, [baseText, count, texts.baseText.length]);
 
 	return (
-		<span>
-			<motion.span className="inline-block ">{displayText}</motion.span>
+		<span className=" inline-block">
+			<motion.span className="inline-block">{displayText}</motion.span>
 			<AnimatedCursor />
 		</span>
 	);
