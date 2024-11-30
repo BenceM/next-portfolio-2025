@@ -27,9 +27,9 @@ export default function TypingAnimaton({ texts }) {
 
 		return () => controls.stop();
 	}, [baseText, count, texts.baseText.length]);
-
+	// lg:w-[680.18px]
 	return (
-		<div className="relative md:h-[288px] md:w-[680.18px] ">
+		<div className="relative text-center md:text-left h-[95px] xl:h-[288px] ">
 			<motion.span className="inline">{displayText}</motion.span>
 			<AnimatedCursor className="absolute" />
 		</div>
