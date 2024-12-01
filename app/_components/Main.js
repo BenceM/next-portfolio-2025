@@ -7,7 +7,7 @@ export default function Main() {
 	const texts = {
 		baseText: ["Bence", "Web Developer", "Blockchain Devoloper"],
 	};
-	// make it first with the library then eventually switch to framer motion for text animations
+
 	return (
 		<main className="flex flex-col min-h-screen ">
 			<div className="max-w-[90rem] mx-auto py-4 px-4 sm:px-8 lg:px-12">
@@ -53,3 +53,4 @@ export default function Main() {
 		</main>
 	);
 }
+// Adjust for darkmode, Oled mode
