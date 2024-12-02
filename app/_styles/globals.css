@@ -9,6 +9,7 @@
 	--gradientMain: #075985;
 	--gradientVia: #155e75;
 	--gradientOff: #115e59;
+	--bgHover: #1f1f1f;
 	--hover: #1f1f1f;
 	--imageBg: hsla(24, 10%, 10%, 0.3);
 }
@@ -17,11 +18,12 @@
 	:root {
 		--background: #121212;
 		--foreground: #ededed;
-		--textSecondary: #535658;
+		--textSecondary: #a8a29e;
 		--gradientMain: #075985;
 		--gradientVia: #155e75;
 		--gradientOff: #115e59;
-		--hover: #1f1f1f;
+		--bgHover: #1f1f1f;
+		--hover: #bbbbbb;
 		--imageBg: hsla(24, 10%, 10%, 0.3);
 	}
 }

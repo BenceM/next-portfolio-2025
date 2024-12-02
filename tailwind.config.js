@@ -17,6 +17,7 @@ module.exports = {
 				gradientMain: "var(--gradientMain)",
 				gradientVia: "var(--gradientVia)",
 				gradientOff: "var(--gradientOff)",
+				bgHover: "var(--bgHover)",
 				hover: "var(--hover)",
 				imageBg: "var(--imageBg)",
 
