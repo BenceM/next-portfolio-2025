@@ -9,10 +9,10 @@ export default function Main() {
 	};
 
 	return (
-		<main className="flex flex-col min-h-screen mt-24 ">
-			<div className="max-w-[90rem] mx-auto py-4 px-4 sm:px-8 lg:px-12">
-				<div className="flex flex-col justify-center items-center md:grid md:grid-cols-12 md:grid-rows-auto lg:grid-rows-[auto_1fr_auto_auto]  gap-y-2">
-					{/* md:grid-cols-12 */}
+		<main className="flex flex-col min-h-screen mt-28 ">
+			<div id="/" className="max-w-[90rem] mx-auto py-4 px-4 sm:px-8 lg:px-12">
+				<div className="flex flex-col justify-center items-center md:grid md:grid-cols-12 md:grid-rows-auto gap-y-2">
+					{/* md:grid-cols-12 lg:grid-rows-[auto_1fr_auto_auto] */}
 					<div className="col-span-7 md:text-left md:row-span-4 md:grid md:grid-rows-subgrid ">
 						<h1 className="flex flex-col justify-center md:justify-start items-center mb-4 md:mb-0 text-4xl sm:text-5xl xl:text-7xl xl:leading-normal font-extrabold md:row-start-1 md:row-end-3 md:grid md:grid-rows-subgrid">
 							<span className="text-transparent bg-gradient-to-br from-sky-800 via-cyan-800 to-teal-800 bg-clip-text md:row-start-1 text-3xl sm:text-4xl xl:text-6xl">

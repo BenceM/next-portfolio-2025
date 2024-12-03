@@ -1,7 +1,6 @@
-import Header from "./_components/Header";
 import Main from "./_components/Main";
 
-export default function Home() {
+export default async function Page() {
 	return (
 		<>
 			<Main />
