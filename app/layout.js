@@ -1,4 +1,5 @@
 import Header from "./_components/Header";
+import { MenuProvider } from "./_components/MenuContext";
 import "./_styles/globals.css";
 
 // const geistSans = localFont({
@@ -20,13 +21,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
 	return (
-		<html lang="en">
-			<body className="">
-				{/* flex flex-col justify-center items-center */}
-				<Header />
+		<MenuProvider>
+			<html lang="en">
+				<body className="">
+					{/* flex flex-col justify-center items-center */}
+					<Header />
 
-				{children}
-			</body>
-		</html>
+					{children}
+				</body>
+			</html>
+		</MenuProvider>
 	);
 }
