@@ -11,8 +11,8 @@ export default function MobileMenu() {
 		setIsOpen((prev) => !prev);
 	}
 	return (
-		<div className="flex flex-row justify-end md:hidden">
-			{/* {isOpen && <Logo />} */}
+		<div className="flex flex-row justify-between md:hidden">
+			<Logo />
 
 			<button onClick={handleMenuClick} className="size-12 ">
 				{isOpen ? <Bars3Icon /> : <XMarkIcon />}

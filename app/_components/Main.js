@@ -9,7 +9,7 @@ export default function Main() {
 	};
 
 	return (
-		<main className="flex flex-col min-h-screen mt-10 md:mt-28 ">
+		<main className="flex flex-col min-h-screen mt-2 md:mt-28 ">
 			<div id="/" className="max-w-[90rem] mx-auto py-4 px-4 sm:px-8 lg:px-12">
 				<div className="flex flex-col justify-center items-center md:grid md:grid-cols-12 md:grid-rows-auto gap-y-2">
 					{/* md:grid-cols-12 lg:grid-rows-[auto_1fr_auto_auto] */}
