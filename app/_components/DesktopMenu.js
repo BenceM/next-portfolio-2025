@@ -1,14 +1,11 @@
-import Link from "next/link";
+import React from "react";
 import Logo from "./Logo";
-import MobileMenu from "./MobileMenu";
+import Link from "next/link";
 
-export default function NavBar() {
-	//easier to fetch the media query of the device and conditional the rendering of MobileMenu Desktop menu component
-
+export default function DesktopMenu() {
 	return (
-		<nav className="md:flex md:flex-wrap md:items-center md:justify-between md:mx-auto md:px-8 md:pl-14 md:fixed md:z-50 md:top-0 md:left-0 md:right-0 md:bg-background">
-			<MobileMenu />
-			{/* <Logo /> */}
+		<nav className="md:flex md:flex-wrap items-center justify-between mx-auto px-8 pl-14 fixed z-50 top-0 left-0 right-0 bg-background">
+			<Logo />
 			<ul className="menu hidden md:flex flex-row gap-16 z-10 text-xl py-7 ">
 				<li>
 					<Link href={"/"} className={`hover:text-hover `}>
