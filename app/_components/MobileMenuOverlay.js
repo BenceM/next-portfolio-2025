@@ -9,8 +9,8 @@ export default function MobileMenuOverlay({ onClose }) {
 				<div className="flex items-center justify-between px-6 py-4 border-b border-gray-200">
 					<Logo />
 
-					<button className="size-12" onClick={onClose}>
-						<XMarkIcon />
+					<button className="size-12 mr-2" onClick={onClose}>
+						<XMarkIcon className="size-12" />
 					</button>
 				</div>
 
