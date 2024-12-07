@@ -23,7 +23,7 @@ export default function Main() {
 							</div>
 						</h1>
 
-						<p className="text-stone-400 text-base sm:text-sm lg:text-lg xl:text-xl mb-6 md:mb-2 md:row-start-3  ">
+						<p className="text-stone-400 text-center md:text-left text-base sm:text-sm lg:text-lg xl:text-xl mb-6 md:mb-2 md:row-start-3 ">
 							This is my website. This is my website. This is my website This is
 							my website
 						</p>
