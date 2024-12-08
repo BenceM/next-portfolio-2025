@@ -9,7 +9,7 @@ export default function MobileMenuOverlay({ onClose }) {
 			className="fixed inset-0 z-50 bg-black bg-opacity-95"
 			initial={{ x: 100 }}
 			animate={{ x: 0 }}
-			transition={{ duration: 0.3, ease: "easeInOut" }}
+			transition={{ duration: 0.3, ease: "linear" }}
 		>
 			{/* <FocusLock> */}
 			{/* Focus lock to trap focus in also to stop scrolling (could use react-focus-on), issue: it doesn't have react 19 support yet.. Update later */}
