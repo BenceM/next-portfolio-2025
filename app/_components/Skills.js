@@ -29,7 +29,10 @@ const data = {
 
 export default function Skills() {
 	return (
-		<section className="flex flex-col justify-center items-center min-h-screen">
+		<section
+			id="skills"
+			className="flex flex-col justify-center items-center min-h-screen"
+		>
 			<h2 className="text-4xl font-extrabold text-center mb-8 text-sky-800">
 				My Skills
 			</h2>
