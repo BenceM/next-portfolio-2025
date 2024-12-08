@@ -2,17 +2,8 @@ import { XMarkIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import Logo from "./Logo";
 import * as motion from "motion/react-client";
-import { useMotionValue, useTransform, animate } from "motion/react";
 
 export default function MobileMenuOverlay({ onClose }) {
-	const overlayVariants = {
-		transition: {
-			duration: 1,
-
-			ease: "linear",
-			times: [0, 0.5, 0.5, 1],
-		},
-	};
 	return (
 		<motion.div
 			className="fixed inset-0 z-50 bg-black bg-opacity-95"
@@ -26,7 +17,11 @@ export default function MobileMenuOverlay({ onClose }) {
 				<div className="flex items-center justify-between px-6 py-4 border-b border-gray-200">
 					<Logo />
 
-					<button className="size-12 mr-2" onClick={onClose}>
+					<button
+						aria-label="Close Menu"
+						className="size-12 mr-2"
+						onClick={onClose}
+					>
 						<XMarkIcon className="size-12" />
 					</button>
 				</div>
