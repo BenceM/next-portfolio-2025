@@ -20,7 +20,8 @@ const BubbleMap = ({ data }) => {
 		return () => window.removeEventListener("resize", handleResize);
 	}, []);
 	useEffect(() => {
-		const { width, height } = dimensions;
+		const width = dimensions.width;
+		const height = dimensions.height;
 
 		const svg = d3
 			.select(svgRef.current)
@@ -37,7 +38,9 @@ const BubbleMap = ({ data }) => {
 					.distance(100),
 			)
 			.force("charge", d3.forceManyBody().strength(-100))
-			.force("center", d3.forceCenter(width / 2, height / 2))
+			// .force("center", d3.forceCenter(width / 2, height / 2))
+			.force("x", d3.forceX(width / 2).strength(0.05)) // Gentle horizontal centering
+			.force("y", d3.forceY(height / 2).strength(0.05))
 			.force("collision", d3.forceCollide().radius(40))
 			.on("tick", ticked);
 
@@ -77,7 +80,12 @@ const BubbleMap = ({ data }) => {
 			.attr("fill", "#fff")
 			.text((d) => d.id);
 
+		function enforceBoundary(node) {
+			node.x = Math.max(20, Math.min(width - 20, node.x));
+			node.y = Math.max(20, Math.min(height - 20, node.y));
+		}
 		function ticked() {
+			data.nodes.forEach(enforceBoundary);
 			link
 				.attr("x1", (d) => d.source.x)
 				.attr("y1", (d) => d.source.y)
@@ -106,7 +114,7 @@ const BubbleMap = ({ data }) => {
 					event.subject.fy = null;
 				});
 		}
-	}, [data]);
+	}, [data, dimensions.width, dimensions.height]);
 
 	return <svg ref={svgRef}></svg>;
 };

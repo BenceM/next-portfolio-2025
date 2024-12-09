@@ -36,7 +36,7 @@ export default function Skills() {
 			<h2 className="text-4xl font-extrabold text-center mb-8 text-sky-800">
 				My Skills
 			</h2>
-			<div className="relative w-full h-[600px] flex justify-center items-center">
+			<div className="relative w-full h-[1000px] flex justify-center items-center">
 				<BubbleMap data={data} />
 			</div>
 		</section>
