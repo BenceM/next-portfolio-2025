@@ -52,11 +52,43 @@ const BubbleMap = ({ data }) => {
 			.attr("stroke", "#ccc")
 			.attr("stroke-width", 2);
 
+		// const node = svg
+		// 	.selectAll(".node")
+		// 	.data(data.nodes)
+		// 	.join("circle")
+		// 	.attr("class", "node")
+		// 	.attr("r", 20)
+		// 	.attr("fill", (d) => {
+		// 		switch (d.group) {
+		// 			case "frontend":
+		// 				return "#69b3a2";
+		// 			case "css":
+		// 				return "#ffa600";
+		// 			default:
+		// 				return "#8884d8";
+		// 		}
+		// 	})
+		// 	.call(drag(simulation));
+
+		// const text = svg
+		// 	.selectAll(".text")
+		// 	.data(data.nodes)
+		// 	.join("text")
+		// 	.attr("class", "text")
+		// 	.attr("dy", 4)
+		// 	.attr("text-anchor", "middle")
+		// 	.attr("fill", "#fff")
+		// 	.text((d) => d.id);
+
 		const node = svg
 			.selectAll(".node")
 			.data(data.nodes)
-			.join("circle")
+			.join("g") // Group elements to combine image and text
 			.attr("class", "node")
+			.call(drag(simulation)); // Drag functionality
+
+		node
+			.append("circle")
 			.attr("r", 20)
 			.attr("fill", (d) => {
 				switch (d.group) {
@@ -67,18 +99,36 @@ const BubbleMap = ({ data }) => {
 					default:
 						return "#8884d8";
 				}
-			})
-			.call(drag(simulation));
+			});
 
-		const text = svg
-			.selectAll(".text")
-			.data(data.nodes)
-			.join("text")
-			.attr("class", "text")
-			.attr("dy", 4)
+		// Add images to each node
+		node
+			.append("image")
+			.attr("xlink:href", (d) => d.img) // Use the image URL from the dataset
+			.attr("width", 40) // Adjust size
+			.attr("height", 40)
+			.attr("x", -20) // Center the image
+			.attr("y", -20);
+
+		// Add text for hover effect
+		node
+			.append("text")
+			.attr("class", "node-label")
+			.attr("dy", -30) // Position above the bubble
 			.attr("text-anchor", "middle")
 			.attr("fill", "#fff")
+			.style("font-size", "12px")
+			.style("visibility", "hidden") // Initially hidden
 			.text((d) => d.id);
+
+		// Show label on hover
+		node
+			.on("mouseover", function () {
+				d3.select(this).select(".node-label").style("visibility", "visible");
+			})
+			.on("mouseout", function () {
+				d3.select(this).select(".node-label").style("visibility", "hidden");
+			});
 
 		function enforceBoundary(node) {
 			node.x = Math.max(20, Math.min(width - 20, node.x));
@@ -92,8 +142,9 @@ const BubbleMap = ({ data }) => {
 				.attr("x2", (d) => d.target.x)
 				.attr("y2", (d) => d.target.y);
 
-			node.attr("cx", (d) => d.x).attr("cy", (d) => d.y);
-			text.attr("x", (d) => d.x).attr("y", (d) => d.y);
+			// node.attr("cx", (d) => d.x).attr("cy", (d) => d.y);
+			node.attr("transform", (d) => `translate(${d.x},${d.y})`);
+			// text.attr("x", (d) => d.x).attr("y", (d) => d.y);
 		}
 
 		function drag(simulation) {

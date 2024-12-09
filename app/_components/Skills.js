@@ -2,17 +2,17 @@ import BubbleMap from "./_charts/BubbleMap";
 
 const data = {
 	nodes: [
-		{ id: "JavaScript", group: "core" },
-		{ id: "React", group: "frontend" },
-		{ id: "Next.js", group: "frontend" },
-		{ id: "CSS", group: "frontend" },
-		{ id: "Tailwind", group: "css" },
-		{ id: "Sass", group: "css" },
-		{ id: "Styled Components", group: "css" },
-		{ id: "Router", group: "react" },
-		{ id: "Context API", group: "react" },
-		{ id: "Redux", group: "react" },
-		{ id: "TanStack Query", group: "react" },
+		{ id: "JavaScript", group: "core", img: "/ReactLogo.png" },
+		{ id: "React", group: "frontend", img: "/ReactLogo.png" },
+		{ id: "Next.js", group: "frontend", img: "/ReactLogo.png" },
+		{ id: "CSS", group: "frontend", img: "/ReactLogo.png" },
+		{ id: "Tailwind", group: "css", img: "/ReactLogo.png" },
+		{ id: "Sass", group: "css", img: "/ReactLogo.png" },
+		{ id: "Styled Components", group: "css", img: "/ReactLogo.png" },
+		{ id: "Router", group: "react", img: "/ReactLogo.png" },
+		{ id: "Context API", group: "react", img: "/ReactLogo.png" },
+		{ id: "Redux", group: "react", img: "/ReactLogo.png" },
+		{ id: "TanStack Query", group: "react", img: "/ReactLogo.png" },
 	],
 	links: [
 		{ source: "JavaScript", target: "React" },
