@@ -19,6 +19,7 @@ const data = {
 		{ id: "Git", group: "version", img: "/ReactLogo.png" },
 		{ id: "Vite", group: "react", img: "/ReactLogo.png" },
 		{ id: "D3", group: "css", img: "/ReactLogo.png" },
+		{ id: "Recharts", group: "css", img: "/ReactLogo.png" },
 		{ id: "Motion", group: "css", img: "/ReactLogo.png" },
 	],
 	links: [
