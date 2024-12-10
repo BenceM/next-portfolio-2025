@@ -13,6 +13,13 @@ const data = {
 		{ id: "Context API", group: "react", img: "/ReactLogo.png" },
 		{ id: "Redux", group: "react", img: "/ReactLogo.png" },
 		{ id: "TanStack Query", group: "react", img: "/ReactLogo.png" },
+		//Added new ones
+		{ id: "Auth.js", group: "react", img: "/ReactLogo.png" },
+		{ id: "Vercel", group: "hosting", img: "/ReactLogo.png" },
+		{ id: "Git", group: "version", img: "/ReactLogo.png" },
+		{ id: "Vite", group: "react", img: "/ReactLogo.png" },
+		{ id: "D3", group: "css", img: "/ReactLogo.png" },
+		{ id: "Motion", group: "css", img: "/ReactLogo.png" },
 	],
 	links: [
 		{ source: "JavaScript", target: "React" },

@@ -2,6 +2,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
 
+//start from the static list and import the path to the images
+
 const BubbleMap = ({ data }) => {
 	const svgRef = useRef();
 	const [dimensions, setDimensions] = useState({ width: 800, height: 1000 });
