@@ -93,14 +93,15 @@ const BubbleMap = ({ data }) => {
 			.append("circle")
 			.attr("r", 20)
 			.attr("fill", (d) => {
-				switch (d.group) {
-					case "frontend":
-						return "#69b3a2";
-					case "css":
-						return "#ffa600";
-					default:
-						return "#8884d8";
-				}
+				return d.bg ? "#fff" : "#121212";
+				// switch (d.group) {
+				// 	case "frontend":
+				// 		return "#69b3a2";
+				// 	case "css":
+				// 		return "#ffa600";
+				// 	default:
+				// 		return "#8884d8";
+				// }
 			});
 
 		// Add images to each node

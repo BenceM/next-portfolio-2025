@@ -4,7 +4,6 @@ import DesktopMenu from "./DesktopMenu";
 import useMediaQuery from "../_hooks/useMediaQuery";
 
 export default function NavBar() {
-	// const isDesktop = useMediaQuery("768");
 	const isDesktop = useMediaQuery("(min-width: 768px)");
 
 	return (

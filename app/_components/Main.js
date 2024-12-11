@@ -5,7 +5,12 @@ import Button from "./Button";
 import TypingAnimaton from "./TypingAnimaton";
 export default function Main() {
 	const texts = {
-		baseText: ["Bence", "Web Developer", "Blockchain Devoloper"],
+		baseText: [
+			"Bence",
+			"Web Developer",
+			"Blockchain Devoloper",
+			"Personal Trainer",
+		],
 	};
 
 	return (
