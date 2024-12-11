@@ -23,14 +23,15 @@ const data = {
 			img: "/tanstacklogo.png",
 			bg: false,
 		},
-		//Added new ones
-		{ id: "Auth.js", group: "react", img: "/ReactLogo.png", bg: false },
-		{ id: "Vercel", group: "hosting", img: "/ReactLogo.png", bg: false },
-		{ id: "Git", group: "version", img: "/ReactLogo.png", bg: false },
-		{ id: "Vite", group: "react", img: "/ReactLogo.png", bg: false },
-		{ id: "D3", group: "css", img: "/ReactLogo.png", bg: false },
-		{ id: "Recharts", group: "css", img: "/ReactLogo.png", bg: false },
-		{ id: "Motion", group: "css", img: "/ReactLogo.png", bg: false },
+		//REMAKE
+		//Make vercel, recharts, context api draw circle with background color, add text, in vercel remove background and just add background, the other 2 is just a background with text on it
+		{ id: "Auth.js", group: "react", img: "/auth-logo.png", bg: false },
+		{ id: "Vercel", group: "hosting", img: "/vercel-logo.png", bg: false },
+		{ id: "Git", group: "version", img: "/git-logo.png", bg: false },
+		{ id: "Vite", group: "react", img: "/vite-logo.png", bg: false },
+		{ id: "D3", group: "css", img: "/d3.png", bg: false },
+		{ id: "Recharts", group: "css", img: "/recharts.png", bg: false },
+		{ id: "Motion", group: "css", img: "/motion-logo.png", bg: false },
 	],
 	links: [
 		{ source: "JavaScript", target: "React" },
