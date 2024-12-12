@@ -6,7 +6,7 @@ import * as d3 from "d3";
 
 const BubbleMap = ({ data }) => {
 	const svgRef = useRef();
-	const [dimensions, setDimensions] = useState({ width: 800, height: 1000 });
+	const [dimensions, setDimensions] = useState({ width: 800, height: 500 });
 
 	useEffect(() => {
 		const handleResize = () => {

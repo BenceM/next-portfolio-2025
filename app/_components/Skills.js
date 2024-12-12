@@ -55,13 +55,32 @@ export default function Skills() {
 	return (
 		<section
 			id="skills"
-			className="flex flex-col justify-center items-center min-h-screen"
+			className="flex flex-col justify-center items-center min-h-screen gap-7 px-4"
 		>
 			<h2 className="text-4xl font-extrabold text-center mb-8 text-sky-800">
 				My Skills
 			</h2>
-			<div className="relative w-full h-[1000px] flex justify-center items-center">
-				<BubbleMap data={data} />
+			<div className="grid grid-rows-auto md:grid-cols-2  gap-2 items-start justify-center">
+				<div className="relative w-full h-[500px] order-2 md:order-none">
+					<BubbleMap data={data} />
+				</div>
+				<div className="w-full order-1 md:order-none">
+					<p className="">
+						I&apos;m a logistics manager turned front-end web developer. My
+						passion is coding, thinking of different ways to make something work
+						optimally. I&apos;m interested in Ai, blockchain,optimalisation,
+						nutrition, training and gardening. I&apos;m a team player, a fast
+						learner and I&apos;m quick to adapt. I&apos;m always looking to
+						expand my skillset and knowledge with new technologies.
+					</p>
+					<h2 className="text-2xl">Technologies</h2>
+					<ul>
+						<li>Js</li>
+						<li>React</li>
+						<li>Next</li>
+						<li>CSS</li>
+					</ul>
+				</div>
 			</div>
 		</section>
 	);
