@@ -64,7 +64,7 @@ export default function Skills() {
 				<div className="relative w-full h-[500px] order-2 md:order-none">
 					<BubbleMap data={data} />
 				</div>
-				<div className="w-full order-1 md:order-none">
+				<div className="w-full order-1 md:order-none pr-12">
 					<p className="">
 						I&apos;m a logistics manager turned front-end web developer. My
 						passion is coding, thinking of different ways to make something work
@@ -73,7 +73,7 @@ export default function Skills() {
 						learner and I&apos;m quick to adapt. I&apos;m always looking to
 						expand my skillset and knowledge with new technologies.
 					</p>
-					<h2 className="text-2xl">Technologies</h2>
+					<h3 className="text-2xl font-bold">Technologies</h3>
 					<ul>
 						<li>Js</li>
 						<li>React</li>
