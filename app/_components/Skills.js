@@ -1,6 +1,7 @@
 import BubbleMap from "./_charts/BubbleMap";
+import SkillsList from "./SkillsList";
 
-const data = {
+const skillsData = {
 	nodes: [
 		{ id: "JavaScript", group: "core", img: "/jslogo.png", bg: false },
 		{ id: "React", group: "frontend", img: "/ReactLogo.png", bg: false },
@@ -62,10 +63,10 @@ export default function Skills() {
 			</h2>
 			<div className="grid grid-rows-auto md:grid-cols-2  gap-2 items-start justify-center">
 				<div className="relative w-full h-[500px] order-2 md:order-none">
-					<BubbleMap data={data} />
+					<BubbleMap data={skillsData} />
 				</div>
 				<div className="w-full order-1 md:order-none pr-12">
-					<p className="">
+					<p className="text-base lg:text-lg">
 						I&apos;m a logistics manager turned front-end web developer. My
 						passion is coding, thinking of different ways to make something work
 						optimally. I&apos;m interested in Ai, blockchain,optimalisation,
@@ -73,13 +74,9 @@ export default function Skills() {
 						learner and I&apos;m quick to adapt. I&apos;m always looking to
 						expand my skillset and knowledge with new technologies.
 					</p>
-					<h3 className="text-2xl font-bold">Technologies</h3>
-					<ul>
-						<li>Js</li>
-						<li>React</li>
-						<li>Next</li>
-						<li>CSS</li>
-					</ul>
+					{/* make it into a filter, base case is all, then core tech, styling, utilities, data vis */}
+					<h3 className="text-2xl font-bold mb-2">Technologies</h3>
+					<SkillsList skills={skillsData.nodes} />
 				</div>
 			</div>
 		</section>
