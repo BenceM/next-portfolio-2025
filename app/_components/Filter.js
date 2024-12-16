@@ -13,8 +13,8 @@ export default function Filter() {
 		const params = new URLSearchParams(searchParams);
 		params.set("capacity", filter);
 		console.log(params.toString());
-		window.history.pushState({}, "", params);
-		// router.replace(`${pathname}?${params.toString()}`, { scroll: false });
+		// window.history.pushState({}, "", params);
+		router.replace(`${pathname}?${params.toString()}`, { scroll: false });
 	}
 	return (
 		<div className="border-primary-800 flex">
