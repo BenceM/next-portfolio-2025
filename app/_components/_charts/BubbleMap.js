@@ -11,10 +11,20 @@ const BubbleMap = ({ data }) => {
 	useEffect(() => {
 		const handleResize = () => {
 			const parent = svgRef.current.parentNode;
-			setDimensions({
+			const newDimensions = {
 				width: parent.clientWidth,
 				height: parent.clientHeight,
-			});
+			};
+			// setDimensions({
+			// 	width: parent.clientWidth,
+			// 	height: parent.clientHeight,
+			// });
+			setDimensions((prev) =>
+				prev.width !== newDimensions.width ||
+				prev.height !== newDimensions.height
+					? newDimensions
+					: prev,
+			);
 		};
 
 		window.addEventListener("resize", handleResize);
@@ -24,7 +34,7 @@ const BubbleMap = ({ data }) => {
 	useEffect(() => {
 		const width = dimensions.width;
 		const height = dimensions.height;
-
+		console.log("BubbleMap render", { data, dimensions });
 		const svg = d3
 			.select(svgRef.current)
 			.attr("width", width)

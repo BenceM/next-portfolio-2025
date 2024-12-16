@@ -1,4 +1,5 @@
 "use client";
+
 import SkillItem from "./SkillItem";
 
 export default function SkillsList({ skills }) {

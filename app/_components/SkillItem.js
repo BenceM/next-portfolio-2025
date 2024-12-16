@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 export default function SkillItem({ skill }) {
-	const { id, img } = skill;
+	const { id, img, group } = skill;
 	return (
 		<li className="flex items-center gap-2 leading-relaxed">
 			<div className={`${id === "Next.js" ? "rounded-full bg-white" : ""}`}>
