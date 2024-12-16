@@ -34,7 +34,6 @@ const BubbleMap = ({ data }) => {
 	useEffect(() => {
 		const width = dimensions.width;
 		const height = dimensions.height;
-		console.log("BubbleMap render", { data, dimensions });
 		const svg = d3
 			.select(svgRef.current)
 			.attr("width", width)
