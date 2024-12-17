@@ -7,7 +7,6 @@ import * as d3 from "d3";
 const BubbleMap = ({ data }) => {
 	const svgRef = useRef();
 	const [dimensions, setDimensions] = useState({ width: 800, height: 500 });
-
 	useEffect(() => {
 		const handleResize = () => {
 			const parent = svgRef.current.parentNode;
@@ -15,10 +14,7 @@ const BubbleMap = ({ data }) => {
 				width: parent.clientWidth,
 				height: parent.clientHeight,
 			};
-			// setDimensions({
-			// 	width: parent.clientWidth,
-			// 	height: parent.clientHeight,
-			// });
+			if (!newDimensions.width || !newDimensions.height) return;
 			setDimensions((prev) =>
 				prev.width !== newDimensions.width ||
 				prev.height !== newDimensions.height
