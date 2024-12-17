@@ -1,5 +1,5 @@
 import BubbleMap from "./_charts/BubbleMap";
-import SkillsList from "./SkillsList";
+import SkillsFilter from "./SkillsFilter";
 
 const skillsData = {
 	nodes: [
@@ -83,7 +83,7 @@ export default function Skills() {
 					{/* make it into a filter, base case is all, then core tech, styling, utilities, data vis . 4 buttons for filtering*/}
 					<h3 className="text-2xl font-bold mb-2">Technologies</h3>
 
-					<SkillsList skills={skillsData.nodes} />
+					<SkillsFilter skills={skillsData.nodes} />
 				</div>
 			</div>
 		</section>

@@ -68,3 +68,20 @@ function Button({ filter, handleFilter, activeFilter, children }) {
 		</button>
 	);
 }
+
+// import { usePathname, useRouter, useSearchParams } from "next/navigation";
+
+// export default function Filter() {
+// 	const searchParams = useSearchParams();
+// 	const router = useRouter();
+// 	const pathname = usePathname();
+
+// 	const activeFilter = searchParams.get("capacity") ?? "all";
+
+// 	function handleFilter(filter) {
+// 		const params = new URLSearchParams(searchParams);
+// 		params.set("capacity", filter);
+// 		console.log(params.toString());
+// 		// window.history.pushState({}, "", params);
+// 		router.replace(`${pathname}?${params.toString()}`, { scroll: false });
+// 	}
