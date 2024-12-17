@@ -17,22 +17,22 @@ const skillsData = {
 		},
 		{
 			id: "Router",
-			group: "utilities",
+			group: "utils",
 			img: "/react-routerlogo.png",
 			bg: true,
 		},
-		{ id: "Context API", group: "utilities", img: "/ReactLogo.png", bg: false },
-		{ id: "Redux", group: "utilities", img: "/reduxlogo.png", bg: false },
+		{ id: "Context API", group: "utils", img: "/ReactLogo.png", bg: false },
+		{ id: "Redux", group: "utils", img: "/reduxlogo.png", bg: false },
 		{
 			id: "TanStack Query",
-			group: "utilities",
+			group: "utils",
 			img: "/tanstacklogo.png",
 			bg: false,
 		},
-		{ id: "Auth.js", group: "utilities", img: "/auth-logo.png", bg: false },
+		{ id: "Auth.js", group: "utils", img: "/auth-logo.png", bg: false },
 		{ id: "Vercel", group: "hosting", img: "/vercel-logo.png", bg: false },
 		{ id: "Git", group: "version", img: "/git-logo.png", bg: false },
-		{ id: "Vite", group: "utilities", img: "/vite-logo.png", bg: false },
+		{ id: "Vite", group: "utils", img: "/vite-logo.png", bg: false },
 		{ id: "D3", group: "data", img: "/d3.png", bg: false },
 		{ id: "Recharts", group: "data", img: "/recharts.png", bg: false },
 		{ id: "Motion", group: "css", img: "/motion-logo.png", bg: false },
@@ -80,7 +80,7 @@ export default function Skills() {
 						learner and I&apos;m quick to adapt. I&apos;m always looking to
 						expand my skillset and knowledge with new technologies.
 					</p>
-					{/* make it into a filter, base case is all, then core tech, styling, utilities, data vis . 4 buttons for filtering*/}
+					{/* make it into a filter, base case is all, then core tech, styling, utils, data vis . 4 buttons for filtering*/}
 					<h3 className="text-2xl font-bold mb-2">Technologies</h3>
 
 					<SkillsFilter skills={skillsData.nodes} />

@@ -1,6 +1,6 @@
 export default function FilterButton({
 	filter,
-	onClick,
+	handleFilter,
 	activeFilter,
 	children,
 }) {
@@ -11,7 +11,7 @@ export default function FilterButton({
 					? "bg-gradient-to-br from-sky-800  to-teal-800 "
 					: ""
 			}`}
-			onClick={onClick}
+			onClick={() => handleFilter(filter)}
 		>
 			{children}
 		</button>

@@ -5,32 +5,49 @@ import FilterButton from "./FilterButton";
 
 export default function SkillsFilter({ skills }) {
 	const [filterGroup, setFilterGroup] = useState("all");
-	let filteredSkills = skills;
-	if (filterGroup === "all") filteredSkills = skills;
+	const filteredSkills =
+		filterGroup === "all"
+			? skills
+			: skills.filter((skill) => skill.group === filterGroup);
+
+	const handleFilter = (filter) => setFilterGroup(filter);
+
 	return (
 		<div className="flex flex-col gap-6">
 			<div className="flex gap-6">
 				<FilterButton
 					filter="all"
 					activeFilter={filterGroup}
-					onClick={() => setFilterGroup("all")}
+					handleFilter={handleFilter}
 				>
 					All
 				</FilterButton>
 				<FilterButton
 					filter="core"
 					activeFilter={filterGroup}
-					onClick={() => setFilterGroup("core")}
+					handleFilter={handleFilter}
 				>
 					Core
 				</FilterButton>
-				<FilterButton filter="css" activeFilter={filterGroup}>
+				<FilterButton
+					filter="css"
+					activeFilter={filterGroup}
+					handleFilter={handleFilter}
+				>
 					Styling
 				</FilterButton>
-				<FilterButton filter="utils" activeFilter={filterGroup}>
+				<FilterButton
+					filter="utils"
+					activeFilter={filterGroup}
+					handleFilter={handleFilter}
+				>
 					Utils
 				</FilterButton>
-				<FilterButton filter="data" activeFilter={filterGroup}>
+				<FilterButton
+					filter="data"
+					activeFilter={filterGroup}
+					handleFilter={handleFilter}
+				>
 					Data
 				</FilterButton>
 			</div>
