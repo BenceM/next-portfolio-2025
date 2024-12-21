@@ -1,7 +1,7 @@
 import BubbleMap from "./_charts/BubbleMap";
 import SkillsFilter from "./SkillsFilter";
 
-const skillsData = {
+export const skillsData = {
 	nodes: [
 		{ id: "JavaScript", group: "core", img: "/jslogo.png", bg: false },
 		{ id: "React", group: "core", img: "/ReactLogo.png", bg: false },

@@ -8,8 +8,8 @@ export default function DesktopMenu() {
 			<Logo />
 			<ul className="menu hidden md:flex flex-row gap-16 z-10 text-xl py-7 ">
 				<li>
-					<Link href={"/"} className={`hover:text-hover `}>
-						Home
+					<Link href={"/#skills"} className={`hover:text-hover `}>
+						Skills
 					</Link>
 				</li>
 				<li>
@@ -17,11 +17,7 @@ export default function DesktopMenu() {
 						Projects
 					</Link>
 				</li>
-				<li>
-					<Link href={"/#skills"} className={`hover:text-hover `}>
-						Skills
-					</Link>
-				</li>
+
 				<li>
 					<Link href={"/#contact"} className={`hover:text-hover `}>
 						Contact
