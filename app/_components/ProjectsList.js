@@ -2,7 +2,12 @@ import ProjectItem from "./ProjectItem";
 
 export default function ProjectsList() {
 	const projectsData = [
-		{ name: "Cabin User App", img: "", desc: "", tech: [""] },
+		{
+			name: "Cabin User App",
+			img: "",
+			desc: "",
+			tech: ["React", "Next.js", "Tailwind"],
+		},
 		{ name: "Cabin Management App", img: "", desc: "", tech: [] },
 		{ name: "Countries Website", img: "", desc: "", tech: [] },
 		{ name: "Ai Image Generator", img: "", desc: "", tech: [] },

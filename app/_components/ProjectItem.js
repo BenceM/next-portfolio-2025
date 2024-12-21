@@ -1,9 +1,8 @@
 import Image from "next/image";
-import { skillsData } from "./Skills";
+
+import TechList from "./TechList";
 
 export default function ProjectItem({ project }) {
-	const { nodes: skills } = skillsData;
-
 	return (
 		<li className="border border-white">
 			<Image
@@ -14,11 +13,7 @@ export default function ProjectItem({ project }) {
 			/>
 			<h4>{project.name}</h4>
 
-			<ul>
-				{project.tech.map((tech) => (
-					<li key={tech}>{tech}</li>
-				))}
-			</ul>
+			<TechList techs={project.tech} />
 		</li>
 	);
 }
