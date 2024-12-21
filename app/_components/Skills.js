@@ -62,16 +62,16 @@ export default function Skills() {
 	return (
 		<section
 			id="skills"
-			className="flex flex-col justify-center items-center min-h-screen gap-7 px-12"
+			className="flex flex-col items-center min-h-screen gap-16 px-12"
 		>
-			<h2 className="text-4xl font-extrabold text-center mb-8 text-sky-800">
+			<h2 className="text-4xl xl:text-5xl xl:leading-normal font-extrabold text-center  text-transparent bg-gradient-to-br from-sky-800 via-cyan-700 to-teal-800 bg-clip-text">
 				My Skills
 			</h2>
 			<div className="grid grid-rows-auto md:grid-cols-2  gap-2 items-start justify-center">
 				<div className="relative w-full min-h-[500px] h-full order-2 md:order-none">
 					<BubbleMap data={skillsData} />
 				</div>
-				<div className="w-full order-1 md:order-none ">
+				<div className="w-full order-1 md:order-none flex flex-col gap-8 ">
 					<p className="text-base lg:text-lg">
 						I&apos;m a logistics manager turned front-end web developer. My
 						passion is coding, thinking of different ways to make something work
@@ -81,9 +81,11 @@ export default function Skills() {
 						expand my skillset and knowledge with new technologies.
 					</p>
 					{/* make it into a filter, base case is all, then core tech, styling, utils, data vis . 4 buttons for filtering*/}
-					<h3 className="text-2xl font-bold mb-2">Technologies</h3>
+					<div className="">
+						<h3 className="text-2xl font-bold mb-6">Technologies</h3>
 
-					<SkillsFilter skills={skillsData.nodes} />
+						<SkillsFilter skills={skillsData.nodes} />
+					</div>
 				</div>
 			</div>
 		</section>
