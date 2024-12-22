@@ -20,6 +20,7 @@ module.exports = {
 				bgHover: "var(--bgHover)",
 				hover: "var(--hover)",
 				imageBg: "var(--imageBg)",
+				borderC: "var(--borderC)",
 
 				// primary: {
 				// 	50: "#E1E8EF",

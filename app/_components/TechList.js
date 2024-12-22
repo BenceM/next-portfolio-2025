@@ -22,7 +22,6 @@ export default function TechList({ techs }) {
 						</span>
 					</li>
 				) : (
-					// Fallback if no matching skill is found
 					<li key={tech}>{tech}</li>
 				);
 			})}
