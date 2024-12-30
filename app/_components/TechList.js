@@ -3,7 +3,7 @@ import { skillsData } from "./Skills";
 export default function TechList({ techs }) {
 	const { nodes: skills } = skillsData;
 	return (
-		<ul className="flex flex-row gap-1">
+		<ul className="flex flex-row gap-1 items-center">
 			{techs.map((tech) => {
 				const skill = skills.find((s) => s.id === tech);
 				return skill ? (

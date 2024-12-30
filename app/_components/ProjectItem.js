@@ -1,9 +1,11 @@
 import Image from "next/image";
 
 import TechList from "./TechList";
-
+import Link from "next/link";
+// add github and live website links and a full fledged page or modal
 export default function ProjectItem({ project }) {
-	const { img, name, tech } = project;
+	const { img, name, tech, github, site } = project;
+	console.log(github);
 	return (
 		<li className="border border-borderC shadow-md shadow-gradientOff flex flex-col items-start rounded-md p-3">
 			<div className="relative w-[256px] h-44 rounded-lg">
@@ -18,9 +20,16 @@ export default function ProjectItem({ project }) {
 					alt={`Picture of ${name}'s website`}
 				/>
 			</div>
-			<div className="flex flex-col items-start mt-2 bg-opacity-50">
+			<div className="flex flex-col items-start mt-2 bg-opacity-50 gap-3">
 				<h4 className="text-lg font-bold">{name}</h4>
+
 				<TechList techs={tech} />
+				<div className="flex flex-col gap-1">
+					{/* github link icon*/}
+					<Link href={github ?? ""}>GIcon</Link>
+					{/* live site link icon */}
+					<Link href={site ?? ""}>Live</Link>
+				</div>
 			</div>
 		</li>
 	);
