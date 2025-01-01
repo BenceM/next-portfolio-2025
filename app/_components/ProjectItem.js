@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import TechList from "./TechList";
 import Link from "next/link";
+import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/solid";
 // add github and live website links and a full fledged page or modal
 export default function ProjectItem({ project }) {
 	const { img, name, tech, github, site } = project;
@@ -21,15 +22,25 @@ export default function ProjectItem({ project }) {
 				/>
 			</div>
 			<div className="flex flex-col items-start mt-2 bg-opacity-50 gap-3">
-				<h4 className="text-lg font-bold hover:cursor-pointer mb-4">{name}</h4>
+				<h4 className="text-lg font-bold hover:cursor-pointer ">{name}</h4>
 
-				<TechList techs={tech} />
-				<div className="flex flex-col gap-1">
-					{/* github link icon*/}
-					<Link href={github ?? ""}>GIcon</Link>
+				<div className="flex flex-col gap-1 mb-4">
 					{/* live site link icon */}
-					<Link href={site ?? ""}>Live</Link>
+					<Link href={site ?? ""} className="inline-flex">
+						Live Site
+						<span>
+							<ArrowTopRightOnSquareIcon className="size-4" />
+						</span>
+					</Link>
+					{/* github link icon*/}
+					<Link href={github ?? ""} className="inline-flex">
+						GitHub
+						<span className="">
+							<ArrowTopRightOnSquareIcon className="size-4" />
+						</span>
+					</Link>
 				</div>
+				<TechList techs={tech} />
 			</div>
 		</li>
 	);

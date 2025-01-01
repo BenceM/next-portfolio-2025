@@ -17,7 +17,7 @@ export default function TechList({ techs }) {
 								tech === "Next.js" ? "rounded-full bg-white" : ""
 							} `}
 						/>
-						<span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-sm text-white bg-black rounded opacity-0 group-hover:opacity-100 transition-opacity z-10">
+						<span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-sm text-white bg-black rounded opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
 							{tech}
 						</span>
 					</li>

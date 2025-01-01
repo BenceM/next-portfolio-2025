@@ -7,8 +7,8 @@ export default function ProjectsList() {
 			img: "/cabins/holiday-cabin-app-4.png",
 			desc: "This is the customer facing page of the cabin project which I made the management app for. It uses the same data base. Users can browse the cabins and read a bit about the history of this place. They can browse the cabins and once they made up their mind they can book a stay. Users need to be logged in to make a booking, they can log in using their google account. Once logged in they can select a timeframe for the booking using a calendar, which only displays available dates. Once booked, they can check their reservations in the profile page, also delete or update them. On a separate tab they can change their details such as ID card number and name.",
 			tech: [
-				"React",
 				"Next.js",
+				"React",
 				"Tailwind",
 				"Context API",
 				"Auth.js",
