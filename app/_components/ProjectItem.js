@@ -5,10 +5,10 @@ import Link from "next/link";
 // add github and live website links and a full fledged page or modal
 export default function ProjectItem({ project }) {
 	const { img, name, tech, github, site } = project;
-	console.log(github);
+
 	return (
-		<li className="border border-borderC shadow-md shadow-gradientOff flex flex-col items-start rounded-md p-3">
-			<div className="relative w-[256px] h-44 rounded-lg">
+		<li className="border border-borderC shadow-md shadow-gradientOff flex flex-col items-start rounded-md p-3 ">
+			<div className="relative w-[256px] h-44 rounded-lg hover:cursor-pointer">
 				<Image
 					src={img}
 					fill
@@ -21,7 +21,7 @@ export default function ProjectItem({ project }) {
 				/>
 			</div>
 			<div className="flex flex-col items-start mt-2 bg-opacity-50 gap-3">
-				<h4 className="text-lg font-bold">{name}</h4>
+				<h4 className="text-lg font-bold hover:cursor-pointer mb-4">{name}</h4>
 
 				<TechList techs={tech} />
 				<div className="flex flex-col gap-1">
