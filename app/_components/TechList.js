@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { skillsData } from "./Skills";
+import { skillsData } from "../_data/data";
 export default function TechList({ techs }) {
 	const { nodes: skills } = skillsData;
 	return (
