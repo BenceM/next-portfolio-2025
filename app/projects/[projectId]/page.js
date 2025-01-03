@@ -8,7 +8,7 @@ export default async function Page({ params }) {
 	const { projectId } = await params;
 
 	// write the id of the project into the url
-	const imgFolder = projectsData.at(0).img.split("/").at(1);
+	// const imgFolder = projectsData.at(0).img.split("/").at(1);
 
 	return (
 		<main className="mt-2 md:mt-28">

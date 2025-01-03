@@ -20,6 +20,7 @@ export default function ImageLoader({ projectId }) {
 		<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
 			{images.map((image, index) => (
 				<div key={index} className="relative w-full h-64">
+					{/* resize the image correctly make an image box set height and width with a background of black and add the images using their own sizes*/}
 					<Image
 						src={`/${projectId}/${image}`}
 						alt={image}
