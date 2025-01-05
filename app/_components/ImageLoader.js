@@ -1,11 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 
 export default function ImageLoader({ projectId }) {
 	const [images, setImages] = useState([]);
 	const [activeIndex, setActiveIndex] = useState(0);
+	const [isFullscreen, setIsFullscreen] = useState(false);
+	const carouselRef = useRef(null);
 	useEffect(() => {
 		async function loadImages() {
 			const response = await fetch(`/api/projects/${projectId}`);
@@ -16,9 +18,6 @@ export default function ImageLoader({ projectId }) {
 		loadImages();
 	}, [projectId]);
 
-	if (images.length === 0) {
-		return <div>Loading...</div>;
-	}
 	const handlePrevious = () => {
 		setActiveIndex(
 			(prevIndex) => (prevIndex - 1 + images.length) % images.length,
@@ -28,10 +27,64 @@ export default function ImageLoader({ projectId }) {
 	const handleNext = () => {
 		setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
 	};
+	const toggleFullscreen = () => {
+		if (!isFullscreen) {
+			if (carouselRef.current.requestFullscreen) {
+				carouselRef.current.requestFullscreen();
+			} else if (carouselRef.current.webkitRequestFullscreen) {
+				carouselRef.current.webkitRequestFullscreen();
+			} else if (carouselRef.current.msRequestFullscreen) {
+				carouselRef.current.msRequestFullscreen();
+			}
+		} else {
+			if (document.exitFullscreen) {
+				document.exitFullscreen();
+			} else if (document.webkitExitFullscreen) {
+				document.webkitExitFullscreen();
+			} else if (document.msExitFullscreen) {
+				document.msExitFullscreen();
+			}
+		}
+	};
+	useEffect(() => {
+		const handleFullscreenChange = () => {
+			setIsFullscreen(!!document.fullscreenElement);
+		};
 
+		document.addEventListener("fullscreenchange", handleFullscreenChange);
+		document.addEventListener("webkitfullscreenchange", handleFullscreenChange);
+		document.addEventListener("msfullscreenchange", handleFullscreenChange);
+
+		return () => {
+			document.removeEventListener("fullscreenchange", handleFullscreenChange);
+			document.removeEventListener(
+				"webkitfullscreenchange",
+				handleFullscreenChange,
+			);
+			document.removeEventListener(
+				"msfullscreenchange",
+				handleFullscreenChange,
+			);
+		};
+	}, []);
+
+	if (images.length === 0) {
+		return <div>Loading...</div>;
+	}
 	return (
-		<div className="relative w-full max-w-2xl mx-auto">
-			<div className="relative w-full h-[600px] max-h-[600px] overflow-hidden bg-slate-800">
+		<div
+			ref={carouselRef}
+			className={`relative ${
+				isFullscreen
+					? "fixed inset-0 w-full h-full z-50 bg-black"
+					: "w-full max-w-2xl"
+			}`}
+		>
+			<div
+				className={`relative ${
+					isFullscreen ? "w-full h-full" : "w-full h-[450px]"
+				} max-h-full overflow-hidden bg-slate-800`}
+			>
 				{images.map((image, index) => (
 					<div
 						key={index}
@@ -43,7 +96,7 @@ export default function ImageLoader({ projectId }) {
 							src={`/${projectId}/${image}`}
 							alt={image}
 							fill
-							style={{ objectFit: "contain" }}
+							style={{ objectFit: isFullscreen ? "contain" : "cover" }}
 						/>
 					</div>
 				))}
@@ -71,6 +124,12 @@ export default function ImageLoader({ projectId }) {
 					/>
 				))}
 			</div>
+			<button
+				onClick={toggleFullscreen}
+				className="absolute top-2 right-2 bg-black bg-opacity-50 text-white p-2 rounded"
+			>
+				{isFullscreen ? "Exit Fullscreen" : "Fullscreen"}
+			</button>
 		</div>
 	);
 }
