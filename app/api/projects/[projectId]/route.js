@@ -4,10 +4,10 @@ import path from "path";
 export async function GET(request, { params }) {
 	const { projectId } = await params;
 
-	const imagesDir = path.join(process.cwd(), "public", projectId);
 	if (!projectId) {
 		return new Response(JSON.stringify([]), { status: 200 });
 	}
+	const imagesDir = path.join(process.cwd(), "public", projectId);
 	try {
 		const files = await fs.promises.readdir(imagesDir);
 		const imageFiles = files.filter((file) =>

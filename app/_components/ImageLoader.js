@@ -5,19 +5,26 @@ import Image from "next/image";
 
 export default function ImageLoader({ projectId }) {
 	const [images, setImages] = useState([]);
+	const [hqImages, setHqImages] = useState([]);
 	const [activeIndex, setActiveIndex] = useState(0);
 	const [isFullscreen, setIsFullscreen] = useState(false);
 	const carouselRef = useRef(null);
+	console.log(images);
 	useEffect(() => {
 		async function loadImages() {
 			const response = await fetch(`/api/projects/${projectId}`);
 			const imageFiles = await response.json();
-			setImages(imageFiles);
+			console.log(imageFiles);
+			const hqImages = imageFiles.filter((image) => image.includes("-hq"));
+			const sqImages = imageFiles.filter((image) => !image.includes("-hq"));
+			setImages(sqImages);
+			setHqImages(hqImages);
 		}
 
 		loadImages();
 	}, [projectId]);
-
+	console.log(hqImages);
+	console.log(images);
 	const handlePrevious = () => {
 		setActiveIndex(
 			(prevIndex) => (prevIndex - 1 + images.length) % images.length,
@@ -46,6 +53,13 @@ export default function ImageLoader({ projectId }) {
 			}
 		}
 	};
+
+	// const getImageSrc = (image) => {
+	// 	const baseUrl = `/${projectId}/`;
+	// 	return isFullscreen
+	// 		? `${baseUrl}${image.replace(/\.(jpg|jpeg|png|gif)$/, "-hq.$1")}`
+	// 		: `${baseUrl}${image}`;
+	// };
 	useEffect(() => {
 		const handleFullscreenChange = () => {
 			setIsFullscreen(!!document.fullscreenElement);
@@ -71,6 +85,7 @@ export default function ImageLoader({ projectId }) {
 	if (images.length === 0) {
 		return <div>Loading...</div>;
 	}
+	const sortedImgArray = isFullscreen ? hqImages : images;
 	return (
 		<div
 			ref={carouselRef}
@@ -85,7 +100,7 @@ export default function ImageLoader({ projectId }) {
 					isFullscreen ? "w-full h-full" : "w-full h-[450px]"
 				} max-h-full overflow-hidden bg-slate-800`}
 			>
-				{images.map((image, index) => (
+				{sortedImgArray.map((image, index) => (
 					<div
 						key={index}
 						className={`absolute w-full h-full transition-opacity duration-300 ${
@@ -94,9 +109,12 @@ export default function ImageLoader({ projectId }) {
 					>
 						<Image
 							src={`/${projectId}/${image}`}
-							alt={image}
+							alt={`Image ${index + 1}`}
+							sizes={isFullscreen ? "100vw" : "(max-width: 768px) 100vw, 50vw"}
 							fill
+							quality={isFullscreen ? 100 : 75}
 							style={{ objectFit: isFullscreen ? "contain" : "cover" }}
+							priority={index === activeIndex}
 						/>
 					</div>
 				))}
@@ -114,7 +132,7 @@ export default function ImageLoader({ projectId }) {
 				&#10095;
 			</button>
 			<div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-				{images.map((_, index) => (
+				{sortedImgArray.map((_, index) => (
 					<button
 						key={index}
 						onClick={() => setActiveIndex(index)}
