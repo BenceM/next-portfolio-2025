@@ -18,11 +18,14 @@ export default async function Page({ params }) {
 			<div className="grid grid-cols-2 gap-16 items-center mx-12">
 				<ImageLoader projectId={projectId} />
 				<div className="">
+					<h2>Description</h2>
 					<p className="max-w-[300px]">{projectsData.at(0).desc}</p>
+					<h2>Tech list</h2>
 					<TechList techs={projectsData.at(0).tech} />
 				</div>
 			</div>
 			<div className="">
+				<h2>Links:</h2>
 				<Link href={projectsData.at(0).github}>Github</Link>
 				<Link href={projectsData.at(0).site}>Live website</Link>
 			</div>
