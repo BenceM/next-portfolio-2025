@@ -9,12 +9,11 @@ export default function ImageLoader({ projectId }) {
 	const [activeIndex, setActiveIndex] = useState(0);
 	const [isFullscreen, setIsFullscreen] = useState(false);
 	const carouselRef = useRef(null);
-	console.log(images);
+
 	useEffect(() => {
 		async function loadImages() {
 			const response = await fetch(`/api/projects/${projectId}`);
 			const imageFiles = await response.json();
-			console.log(imageFiles);
 			const hqImages = imageFiles.filter((image) => image.includes("-hq"));
 			const sqImages = imageFiles.filter((image) => !image.includes("-hq"));
 			setImages(sqImages);
@@ -23,8 +22,7 @@ export default function ImageLoader({ projectId }) {
 
 		loadImages();
 	}, [projectId]);
-	console.log(hqImages);
-	console.log(images);
+
 	const handlePrevious = () => {
 		setActiveIndex(
 			(prevIndex) => (prevIndex - 1 + images.length) % images.length,

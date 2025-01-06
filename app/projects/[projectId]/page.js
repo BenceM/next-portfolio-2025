@@ -6,9 +6,14 @@ import Link from "next/link";
 // import { useEffect, useState } from "react";
 export default async function Page({ params }) {
 	const { projectId } = await params;
-	const project = projectsData.at(0);
-	// write the id of the project into the url
+	console.log(projectId);
+	const project = projectsData.find(
+		(project) => project.id === Number(projectId),
+	);
 
+	// projectsData.at(0);
+	// write the id of the project into the url
+	console.log(project);
 	// const imgFolder = projectsData.at(0).img.split("/").at(1);
 
 	return (

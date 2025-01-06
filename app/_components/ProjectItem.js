@@ -7,11 +7,14 @@ import ImageWithOverlay from "./ImageWithOverlay";
 // add github and live website links and a full fledged page or modal
 //make a page for each project
 export default function ProjectItem({ project }) {
-	const { img, name, tech, github, site } = project;
+	const { img, name, tech, github, site, id } = project;
 
 	return (
 		<li className="border border-borderC shadow-md shadow-gradientOff flex flex-col items-start rounded-md p-3 ">
-			<Link href={""} className="relative w-[256px] h-44 rounded-lg ">
+			<Link
+				href={`/projects/${id}`}
+				className="relative w-[256px] h-44 rounded-lg "
+			>
 				{/* <Image
 					src={img}
 					fill
