@@ -112,7 +112,6 @@ export default function ImageLoader({ projectId }) {
 							alt={`Image ${index + 1}`}
 							sizes={isFullscreen ? "100vw" : "(max-width: 768px) 100vw, 50vw"}
 							fill
-							quality={isFullscreen ? 100 : 75}
 							style={{ objectFit: "contain" }}
 							priority={index === activeIndex}
 						/>
