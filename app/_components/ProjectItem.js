@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 import TechList from "./TechList";
 import Link from "next/link";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/solid";
