@@ -14,6 +14,8 @@ export default function ProjectFilter() {
 			: projects.filter((project) => project.group === filterGroup); //replace
 	//project.tech has to find the tech which is being filtered, also pair multiple filters?
 
+	//instead of buttons add shadcn combobox and every time a filter is selected push an element to the screen max 3 filters which then can be removed by clicking it. Hovering changes the content of the pill to x and clicking removes the filter
+	//the filter is an array of state and manipulate it
 	const handleFilter = (filter) => setFilterGroup(filter);
 
 	return (

@@ -11,9 +11,9 @@ export default function ImageLoader({ projectId }) {
 
 	useEffect(() => {
 		async function loadImages() {
-			const response = await fetch(`/api/projects/${projectId}`);
-			const imageFiles = await response.json();
-			const hqImages = imageFiles.filter((image) => image.includes("-hq"));
+			const res = await fetch(`/api/projects/${projectId}`);
+			const data = await res.json();
+			const hqImages = data.filter((image) => image.includes("-hq"));
 			setImages(hqImages);
 		}
 

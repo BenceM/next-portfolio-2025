@@ -11,23 +11,27 @@ export default async function Page({ params }) {
 	);
 
 	return (
-		<main className="mt-2 md:mt-28 flex flex-col gap-10 px-10 max-w-[90rem] py-4 md:py-0  sm:px-8 lg:px-12 min-h-screen">
+		<main className="mt-2 md:mt-28 flex flex-col gap-6 px-10 max-w-[90rem] py-4 md:py-0  sm:px-8 lg:px-12 ">
 			<BackButton />
-			<h1 className="text-3xl text-white">{project.name}</h1>
-			<div className="grid grid-cols-2 gap-16 items-center mx-12">
+			<h1 className="text-3xl pt-6 text-white">{project.name}</h1>
+			<div className="grid grid-cols-2 gap-16 items-center px-8">
 				<ImageLoader projectId={projectId} />
-				<div className="">
-					<h2>Description</h2>
-					<p className="max-w-[300px]">{project.desc}</p>
-					<h2>Tech list</h2>
-					<TechList techs={project.tech} />
+				<div className="grid grid-rows-2 gap-4 items-end">
+					<div className="">
+						<h2 className="text-2xl">Description</h2>
+						<p className="">{project.desc}</p>
+					</div>
+					<div className="">
+						<h3 className="text-xl">Tech list</h3>
+						<TechList techs={project.tech} />
+						<h3 className="text-xl">Links:</h3>
+						<div className="flex flex-col">
+							<Link href={project.github}>Github</Link>
+							<Link href={project.site}>Live website</Link>
+							{project?.extra && <Link href={project.extra}>Hugging Face</Link>}
+						</div>
+					</div>
 				</div>
-			</div>
-			<div className="">
-				<h2>Links:</h2>
-				<Link href={project.github}>Github</Link>
-				<Link href={project.site}>Live website</Link>
-				{project?.extra && <Link href={project.extra}>Hugging Face</Link>}
 			</div>
 		</main>
 	);

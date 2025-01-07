@@ -37,7 +37,7 @@ export const projectsData = [
 	},
 	{
 		name: "2D Platformer Game",
-		img: "/game/2d-game-2.png",
+		img: "/3/2d-game-2.png",
 		id: 3,
 		desc: "A 2D Platformer game created in plain ES7+, CSS, HTML using canvas. This was my first attempt at creating a game. It was a steep learning curve, but it turned out okay. Canvas has some limitations and if I were to create a game again I'd probably use an engine, so I wouldn't have to create everything again from 0. The camera size is different on different screens depending on resolution and pixel density, to fix this the whole camera system would need a rework and most of the game. This I'd defintiely do differently in another iteration.",
 		tech: ["JavaScript", "CSS"],
