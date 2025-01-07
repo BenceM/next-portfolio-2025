@@ -14,9 +14,10 @@ export default function Main() {
 	};
 
 	return (
+		//min-h-screen
 		<div
 			id="/"
-			className="max-w-[90rem] mx-auto py-4 md:py-0 px-4 sm:px-8 lg:px-12 min-h-screen md:flex  md:justify-center"
+			className="max-w-[90rem] mx-auto py-4 md:py-0 px-4 sm:px-8 lg:px-12  md:flex  md:justify-center"
 		>
 			<div className="flex flex-col justify-center items-center md:grid md:grid-cols-12 md:grid-rows-auto gap-y-2 md:h-full pt-12">
 				{/* md:grid-cols-12 lg:grid-rows-[auto_1fr_auto_auto] */}

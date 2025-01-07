@@ -1,4 +1,5 @@
 // "use client";
+import { BackButton } from "@/app/_components/BackButton";
 import ImageLoader from "@/app/_components/ImageLoader";
 import TechList from "@/app/_components/TechList";
 import { projectsData } from "@/app/_data/data";
@@ -11,6 +12,7 @@ export default async function Page({ params }) {
 
 	return (
 		<main className="mt-2 md:mt-28 flex flex-col gap-10 px-10 max-w-[90rem] py-4 md:py-0  sm:px-8 lg:px-12 min-h-screen">
+			<BackButton />
 			<h1 className="text-3xl text-white">{project.name}</h1>
 			<div className="grid grid-cols-2 gap-16 items-center mx-12">
 				<ImageLoader projectId={projectId} />
