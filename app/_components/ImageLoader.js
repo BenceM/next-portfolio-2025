@@ -5,7 +5,6 @@ import Image from "next/image";
 
 export default function ImageLoader({ projectId }) {
 	const [images, setImages] = useState([]);
-	const [hqImages, setHqImages] = useState([]);
 	const [activeIndex, setActiveIndex] = useState(0);
 	const [isFullscreen, setIsFullscreen] = useState(false);
 	const carouselRef = useRef(null);
@@ -15,9 +14,7 @@ export default function ImageLoader({ projectId }) {
 			const response = await fetch(`/api/projects/${projectId}`);
 			const imageFiles = await response.json();
 			const hqImages = imageFiles.filter((image) => image.includes("-hq"));
-			const sqImages = imageFiles.filter((image) => !image.includes("-hq"));
-			setImages(sqImages);
-			setHqImages(hqImages);
+			setImages(hqImages);
 		}
 
 		loadImages();
@@ -52,12 +49,6 @@ export default function ImageLoader({ projectId }) {
 		}
 	};
 
-	// const getImageSrc = (image) => {
-	// 	const baseUrl = `/${projectId}/`;
-	// 	return isFullscreen
-	// 		? `${baseUrl}${image.replace(/\.(jpg|jpeg|png|gif)$/, "-hq.$1")}`
-	// 		: `${baseUrl}${image}`;
-	// };
 	useEffect(() => {
 		const handleFullscreenChange = () => {
 			setIsFullscreen(!!document.fullscreenElement);
@@ -83,7 +74,7 @@ export default function ImageLoader({ projectId }) {
 	if (images.length === 0) {
 		return <div>Loading...</div>;
 	}
-	const sortedImgArray = isFullscreen ? hqImages : images;
+	const sortedImgArray = images;
 	return (
 		<div
 			ref={carouselRef}
@@ -110,6 +101,7 @@ export default function ImageLoader({ projectId }) {
 							alt={`Image ${index + 1}`}
 							sizes={isFullscreen ? "100vw" : "(max-width: 768px) 100vw, 50vw"}
 							fill
+							quality={isFullscreen ? 100 : 80}
 							style={{ objectFit: "contain" }}
 							priority={index === activeIndex}
 						/>

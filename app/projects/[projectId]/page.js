@@ -3,18 +3,11 @@ import ImageLoader from "@/app/_components/ImageLoader";
 import TechList from "@/app/_components/TechList";
 import { projectsData } from "@/app/_data/data";
 import Link from "next/link";
-// import { useEffect, useState } from "react";
 export default async function Page({ params }) {
 	const { projectId } = await params;
-	console.log(projectId);
 	const project = projectsData.find(
 		(project) => project.id === Number(projectId),
 	);
-
-	// projectsData.at(0);
-	// write the id of the project into the url
-	console.log(project);
-	// const imgFolder = projectsData.at(0).img.split("/").at(1);
 
 	return (
 		<main className="mt-2 md:mt-28 flex flex-col gap-10 px-10 max-w-[90rem] py-4 md:py-0  sm:px-8 lg:px-12 min-h-screen">
