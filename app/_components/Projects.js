@@ -10,9 +10,8 @@ export default function Projects() {
 			<h2 className="text-4xl xl:text-5xl xl:leading-normal font-extrabold text-center  text-transparent bg-gradient-to-br from-sky-800 via-cyan-700 to-teal-800 bg-clip-text">
 				Projects
 			</h2>
-			{/* add filter */}
+
 			<ProjectFilter />
-			<ProjectsList />
 		</section>
 	);
 }

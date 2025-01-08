@@ -19,46 +19,7 @@ import {
 } from "@/components/ui/popover";
 import { useState } from "react";
 
-const frameworks = [
-	{
-		value: "next.js",
-		label: "Next.js",
-	},
-	{
-		value: "sveltekit",
-		label: "SvelteKit",
-	},
-	{
-		value: "nuxt.js",
-		label: "Nuxt.js",
-	},
-	{
-		value: "remix",
-		label: "Remix",
-	},
-	{
-		value: "astro",
-		label: "Astro",
-	},
-	{
-		value: "sveltekit1",
-		label: "SvelteKit1",
-	},
-	{
-		value: "nuxt.js1",
-		label: "Nuxt.js1",
-	},
-	{
-		value: "remix1",
-		label: "Remix1",
-	},
-	{
-		value: "astro1",
-		label: "Astro1",
-	},
-];
-
-export function ComboBox() {
+export function ComboBox({ frameworks }) {
 	const [open, setOpen] = useState(false);
 	const [value, setValue] = useState("");
 
