@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const plugin = require("tailwindcss/plugin");
+
 module.exports = {
 	content: [
 		"./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -97,11 +99,34 @@ module.exports = {
 				},
 			},
 			borderRadius: {
+				"scrollbar-thumb": "8px",
 				lg: "var(--radius)",
 				md: "calc(var(--radius) - 2px)",
 				sm: "calc(var(--radius) - 4px)",
 			},
 		},
 	},
-	plugins: [],
+	plugins: [
+		plugin(function ({ addUtilities }) {
+			addUtilities({
+				".scrollbar-hide": {
+					"scrollbar-width": "none", // For Firefox
+					"-ms-overflow-style": "none", // For Internet Explorer and Edge
+				},
+				".scrollbar-hide::-webkit-scrollbar": {
+					display: "none", // Hides the full scrollbar
+				},
+				".scrollbar-thumb-only::-webkit-scrollbar": {
+					width: "6px",
+				},
+				".scrollbar-thumb-only::-webkit-scrollbar-track": {
+					background: "transparent", // Completely hidden track
+				},
+				".scrollbar-thumb-only::-webkit-scrollbar-thumb": {
+					background: "var(--bgHover)",
+					"border-radius": "8px",
+				},
+			});
+		}),
+	],
 };

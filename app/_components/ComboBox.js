@@ -81,11 +81,11 @@ export function ComboBox() {
 			</PopoverTrigger>
 
 			<PopoverContent className="w-[200px] p-0 bg-background border-none relative flex items-center justify-center after:h-[101%] after:w-[101%] after:absolute after:bg-gradient-to-br after:from-sky-800 after:to-teal-800 after:-z-10 after:rounded-md ">
-				<Command className=" ">
+				<Command>
 					<CommandInput placeholder="Search framework..." />
-					<CommandList>
+					<CommandList className="max-h-[200px] overflow-y-auto scrollbar-thumb-only">
 						<CommandEmpty>No framework found.</CommandEmpty>
-						<CommandGroup>
+						<CommandGroup className="border-none">
 							{frameworks.map((framework) => (
 								<CommandItem
 									key={framework.value}
@@ -94,7 +94,7 @@ export function ComboBox() {
 										setValue(currentValue === value ? "" : currentValue);
 										setOpen(false);
 									}}
-									className="data-[selected=true]:bg-bgHover"
+									className="data-[selected=true]:bg-bgHover border-t border-sky-800/20 first:border-t-0"
 								>
 									<Check
 										className={cn(
