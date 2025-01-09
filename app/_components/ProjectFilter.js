@@ -1,51 +1,34 @@
 "use client";
 import { useState } from "react";
-import { projectsData } from "../_data/data";
+import { projectsData, skillsData } from "../_data/data";
 import { ComboBox } from "./ComboBox";
 import ProjectsList from "./ProjectsList";
-const frameworks = [
+const framework = [
 	{
 		value: "next.js",
 		label: "Next.js",
 	},
-	{
-		value: "sveltekit",
-		label: "SvelteKit",
-	},
-	{
-		value: "nuxt.js",
-		label: "Nuxt.js",
-	},
-	{
-		value: "remix",
-		label: "Remix",
-	},
-	{
-		value: "astro",
-		label: "Astro",
-	},
-	{
-		value: "sveltekit1",
-		label: "SvelteKit1",
-	},
-	{
-		value: "nuxt.js1",
-		label: "Nuxt.js1",
-	},
-	{
-		value: "remix1",
-		label: "Remix1",
-	},
-	{
-		value: "astro1",
-		label: "Astro1",
-	},
 ];
 export default function ProjectFilter() {
-	const [filterGroup, setFilterGroup] = useState("all");
+	const frameworks = skillsData.nodes.map((skill) => {
+		return {
+			value: skill.id.toLowerCase(),
+			label: skill.id,
+		};
+	});
+	const [filterGroup, setFilterGroup] = useState(["all"]);
 	const projects = projectsData;
-	// Import projects and also import the projectslist
-	// change projectslist so it doesn't receive projectsData from import but pass down the ones that are filtered as props and import projectsdata here
+	const [selectedValues, setSelectedValues] = useState([]);
+	const handleSelect = (currentValue) => {
+		setSelectedValues((prev) =>
+			prev.includes(currentValue)
+				? prev.filter((value) => value !== currentValue)
+				: prev.length < 3
+				? [...prev, currentValue]
+				: [...prev],
+		);
+	};
+
 	const filteredProjects =
 		filterGroup === "all"
 			? projects
@@ -58,12 +41,18 @@ export default function ProjectFilter() {
 	//probably have to create a context in the combobox set the context for the filter. Additionally to be able to combo the filters use the context to create a filterbutton with the value inside, tops 3, on hover changes to x when clicked removes the filter from the button. also have to reset the combobox so it displays not the chosen element but choose additional filter if a filter already exists
 	// or make it into a multiple option one and just type out the active filters
 	//add a color picker using the input type="color"
+
+	//write the filter logic
 	return (
 		<div className="mr-auto flex flex-col gap-10">
 			<div className="flex gap-6">
-				<ComboBox frameworks={frameworks} />
+				<ComboBox
+					selectedValues={selectedValues}
+					handleSelect={handleSelect}
+					frameworks={frameworks}
+				/>
 			</div>
-			<ProjectsList />
+			<ProjectsList projects={projects} />
 		</div>
 	);
 }

@@ -18,21 +18,10 @@ import {
 	PopoverTrigger,
 } from "@/components/ui/popover";
 import { useState } from "react";
-import FilterButton from "./FilterButton";
-import { XMarkIcon } from "@heroicons/react/24/solid";
+import ProjectFilterPills from "./ProjectFilterPills";
 
-export function ComboBox({ frameworks }) {
+export function ComboBox({ selectedValues, handleSelect, frameworks }) {
 	const [open, setOpen] = useState(false);
-	const [selectedValues, setSelectedValues] = useState([]);
-	const handleSelect = (currentValue) => {
-		setSelectedValues((prev) =>
-			prev.includes(currentValue)
-				? prev.filter((value) => value !== currentValue)
-				: prev.length < 3
-				? [...prev, currentValue]
-				: [...prev],
-		);
-	};
 
 	return (
 		<Popover open={open} onOpenChange={setOpen}>
@@ -55,19 +44,16 @@ export function ComboBox({ frameworks }) {
 			<div className="flex flex-row gap-2">
 				{selectedValues.length > 0 &&
 					selectedValues.map((value) => {
+						const { label } = frameworks.find(
+							(framework) => framework.value === value,
+						);
 						return (
-							<button
+							<ProjectFilterPills
 								key={value}
-								className={`px-6 py-1 transition-all ease-in-out duration-300 bg-background relative flex items-center justify-center hover:bg-bgHover hover:shadow-xl rounded-full after:h-[107%] after:w-[104%] after:absolute after:bg-gradient-to-br after:from-sky-800 after:to-teal-800 after:rounded-full after:-z-10 group `}
-								onClick={() => handleSelect(value)}
-							>
-								<p className="group-hover:opacity-0 duration-100 ">{value}</p>
-								<div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-imageBg">
-									<div className="font-bold ">
-										<XMarkIcon className="w-6 h-6 text-white" />
-									</div>
-								</div>
-							</button>
+								value={value}
+								label={label}
+								handleSelect={handleSelect}
+							/>
 						);
 					})}
 			</div>
@@ -77,25 +63,6 @@ export function ComboBox({ frameworks }) {
 					<CommandList className="max-h-[200px] overflow-y-auto scrollbar-thumb-only">
 						<CommandEmpty>No framework found.</CommandEmpty>
 						<CommandGroup className="border-none">
-							{/* {frameworks.map((framework) => (
-								<CommandItem
-									key={framework.value}
-									value={framework.value}
-									onSelect={(currentValue) => {
-										setValue(currentValue === value ? "" : currentValue);
-										setOpen(false);
-									}}
-									className="data-[selected=true]:bg-bgHover border-t border-sky-800/20 first:border-t-0"
-								>
-									<Check
-										className={cn(
-											"mr-2 h-4 w-4",
-											value === framework.value ? "opacity-100" : "opacity-0",
-										)}
-									/>
-									{framework.label}
-								</CommandItem>
-							))} */}
 							{frameworks.map((framework) => (
 								<CommandItem
 									key={framework.value}
