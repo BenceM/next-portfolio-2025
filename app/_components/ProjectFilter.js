@@ -56,7 +56,7 @@ export default function ProjectFilter() {
 	//the filter is an array of state and manipulate it
 	const handleFilter = (filter) => setFilterGroup(filter);
 	//probably have to create a context in the combobox set the context for the filter. Additionally to be able to combo the filters use the context to create a filterbutton with the value inside, tops 3, on hover changes to x when clicked removes the filter from the button. also have to reset the combobox so it displays not the chosen element but choose additional filter if a filter already exists
-
+	// or make it into a multiple option one and just type out the active filters
 	//add a color picker using the input type="color"
 	return (
 		<div className="mr-auto flex flex-col gap-10">
