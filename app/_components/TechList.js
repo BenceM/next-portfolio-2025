@@ -10,7 +10,7 @@ export default function TechList({ techs }) {
 					<li key={tech} className="relative group">
 						<Image
 							src={skill.img}
-							alt={tech}
+							alt={`small ${tech} logo`}
 							width={25}
 							height={25}
 							className={`${

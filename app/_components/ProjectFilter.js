@@ -24,7 +24,6 @@ export default function ProjectFilter() {
 		});
 	}, [selectedValues]);
 
-	console.log(projects);
 	const handleSelect = (currentValue) => {
 		setSelectedValues((prev) =>
 			prev.includes(currentValue)

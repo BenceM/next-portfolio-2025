@@ -30,6 +30,7 @@ export function ComboBox({ selectedValues, handleSelect, frameworks }) {
 					variant="outline"
 					role="combobox"
 					aria-expanded={open}
+					aria-label="Technology filter button for the projects"
 					className="relative flex items-center justify-center w-[200px]  hover:shadow-xl after:h-[110%] after:w-[102%] after:absolute after:bg-gradient-to-br after:from-sky-800 after:to-teal-800 after:-z-10 after:rounded-md "
 				>
 					<div className="w-full flex justify-between">

@@ -45,25 +45,55 @@ export const projectsData = [
 		site: "https://bencem.github.io/2d-platformer/",
 	},
 	{
-		name: "Countries Website",
-		img: "/1/holiday-cabin-app-1.png",
-		id: 4,
-		desc: "A small project that uses an API for data fetching and display. This is an older project and my understanding of data fetching and handling greatly improved since then, would make the entire app much simpler, but regardless of code complexity, it runs decently well and it's pretty fast. Core functionality, displays all countries and flags. Can search for specific countries or filter based on location. Also has a separate page for each country where it shows more details. First time using the Intersection Observer.",
-		tech: ["JavaScript", "CSS"],
-		//update
-		github: "https://github.com/BenceM/REST-countries",
-		site: "https://bence-restcountriesapi.netlify.app",
-	},
-	{
 		name: "Ai Image Generator",
 		img: "/1/holiday-cabin-app-1.png",
-		id: 5,
+		id: 4,
 		desc: "This Project was my very first Ai model training project. It was a steep jump for me in difficulty as my Python was a bit rusty and I haven't used Next.js before, on top of that I had to learn how diffusors and image generators work. I ran the training on Jupyter Notebooks renting a computer from google as my rig wasn't made for this kind of computation. Once the training was done I dowloaded the model and hosted it on Hugging Face. Their API model always clears the API endpoints so the first generation might take a long while if it wasn't in use for a bit. Overall cool project, today I'd do many things differently and would write a cleaner code for the front end.",
-		tech: ["Next.js", "Tailwind", "Hugging Face", "Ai models"],
-		//update
+		tech: ["Next.js", "Tailwind", "Hugging Face", "Vercel", "Ai models"],
+
 		extra: "https://huggingface.co/BenceM/ai-avatar",
 		github: "https://github.com/BenceM/ai-avatar",
 		site: "https://bencem-ai-avatar.vercel.app/",
+	},
+	{
+		name: "Pizza Ordering App",
+		img: "/1/holiday-cabin-app-1.png",
+		id: 5,
+		desc: "This is a smaller project, with a decent minimalistic ui, demonstrating react and redux.",
+		tech: ["React", "Redux", "CSS", "Vite"],
+
+		github: "https://github.com/BenceM/fast-react-pizza-co",
+		site: "https://bence-pizza-co.netlify.app/",
+	},
+	{
+		name: "WorldWise",
+		img: "/1/holiday-cabin-app-1.png",
+		id: 6,
+		desc: "This is a smaller project, with a decent minimalistic ui, demonstrating react and redux.",
+		tech: ["React", "Redux", "CSS", "Vite"],
+
+		github: "https://github.com/BenceM/worldwise",
+		site: "",
+	},
+	{
+		name: "Movie Rating App",
+		img: "/1/holiday-cabin-app-1.png",
+		id: 7,
+		desc: "This is a smaller project, with a decent minimalistic ui, demonstrating react and redux.",
+		tech: ["React", "Redux", "CSS", "Vite"],
+
+		github: "https://github.com/BenceM/movie-rating",
+		site: "https://bence-rate-movies.netlify.app/",
+	},
+	{
+		name: "Countries Website",
+		img: "/1/holiday-cabin-app-1.png",
+		id: 8,
+		desc: "A small project that uses an API for data fetching and display. This is an older project and my understanding of data fetching and handling greatly improved since then, would make the entire app much simpler, but regardless of code complexity, it runs decently well and it's pretty fast. Core functionality, displays all countries and flags. Can search for specific countries or filter based on location. Also has a separate page for each country where it shows more details. First time using the Intersection Observer.",
+		tech: ["JavaScript", "CSS"],
+
+		github: "https://github.com/BenceM/REST-countries",
+		site: "https://bence-restcountriesapi.netlify.app",
 	},
 ];
 
