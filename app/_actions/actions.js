@@ -11,10 +11,24 @@ export async function sendEmail(formData) {
 
 	try {
 		const data = await resend.emails.send({
-			from: "Your Website <onboarding@resend.dev>",
-			to: ["your-email@example.com"],
-			subject: "New Contact Form Submission",
-			text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+			from: "Acme <onboarding@resend.dev>",
+			to: ["delivered@resend.dev"],
+			subject: "New email from the portfolio page",
+			react: (
+				<body>
+					<h2>New Contact Form Submission</h2>
+					<p>
+						<strong>Name:</strong> {name}
+					</p>
+					<p>
+						<strong>Email:</strong> {email}
+					</p>
+					<p>
+						<strong>Message:</strong> {message}
+					</p>
+					,
+				</body>
+			),
 		});
 
 		return { success: true, message: "Email sent successfully!" };
