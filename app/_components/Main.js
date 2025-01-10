@@ -39,7 +39,7 @@ export default function Main() {
 						<Button className="bg-gradient-to-br from-sky-800  to-teal-700  hover:brightness-110  text-white shadow shadow-blue-200/0 hover:shadow-3xl">
 							Hire me
 						</Button>
-						<Button className="bg-[#121212] text-stone-100 relative flex items-center justify-center after:h-[107%] after:w-[102%] after:absolute after:bg-gradient-to-br after:from-sky-800 after:to-teal-700 after:rounded-full after:-z-10 hover:bg-[#1f1f1f]  hover:shadow-3xl  ">
+						<Button className="bg-[#121212] text-stone-100 relative flex items-center justify-center after:h-[111%] after:w-[103%] after:absolute  after:bg-gradient-to-br after:from-sky-800 after:to-teal-700 after:rounded-full after:-z-10 hover:bg-[#1f1f1f]  hover:shadow-3xl  ">
 							Dowload CV
 						</Button>
 					</div>
