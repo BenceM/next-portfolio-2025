@@ -32,15 +32,26 @@ export function EmailForm() {
 					<CardContent className="space-y-4">
 						<div className="space-y-2">
 							<Label htmlFor="name">Name</Label>
-							<Input id="name" name="name" required />
+							<Input id="name" name="name" placeholder="Your Name" required />
 						</div>
 						<div className="space-y-2">
 							<Label htmlFor="email">Email</Label>
-							<Input id="email" name="email" type="email" required />
+							<Input
+								id="email"
+								name="email"
+								type="email"
+								placeholder="your@email.com"
+								required
+							/>
 						</div>
 						<div className="space-y-2">
 							<Label htmlFor="message">Message</Label>
-							<Textarea id="message" name="message" required />
+							<Textarea
+								id="message"
+								name="message"
+								placeholder="The message comes here ..."
+								required
+							/>
 						</div>
 					</CardContent>
 					<CardFooter className="flex items-center justify-center">
