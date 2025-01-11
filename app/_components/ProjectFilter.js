@@ -35,8 +35,8 @@ export default function ProjectFilter() {
 	};
 
 	return (
-		<div className="mr-auto flex flex-col gap-10">
-			<div className="flex gap-6">
+		<div className="flex flex-col gap-10 justify-center items-center md:items-start md:justify-start md:mr-auto">
+			<div className="flex flex-col md:flex-row gap-6">
 				<ComboBox
 					selectedValues={selectedValues}
 					handleSelect={handleSelect}

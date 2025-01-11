@@ -42,7 +42,7 @@ export function ComboBox({ selectedValues, handleSelect, frameworks }) {
 					</div>
 				</Button>
 			</PopoverTrigger>
-			<div className="flex flex-row gap-2">
+			<div className="flex flex-col md:flex-row gap-2">
 				{selectedValues.length > 0 &&
 					selectedValues.map((value) => {
 						const { label } = frameworks.find(

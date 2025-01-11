@@ -1,12 +1,15 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
-
-//start from the static list and import the path to the images
+import useMediaQuery from "@/app/_hooks/useMediaQuery";
 
 const BubbleMap = ({ data }) => {
 	const svgRef = useRef();
-	const [dimensions, setDimensions] = useState({ width: 800, height: 500 });
+	const isDesktop = useMediaQuery("(min-width: 768px)");
+	const INITIAL_STATE = isDesktop
+		? { width: 500, height: 500 }
+		: { width: 300, height: 500 };
+	const [dimensions, setDimensions] = useState(INITIAL_STATE);
 	useEffect(() => {
 		const handleResize = () => {
 			const parent = svgRef.current.parentNode;
@@ -59,34 +62,6 @@ const BubbleMap = ({ data }) => {
 			.attr("stroke", "#ccc")
 			.attr("stroke-width", 2);
 
-		// const node = svg
-		// 	.selectAll(".node")
-		// 	.data(data.nodes)
-		// 	.join("circle")
-		// 	.attr("class", "node")
-		// 	.attr("r", 20)
-		// 	.attr("fill", (d) => {
-		// 		switch (d.group) {
-		// 			case "frontend":
-		// 				return "#69b3a2";
-		// 			case "css":
-		// 				return "#ffa600";
-		// 			default:
-		// 				return "#8884d8";
-		// 		}
-		// 	})
-		// 	.call(drag(simulation));
-
-		// const text = svg
-		// 	.selectAll(".text")
-		// 	.data(data.nodes)
-		// 	.join("text")
-		// 	.attr("class", "text")
-		// 	.attr("dy", 4)
-		// 	.attr("text-anchor", "middle")
-		// 	.attr("fill", "#fff")
-		// 	.text((d) => d.id);
-
 		const node = svg
 			.selectAll(".node")
 			.data(data.nodes)
@@ -99,30 +74,22 @@ const BubbleMap = ({ data }) => {
 			.attr("r", 20)
 			.attr("fill", (d) => {
 				return d.bg ? "#fff" : "#121212";
-				// switch (d.group) {
-				// 	case "frontend":
-				// 		return "#69b3a2";
-				// 	case "css":
-				// 		return "#ffa600";
-				// 	default:
-				// 		return "#8884d8";
-				// }
 			});
 
 		// Add images to each node
 		node
 			.append("image")
-			.attr("xlink:href", (d) => d.img) // Use the image URL from the dataset
-			.attr("width", 40) // Adjust size
+			.attr("xlink:href", (d) => d.img)
+			.attr("width", 40)
 			.attr("height", 40)
-			.attr("x", -20) // Center the image
+			.attr("x", -20)
 			.attr("y", -20);
 
 		// Add text for hover effect
 		node
 			.append("text")
 			.attr("class", "node-label")
-			.attr("dy", -30) // Position above the bubble
+			.attr("dy", -30)
 			.attr("text-anchor", "middle")
 			.attr("fill", "#fff")
 			.style("font-size", "12px")

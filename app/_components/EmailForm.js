@@ -28,7 +28,7 @@ export function EmailForm() {
 						Send me a message and I&apos;ll get back to you soon.
 					</CardDescription>
 				</CardHeader>
-				<form action={sendEmail}>
+				<form action={formAction}>
 					<CardContent className="space-y-4">
 						<div className="space-y-2">
 							<Label htmlFor="name">Name</Label>

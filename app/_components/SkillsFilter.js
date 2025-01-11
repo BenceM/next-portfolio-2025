@@ -14,7 +14,7 @@ export default function SkillsFilter({ skills }) {
 
 	return (
 		<div className="flex flex-col gap-6">
-			<div className="flex gap-6">
+			<div className="flex gap-1 items-center justify-center md:justify-start md:gap-2 lg:gap-4 xl:gap-6">
 				<FilterButton
 					filter="all"
 					activeFilter={filterGroup}
@@ -51,7 +51,9 @@ export default function SkillsFilter({ skills }) {
 					Data
 				</FilterButton>
 			</div>
-			<SkillsList filteredSkills={filteredSkills} />
+			<div className="md:min-h-[333.5px]">
+				<SkillsList filteredSkills={filteredSkills} />
+			</div>
 		</div>
 	);
 }
