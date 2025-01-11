@@ -13,7 +13,7 @@ export default function Skills() {
 			</h2>
 
 			<div className="grid grid-rows-auto md:grid-cols-2 gap-2 items-center md:items-start justify-center">
-				<div className="relative w-full min-h-[500px] h-full order-2">
+				<div className="relative w-full min-h-[600px] md:min-h-[500px] h-full order-2 overflow-hidden flex items-center justify-center">
 					<BubbleMap data={skillsData} />
 				</div>
 

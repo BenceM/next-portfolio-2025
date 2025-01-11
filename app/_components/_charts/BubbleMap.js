@@ -8,13 +8,13 @@ const BubbleMap = ({ data }) => {
 	const isDesktop = useMediaQuery("(min-width: 768px)");
 	const INITIAL_STATE = isDesktop
 		? { width: 500, height: 500 }
-		: { width: 300, height: 500 };
+		: { width: 300, height: 600 };
 	const [dimensions, setDimensions] = useState(INITIAL_STATE);
 	useEffect(() => {
 		const handleResize = () => {
 			const parent = svgRef.current.parentNode;
 			const newDimensions = {
-				width: parent.clientWidth,
+				width: parent.clientWidth < 334 ? 320 : parent.clientWidth,
 				height: parent.clientHeight,
 			};
 			if (!newDimensions.width || !newDimensions.height) return;
@@ -65,9 +65,9 @@ const BubbleMap = ({ data }) => {
 		const node = svg
 			.selectAll(".node")
 			.data(data.nodes)
-			.join("g") // Group elements to combine image and text
+			.join("g") // group elements to combine image and text
 			.attr("class", "node")
-			.call(drag(simulation)); // Drag functionality
+			.call(drag(simulation)); // drag functionality
 
 		node
 			.append("circle")

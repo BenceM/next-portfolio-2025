@@ -20,7 +20,7 @@ export function EmailForm() {
 	console.log(state);
 	console.log(isPending);
 	return (
-		<div className="relative w-full max-w-md mx-auto flex items-center justify-center rounded-xl after:h-[102%] after:w-[102%] after:absolute after:bg-gradient-to-br after:from-teal-800 after:to-sky-800 after:-z-10 after:rounded-xl ">
+		<div className="relative w-[90%] md:w-full max-w-md mx-auto flex items-center justify-center rounded-xl after:h-[102%] after:w-[102%] after:absolute after:bg-gradient-to-br after:from-teal-800 after:to-sky-800 after:-z-10 after:rounded-xl ">
 			<Card className="w-full max-w-md ">
 				<CardHeader>
 					<CardTitle>Let&apos;s get in touch</CardTitle>
@@ -44,7 +44,7 @@ export function EmailForm() {
 						</div>
 					</CardContent>
 					<CardFooter className="flex items-center justify-center">
-						<Button type="submit" className="w-[30%] border">
+						<Button type="submit" className="w-full md:w-[30%] border">
 							{isPending ? "Sending..." : "Send Message"}
 						</Button>
 					</CardFooter>
