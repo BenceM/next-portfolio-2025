@@ -1,4 +1,4 @@
-import { EmailForm } from "./_components/EmailForm";
+import Contact from "./_components/Contact";
 import Main from "./_components/Main";
 import Projects from "./_components/Projects";
 import Skills from "./_components/Skills";
@@ -10,7 +10,7 @@ export default async function Page() {
 			<Main />
 			<Skills />
 			<Projects />
-			<EmailForm />
+			<Contact />
 		</main>
 	);
 }

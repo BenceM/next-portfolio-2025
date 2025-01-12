@@ -3,6 +3,7 @@ import benceImage from "@/public/benceImage.png";
 import Button from "./Button";
 
 import TypingAnimaton from "./TypingAnimaton";
+import Link from "next/link";
 export default function Main() {
 	const texts = {
 		baseText: [
@@ -15,7 +16,7 @@ export default function Main() {
 
 	return (
 		//min-h-screen
-		<div
+		<section
 			id="/"
 			className="max-w-[90rem] mx-auto py-4 md:py-0 px-4 sm:px-8 lg:px-12  md:flex  md:justify-center"
 		>
@@ -36,9 +37,13 @@ export default function Main() {
 						my website
 					</p>
 					<div className="flex flex-col md:flex-row gap-3 md:justify-start md:gap-4 justify-center items-center md:row-start-4">
-						<Button className="bg-gradient-to-br from-sky-800  to-teal-700  hover:brightness-110  text-white shadow shadow-blue-200/0 hover:shadow-3xl">
+						<Button
+							href="#contact"
+							className="bg-gradient-to-br from-sky-800  to-teal-700  hover:brightness-110  text-white shadow shadow-blue-200/0 hover:shadow-3xl"
+						>
 							Hire me
 						</Button>
+
 						<Button className="bg-[#121212] text-stone-100 relative flex items-center justify-center after:h-[111%] after:w-[103%] after:absolute  after:bg-gradient-to-br after:from-sky-800 after:to-teal-700 after:rounded-full after:-z-10 hover:bg-[#1f1f1f]  hover:shadow-3xl  ">
 							Dowload CV
 						</Button>
@@ -57,7 +62,7 @@ export default function Main() {
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 }
 // Adjust for darkmode, Oled mode
