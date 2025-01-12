@@ -12,14 +12,27 @@ import {
 	CardFooter,
 } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
+import { useActionState, useEffect } from "react";
+import { useToast } from "@/hooks/use-toast";
+import { Toast, ToastAction } from "@/components/ui/toast";
 import { sendEmail } from "../_actions/actions";
-import { useActionState } from "react";
 
 export function EmailForm() {
-	const [state, formAction, isPending] = useActionState(sendEmail, null);
-
+	const [state, action, isPending] = useActionState(sendEmail, null);
+	const { toast } = useToast();
+	useEffect(() => {
+		if (state) {
+			toast({
+				title: state.success ? "Success" : "Error",
+				description: state.message,
+				action: state.success ? undefined : (
+					<ToastAction altText="Try again">Try again</ToastAction>
+				),
+			});
+		}
+	}, [state, toast]);
 	return (
-		<div className="relative w-[90%] md:w-full max-w-md mx-auto flex items-center justify-center rounded-xl after:h-[102%] after:w-[102%] after:absolute after:bg-gradient-to-br after:from-teal-800 after:to-sky-800 after:-z-10 after:rounded-xl ">
+		<div className="relative w-[90%] md:w-full h-full md:h-fit max-w-md mx-auto flex items-center justify-center rounded-xl after:h-[102%] after:w-[102%] after:absolute after:bg-gradient-to-br after:from-teal-800 after:to-sky-800 after:-z-10 after:rounded-xl  ">
 			<Card className="w-full max-w-md ">
 				<CardHeader>
 					<CardTitle>Let&apos;s get in touch</CardTitle>
@@ -27,7 +40,7 @@ export function EmailForm() {
 						Send me a message and I&apos;ll get back to you soon.
 					</CardDescription>
 				</CardHeader>
-				<form action={formAction}>
+				<form action={action}>
 					<CardContent className="space-y-4">
 						<div className="space-y-2">
 							<Label htmlFor="name">Name</Label>
@@ -54,7 +67,7 @@ export function EmailForm() {
 						</div>
 					</CardContent>
 					<CardFooter className="flex items-center justify-center">
-						<Button type="submit" className="w-full md:w-[30%] border">
+						<Button type="submit" className="w-full md:w-[40%] border">
 							{isPending ? "Sending..." : "Send Message"}
 						</Button>
 					</CardFooter>

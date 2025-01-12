@@ -1,3 +1,4 @@
+import { Toaster } from "@/components/ui/toaster";
 import Header from "./_components/Header";
 import { MenuProvider } from "./_components/MenuContext";
 import "./_styles/globals.css";
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
 					<Header />
 
 					{children}
+					<Toaster />
 				</body>
 			</html>
 		</MenuProvider>
