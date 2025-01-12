@@ -26,7 +26,6 @@ export async function sendEmail(previousState, formData) {
 					<p>
 						<strong>Message:</strong> {message}
 					</p>
-					,
 				</body>
 			),
 		});

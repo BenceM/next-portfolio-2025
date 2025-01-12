@@ -17,8 +17,7 @@ import { useActionState } from "react";
 
 export function EmailForm() {
 	const [state, formAction, isPending] = useActionState(sendEmail, null);
-	console.log(state);
-	console.log(isPending);
+
 	return (
 		<div className="relative w-[90%] md:w-full max-w-md mx-auto flex items-center justify-center rounded-xl after:h-[102%] after:w-[102%] after:absolute after:bg-gradient-to-br after:from-teal-800 after:to-sky-800 after:-z-10 after:rounded-xl ">
 			<Card className="w-full max-w-md ">
