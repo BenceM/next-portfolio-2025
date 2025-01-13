@@ -11,7 +11,7 @@ export default function Contact() {
 				Lets connect
 			</h2>
 			<EmailForm />
-			{/* <ToastDemo /> */}
+			<ToastDemo />
 		</section>
 	);
 }

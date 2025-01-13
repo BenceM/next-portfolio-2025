@@ -12,25 +12,34 @@ import {
 	CardFooter,
 } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
-import { useActionState, useEffect } from "react";
+import { useActionState, useEffect, useState } from "react";
 import { useToast } from "@/hooks/use-toast";
-import { Toast, ToastAction } from "@/components/ui/toast";
 import { sendEmail } from "../_actions/actions";
 
 export function EmailForm() {
-	const [state, action, isPending] = useActionState(sendEmail, null);
+	const [state, action, isPending] = useActionState(sendEmail, {
+		success: false,
+		message: "",
+	});
+	// const state = {
+	// 	success: false,
+	// 	message: "",
+	// };
+	const [actualState, setActualState] = useState(state);
 	const { toast } = useToast();
+	console.log(state);
 	useEffect(() => {
-		if (state) {
+		console.log(state);
+		console.log(actualState);
+		if (state && state.message !== "") {
 			toast({
+				variant: state.success ? "default" : "destructive",
 				title: state.success ? "Success" : "Error",
 				description: state.message,
-				action: state.success ? undefined : (
-					<ToastAction altText="Try again">Try again</ToastAction>
-				),
 			});
+			setActualState(state);
 		}
-	}, [state, toast]);
+	}, [state, toast, actualState]);
 	return (
 		<div className="relative w-[90%] md:w-full h-full md:h-fit max-w-md mx-auto flex items-center justify-center rounded-xl after:h-[102%] after:w-[102%] after:absolute after:bg-gradient-to-br after:from-teal-800 after:to-sky-800 after:-z-10 after:rounded-xl  ">
 			<Card className="w-full max-w-md ">
