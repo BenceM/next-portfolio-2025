@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import { listImagesInFolder } from "../_lib/utils";
 
 export default function ImageLoader({ projectId }) {
 	const [images, setImages] = useState([]);
@@ -9,17 +10,28 @@ export default function ImageLoader({ projectId }) {
 	const [isFullscreen, setIsFullscreen] = useState(false);
 	const carouselRef = useRef(null);
 
+	// useEffect(() => {
+	// 	async function loadImages() {
+	// 		const res = await fetch(`/api/projects/${projectId}`);
+	// 		const data = await res.json();
+	// 		const hqImages = data.filter((image) => image.includes("-hq"));
+	// 		setImages(hqImages);
+	// 	}
+
+	// 	loadImages();
+	// }, [projectId]);
+	//round 2
 	useEffect(() => {
-		async function loadImages() {
-			const res = await fetch(`/api/projects/${projectId}`);
-			const data = await res.json();
-			const hqImages = data.filter((image) => image.includes("-hq"));
-			setImages(hqImages);
+		async function fetchImages() {
+			const fetchedImages = await listImagesInFolder(
+				"project%20images",
+				projectId,
+			);
+			setImages(fetchedImages);
 		}
-
-		loadImages();
+		fetchImages();
 	}, [projectId]);
-
+	console.log(images);
 	const handlePrevious = () => {
 		setActiveIndex(
 			(prevIndex) => (prevIndex - 1 + images.length) % images.length,
@@ -97,7 +109,8 @@ export default function ImageLoader({ projectId }) {
 						}`}
 					>
 						<Image
-							src={`/${projectId}/${image}`}
+							// src={`/${projectId}/${image}`}
+							src={`${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/project%20images/${projectId}/${image.name}`}
 							alt={`Image ${index + 1}`}
 							sizes={isFullscreen ? "100vw" : "(max-width: 768px) 100vw, 50vw"}
 							fill
