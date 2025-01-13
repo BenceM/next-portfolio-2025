@@ -19,3 +19,4 @@ export async function GET(request, { params }) {
 		return new Response(JSON.stringify([]), { status: 500 });
 	}
 }
+//delete
