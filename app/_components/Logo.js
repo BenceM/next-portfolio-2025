@@ -1,8 +1,16 @@
+"use client";
 import Link from "next/link";
-import React from "react";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function Logo() {
+	const path = usePathname();
+
+	const router = useRouter();
 	const scrollTop = () => {
+		if (path !== "/") {
+			router.replace("/");
+			return;
+		}
 		window.scrollTo({
 			top: 0,
 			behavior: "smooth",

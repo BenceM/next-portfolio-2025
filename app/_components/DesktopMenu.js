@@ -3,13 +3,15 @@ import React from "react";
 import Logo from "./Logo";
 import Link from "next/link";
 import { useBackNavigation } from "../_hooks/useBackNavigation";
+import { useHashNavigation } from "../_hooks/useHashNavigation";
 
 export default function DesktopMenu({ navRef }) {
 	const moveBack = useBackNavigation();
+	const moveSection = useHashNavigation();
 	const scrollToSection = (id) => {
 		const section = document.getElementById(id);
 		if (!section) {
-			moveBack();
+			moveSection(id);
 			return;
 		}
 		const navHeight = navRef.current?.offsetHeight || 0;
