@@ -27,10 +27,8 @@ export function EmailForm() {
 	// };
 	const [actualState, setActualState] = useState(state);
 	const { toast } = useToast();
-	console.log(state);
+
 	useEffect(() => {
-		console.log(state);
-		console.log(actualState);
 		if (state && state.message !== "") {
 			toast({
 				variant: state.success ? "default" : "destructive",

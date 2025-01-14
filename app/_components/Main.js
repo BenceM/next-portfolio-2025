@@ -5,6 +5,7 @@ import Button from "./Button";
 import TypingAnimaton from "./TypingAnimaton";
 import { DownloadSheet } from "./DownloadSheet";
 import DownloadSection from "./DownloadSection";
+import * as motion from "motion/react-client";
 
 export default function Main() {
 	const texts = {
@@ -15,10 +16,19 @@ export default function Main() {
 			"Personal Trainer",
 		],
 	};
-
+	const variants = {
+		hidden: { opacity: 0, x: -200, y: 0 },
+		enter: { opacity: 1, x: 0, y: 0 },
+		exit: { opacity: 0, x: 0, y: -100 },
+	};
 	return (
 		//min-h-screen
-		<section
+		<motion.section
+			variants={variants} // Pass the variant object into Framer Motion
+			initial="hidden" // Set the initial state to variants.hidden
+			animate="enter" // Animated state to variants.enter
+			exit="exit" // Exit state (used later) to variants.exit
+			transition={{ type: "linear" }}
 			id="/"
 			className="max-w-[90rem] mx-auto py-4 md:py-0 px-4 sm:px-8 lg:px-12  md:flex  md:justify-center"
 		>
@@ -34,9 +44,9 @@ export default function Main() {
 						</div>
 					</h1>
 
-					<p className="text-stone-400 text-center md:text-left text-base sm:text-sm lg:text-lg xl:text-xl mb-6 md:mb-2 md:row-start-3 ">
-						This is my website. This is my website. This is my website This is
-						my website
+					<p className="text-stone-400 max-w-xl text-center md:text-left text-base sm:text-sm lg:text-lg xl:text-xl mb-6 md:mb-2 md:row-start-3 ">
+						Frontend dev with 3+ years of experience in React. Currently
+						specialising in Next.js
 					</p>
 					<div className="flex flex-col md:flex-row gap-3 md:justify-start md:gap-4 justify-center items-center md:row-start-4">
 						<Button
@@ -65,7 +75,7 @@ export default function Main() {
 					</div>
 				</div>
 			</div>
-		</section>
+		</motion.section>
 	);
 }
 // Adjust for darkmode, Oled mode

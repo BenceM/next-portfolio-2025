@@ -23,7 +23,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<MenuProvider>
-			<html lang="en">
+			<html lang="en" className="scroll-smooth">
 				<body className="">
 					{/* flex flex-col justify-center items-center */}
 					<Header />
