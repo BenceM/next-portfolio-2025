@@ -1,18 +1,24 @@
+"use client";
 import React from "react";
 import Logo from "./Logo";
 import Link from "next/link";
+import { useBackNavigation } from "../_hooks/useBackNavigation";
 
 export default function DesktopMenu({ navRef }) {
+	const moveBack = useBackNavigation();
 	const scrollToSection = (id) => {
-		const navHeight = navRef.current?.offsetHeight || 0;
 		const section = document.getElementById(id);
-		if (section) {
-			const topPosition = section.offsetTop - navHeight;
-			window.scrollTo({
-				top: topPosition,
-				behavior: "smooth",
-			});
+		if (!section) {
+			moveBack();
+			return;
 		}
+		const navHeight = navRef.current?.offsetHeight || 0;
+
+		const topPosition = section.offsetTop - navHeight;
+		window.scrollTo({
+			top: topPosition,
+			behavior: "smooth",
+		});
 	};
 	return (
 		<>

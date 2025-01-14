@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { listImagesInFolder } from "../_lib/utils";
 
-export default function ImageLoader({ projectId }) {
+export default function ImageLoader({ projectId, className }) {
 	const [images, setImages] = useState([]);
 	const [activeIndex, setActiveIndex] = useState(0);
 	const [isFullscreen, setIsFullscreen] = useState(false);
@@ -90,11 +90,11 @@ export default function ImageLoader({ projectId }) {
 	return (
 		<div
 			ref={carouselRef}
-			className={`relative ${
+			className={`relative h-fit md:h-full ${
 				isFullscreen
 					? "fixed inset-0 w-full h-full z-50 bg-black"
 					: "w-full max-w-2xl"
-			}`}
+			} ${className}`}
 		>
 			<div
 				className={`relative ${

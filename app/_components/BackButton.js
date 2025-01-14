@@ -10,8 +10,7 @@ export function BackButton() {
 	return (
 		<Button
 			onClick={moveBack}
-			variant="outline"
-			className="flex flex-row gap-2 bg-slate-600 lg:w-fit"
+			className="flex flex-row gap-2 lg:w-fit w-[35%] bg-[#121212] text-stone-100 relative items-center justify-center after:h-[111%] after:w-[103%] after:absolute  after:bg-gradient-to-br after:from-sky-800 after:to-teal-700 after:rounded-full after:-z-10 hover:bg-[#1f1f1f]  hover:shadow-3xl"
 		>
 			<span>
 				<ArrowLeftIcon className=" w-6 h-6" />
