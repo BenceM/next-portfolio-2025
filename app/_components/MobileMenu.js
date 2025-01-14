@@ -5,11 +5,6 @@ import { useState } from "react";
 import { MobileMenuOverlay } from "./MobileMenuOverlay";
 
 export default function MobileMenu() {
-	// const { isOpen, setIsOpen } = useMenu();
-
-	// function handleMenuClick() {
-	// 	setIsOpen((prev) => !prev);
-	// }
 	const [isOpen, setIsOpen] = useState(false);
 
 	const handleOpenSheet = () => {

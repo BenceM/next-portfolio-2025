@@ -1,6 +1,5 @@
 import { Toaster } from "@/components/ui/toaster";
 import Header from "./_components/Header";
-import { MenuProvider } from "./_components/MenuContext";
 import "./_styles/globals.css";
 
 // const geistSans = localFont({
@@ -22,16 +21,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
 	return (
-		<MenuProvider>
-			<html lang="en" className="scroll-smooth">
-				<body className="">
-					{/* flex flex-col justify-center items-center */}
-					<Header />
+		<html lang="en" className="scroll-smooth">
+			<body className="">
+				{/* flex flex-col justify-center items-center */}
+				<Header />
 
-					{children}
-					<Toaster />
-				</body>
-			</html>
-		</MenuProvider>
+				{children}
+				<Toaster />
+			</body>
+		</html>
 	);
 }
