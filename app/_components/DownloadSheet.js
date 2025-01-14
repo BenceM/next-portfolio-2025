@@ -7,10 +7,8 @@ import {
 	SheetFooter,
 	SheetHeader,
 	SheetTitle,
-	SheetTrigger,
 } from "@/components/ui/sheet";
 import { DownloadHoverCard } from "./DownloadHoverCard";
-import Link from "next/link";
 
 export function DownloadSheet({ open, onOpenChange }) {
 	return (

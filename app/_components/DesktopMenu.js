@@ -4,10 +4,10 @@ import Link from "next/link";
 
 export default function DesktopMenu({ navRef }) {
 	const scrollToSection = (id) => {
-		const navHeight = navRef.current?.offsetHeight || 0; // Get nav height
+		const navHeight = navRef.current?.offsetHeight || 0;
 		const section = document.getElementById(id);
 		if (section) {
-			const topPosition = section.offsetTop - navHeight; // Offset by nav height
+			const topPosition = section.offsetTop - navHeight;
 			window.scrollTo({
 				top: topPosition,
 				behavior: "smooth",
@@ -20,7 +20,6 @@ export default function DesktopMenu({ navRef }) {
 			<ul className="menu hidden md:flex flex-row gap-16 z-10 text-xl py-7 ">
 				<li>
 					<Link
-						scr
 						href={"/#skills"}
 						onClick={(e) => {
 							e.preventDefault();
