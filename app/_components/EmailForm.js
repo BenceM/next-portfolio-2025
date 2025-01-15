@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import {
@@ -15,6 +14,7 @@ import { Label } from "@/components/ui/label";
 import { useActionState, useEffect, useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { sendEmail } from "../_actions/actions";
+import Button from "./Button";
 
 export function EmailForm() {
 	const [state, action, isPending] = useActionState(sendEmail, {
@@ -39,15 +39,15 @@ export function EmailForm() {
 		}
 	}, [state, toast, actualState]);
 	return (
-		<div className="relative w-[90%] md:w-full h-full md:h-fit max-w-md mx-auto flex items-center justify-center rounded-xl after:h-[102%] after:w-[102%] after:absolute after:bg-gradient-to-br after:from-teal-800 after:to-sky-800 after:-z-10 after:rounded-xl  ">
-			<Card className="w-full max-w-md ">
+		<div className="relative w-[90%] md:w-full h-full z-10 md:h-fit max-w-md mx-auto flex items-center justify-center rounded-xl after:h-[102%] after:w-[102%] after:absolute after:bg-gradient-to-br after:from-teal-800 after:to-sky-800 after:-z-10 after:rounded-xl  ">
+			<Card className="w-full max-w-md z-20 ">
 				<CardHeader>
 					<CardTitle>Let&apos;s get in touch</CardTitle>
 					<CardDescription>
-						Send me a message and I&apos;ll get back to you soon.
+						Send me a message and I&apos;ll get back to you as soon as I can.
 					</CardDescription>
 				</CardHeader>
-				<form action={action}>
+				<form action={action} className="z-20">
 					<CardContent className="space-y-4">
 						<div className="space-y-2">
 							<Label htmlFor="name">Name</Label>
@@ -73,8 +73,16 @@ export function EmailForm() {
 							/>
 						</div>
 					</CardContent>
-					<CardFooter className="flex items-center justify-center">
-						<Button type="submit" className="w-full md:w-[40%] border">
+					<CardFooter className="flex items-center justify-center z-10">
+						<Button
+							type="submit"
+							className="relative w-full md:w-[40%] bg-[#121212] h-full rounded-md
+        flex justify-center items-center whitespace-nowrap
+         transition-colors duration-500
+        before:absolute before:h-[107%] before:w-[104%] before:bg-gradient-to-br before:from-sky-800 before:to-teal-700 before:rounded-md before:z-[-10]
+        after:absolute after:h-[107%] after:w-[104%] after:bg-gradient-to-br after:from-teal-700 after:to-sky-700 after:rounded-md after:z-[-10] after:opacity-0
+        hover:after:opacity-100 after:transition-opacity after:duration-500 "
+						>
 							{isPending ? "Sending..." : "Send Message"}
 						</Button>
 					</CardFooter>
@@ -83,3 +91,33 @@ export function EmailForm() {
 		</div>
 	);
 }
+// <CardFooter className="flex items-center justify-center -z-10">
+// 						<Button
+// 							type="submit"
+// 							className="w-full md:w-[40%] bg-[#121212] h-full rounded-md relative z-10 hover:bg-hover flex justify-center items-center after:h-[111%] after:w-[113%] after:absolute after:bg-gradient-to-br after:from-sky-800 after:to-teal-700 after:rounded-md after:-z-10 whitespace-nowrap"
+// 						>
+// 							{isPending ? "Sending..." : "Send Message"}
+// 						</Button>
+// 					</CardFooter>
+
+// w-full md:w-[40%] bg-[#121212] h-full rounded-md relative flex justify-center items-center after:h-[107%] after:w-[104%] after:absolute after:bg-gradient-to-br after:from-sky-800 after:to-teal-700 after:rounded-md after:transition-colors after:-z-10 whitespace-nowrap after:hover:from-teal-700 after:hover:to-sky-800 after:duration-300
+
+// <Button
+// 	type="submit"
+// 	className="relative w-full md:w-[40%] bg-[#121212] h-full rounded-md
+//         flex justify-center items-center whitespace-nowrap
+//          transition-colors duration-500
+//         before:absolute before:h-[107%] before:w-[104%] before:bg-gradient-to-br before:from-sky-800 before:to-teal-700 before:rounded-md before:z-[-10]
+//         after:absolute after:h-[107%] after:w-[104%] after:bg-gradient-to-br after:from-teal-700 after:to-sky-700 after:rounded-md after:z-[-10] after:opacity-0
+//         hover:after:opacity-100 after:transition-opacity after:duration-500 "
+// >
+// 	{isPending ? "Sending..." : "Send Message"}
+// </Button>;
+
+// <Button
+// 							type="submit"
+// 							className="
+// 					w-full md:w-[40%] bg-[#121212] h-full rounded-md relative flex justify-center items-center after:h-[107%] after:w-[104%] after:absolute after:bg-gradient-to-br after:from-sky-800 transition-colors after:to-teal-700 after:rounded-md after:transition-colors after:-z-10 whitespace-nowrap after:hover:from-teal-700 after:hover:to-sky-800 after:duration-300"
+// 						>
+// 							{isPending ? "Sending..." : "Send Message"}
+// 						</Button>
