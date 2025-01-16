@@ -1,6 +1,4 @@
-import AnimatedGradientButton from "./AnimatedGradientButton";
 import { EmailForm } from "./EmailForm";
-import { ToastDemo } from "./ToastDemo";
 
 export default function Contact() {
 	return (
@@ -13,7 +11,6 @@ export default function Contact() {
 			</h2>
 			<EmailForm />
 			{/* <ToastDemo /> */}
-			<AnimatedGradientButton>Button</AnimatedGradientButton>
 		</section>
 	);
 }

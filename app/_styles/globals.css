@@ -35,6 +35,13 @@
 	--chart-4: 43 74% 66%;
 	--chart-5: 27 87% 67%;
 	--radius: 0.5rem;
+	/* testing */
+	--clr-1: #115e59;
+	--clr-2: #0891b2;
+	--clr-3: #075985;
+	/* /* --clr-4: #2d8f85;
+	--clr-5: #637c54; */
+	--transition-speed: 0.5s;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -99,4 +106,46 @@ input:-webkit-autofill:active {
 	background-color: var(--background) !important;
 	-webkit-text-fill-color: var(--foreground) !important;
 	transition: background-color 0s ease-in-out 0s !important;
+}
+
+/* //gradient button */
+@property --gradient-angle {
+	syntax: "<angle>";
+	initial-value: 0deg;
+	inherits: false;
+}
+
+.gradient-button {
+	background: var(--background);
+
+	position: relative;
+}
+.gradient-button:hover {
+	background: var(--bgHover);
+}
+
+.gradient-button::after {
+	content: "";
+	position: absolute;
+	inset: -0.2rem;
+	z-index: -1;
+	background: conic-gradient(
+		from var(--gradient-angle),
+		var(--clr-1),
+		var(--clr-2),
+		var(--clr-3),
+		var(--clr-2),
+		var(--clr-1)
+	);
+	border-radius: inherit;
+	animation: rotation 5s linear infinite;
+}
+
+@keyframes rotation {
+	0% {
+		--gradient-angle: 0deg;
+	}
+	100% {
+		--gradient-angle: 360deg;
+	}
 }

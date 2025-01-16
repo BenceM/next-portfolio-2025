@@ -76,12 +76,7 @@ export function EmailForm() {
 					<CardFooter className="flex items-center justify-center z-10">
 						<Button
 							type="submit"
-							className="relative w-full md:w-[40%] bg-[#121212] h-full rounded-md
-        flex justify-center items-center whitespace-nowrap
-         transition-colors duration-500
-        before:absolute before:h-[107%] before:w-[104%] before:bg-gradient-to-br before:from-sky-800 before:to-teal-700 before:rounded-md before:z-[-10]
-        after:absolute after:h-[107%] after:w-[104%] after:bg-gradient-to-br after:from-teal-700 after:to-sky-700 after:rounded-md after:z-[-10] after:opacity-0
-        hover:after:opacity-100 after:transition-opacity after:duration-500 "
+							className="flex items-center justify-center gradient-button whitespace-nowrap md:w-[40%] lg:w-[40%] hover:shadow-3xl duration-500 rounded-full "
 						>
 							{isPending ? "Sending..." : "Send Message"}
 						</Button>
@@ -92,12 +87,17 @@ export function EmailForm() {
 	);
 }
 // <CardFooter className="flex items-center justify-center -z-10">
-// 						<Button
-// 							type="submit"
-// 							className="w-full md:w-[40%] bg-[#121212] h-full rounded-md relative z-10 hover:bg-hover flex justify-center items-center after:h-[111%] after:w-[113%] after:absolute after:bg-gradient-to-br after:from-sky-800 after:to-teal-700 after:rounded-md after:-z-10 whitespace-nowrap"
-// 						>
-// 							{isPending ? "Sending..." : "Send Message"}
-// 						</Button>
+// 					<Button
+// type="submit"
+// className="relative w-full md:w-[40%] bg-[#121212] h-full rounded-md
+// flex justify-center items-center whitespace-nowrap
+// transition-colors duration-500
+// before:absolute before:h-[107%] before:w-[104%] before:bg-gradient-to-br before:from-sky-800 before:to-teal-700 before:rounded-md before:z-[-10]
+// after:absolute after:h-[107%] after:w-[104%] after:bg-gradient-to-br after:from-teal-700 after:to-sky-700 after:rounded-md after:z-[-10] after:opacity-0
+// hover:after:opacity-100 after:transition-opacity after:duration-500 "
+// >
+// {isPending ? "Sending..." : "Send Message"}
+// </Button>
 // 					</CardFooter>
 
 // w-full md:w-[40%] bg-[#121212] h-full rounded-md relative flex justify-center items-center after:h-[107%] after:w-[104%] after:absolute after:bg-gradient-to-br after:from-sky-800 after:to-teal-700 after:rounded-md after:transition-colors after:-z-10 whitespace-nowrap after:hover:from-teal-700 after:hover:to-sky-800 after:duration-300
