@@ -42,7 +42,7 @@ export function EmailForm() {
 		<div className="relative w-[90%] md:w-full h-full z-10 md:h-fit max-w-md mx-auto flex items-center justify-center rounded-xl after:h-[102%] after:w-[102%] after:absolute after:bg-gradient-to-br after:from-gradientMain  after:to-gradientTo after:-z-10 after:rounded-xl  ">
 			<Card className="w-full max-w-md z-20 ">
 				<CardHeader>
-					<CardTitle className="bg-gradient-to-br  text-gradientVia brightness-110 text-xl leading-relaxed tracking-wide">
+					<CardTitle className="text-gradientVia brightness-110 text-xl leading-relaxed tracking-wide">
 						Let&apos;s get in touch
 					</CardTitle>
 					<CardDescription>
@@ -78,7 +78,7 @@ export function EmailForm() {
 					<CardFooter className="flex items-center justify-center z-10">
 						<Button
 							type="submit"
-							className="flex items-center justify-center gradient-outline whitespace-nowrap md:w-[40%] lg:w-[40%] hover:shadow-3xl duration-500 rounded-full hover:bg-bgHover "
+							className="flex items-center justify-center gradient-outline whitespace-nowrap md:w-[40%] lg:w-[40%] hover:shadow-3xl duration-300 rounded-full hover:bg-bgHover px-6 py-3 "
 						>
 							{isPending ? "Sending..." : "Send Message"}
 						</Button>

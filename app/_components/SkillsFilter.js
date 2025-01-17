@@ -51,7 +51,7 @@ export default function SkillsFilter({ skills }) {
 					Data
 				</FilterButton>
 			</div>
-			<div className="md:min-h-[367.5px]">
+			<div className="min-h-[367.5px]">
 				<SkillsList filteredSkills={filteredSkills} />
 			</div>
 		</div>

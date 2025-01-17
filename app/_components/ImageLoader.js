@@ -10,17 +10,6 @@ export default function ImageLoader({ projectId, className }) {
 	const [isFullscreen, setIsFullscreen] = useState(false);
 	const carouselRef = useRef(null);
 
-	// useEffect(() => {
-	// 	async function loadImages() {
-	// 		const res = await fetch(`/api/projects/${projectId}`);
-	// 		const data = await res.json();
-	// 		const hqImages = data.filter((image) => image.includes("-hq"));
-	// 		setImages(hqImages);
-	// 	}
-
-	// 	loadImages();
-	// }, [projectId]);
-	//round 2
 	useEffect(() => {
 		async function fetchImages() {
 			const fetchedImages = await listImagesInFolder(
@@ -31,7 +20,7 @@ export default function ImageLoader({ projectId, className }) {
 		}
 		fetchImages();
 	}, [projectId]);
-	console.log(images);
+
 	const handlePrevious = () => {
 		setActiveIndex(
 			(prevIndex) => (prevIndex - 1 + images.length) % images.length,
@@ -86,11 +75,11 @@ export default function ImageLoader({ projectId, className }) {
 	if (images.length === 0) {
 		return <div>Loading...</div>;
 	}
-	const sortedImgArray = images;
+
 	return (
 		<div
 			ref={carouselRef}
-			className={`relative h-fit md:h-full ${
+			className={`relative h-fit  ${
 				isFullscreen
 					? "fixed inset-0 w-full h-full z-50 bg-black"
 					: "w-full max-w-2xl"
@@ -101,7 +90,7 @@ export default function ImageLoader({ projectId, className }) {
 					isFullscreen ? "w-full h-full" : "w-full h-[450px]"
 				} max-h-full overflow-hidden bg-slate-800`}
 			>
-				{sortedImgArray.map((image, index) => (
+				{images.map((image, index) => (
 					<div
 						key={index}
 						className={`absolute w-full h-full transition-opacity duration-300 ${
@@ -109,7 +98,6 @@ export default function ImageLoader({ projectId, className }) {
 						}`}
 					>
 						<Image
-							// src={`/${projectId}/${image}`}
 							src={`${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/project%20images/${projectId}/${image.name}`}
 							alt={`Image ${index + 1}`}
 							sizes={isFullscreen ? "100vw" : "(max-width: 768px) 100vw, 50vw"}
@@ -133,8 +121,8 @@ export default function ImageLoader({ projectId, className }) {
 			>
 				&#10095;
 			</button>
-			<div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-				{sortedImgArray.map((_, index) => (
+			<div className="absolute bottom-4 lg:bottom-10 xl:bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
+				{images.map((_, index) => (
 					<button
 						key={index}
 						onClick={() => setActiveIndex(index)}
