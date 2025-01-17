@@ -4,12 +4,24 @@ export default function Contact() {
 	return (
 		<section
 			id="contact"
-			className="flex flex-col w-full items-center gap-16 md:gap-10 md:px-8 max-w-[90rem] mx-auto min-h-screen"
+			className="flex flex-col w-full items-center justify-center gap-16 md:gap-10 md:px-8 max-w-[90rem] mx-auto min-h-screen"
 		>
-			<h2 className="text-4xl xl:text-5xl xl:leading-normal font-extrabold text-center md:text-start md:w-full py-1 text-transparent bg-gradient-to-br from-gradientMain via-gradientVia to-gradientTo bg-clip-text">
-				Lets connect
+			<h2 className="text-4xl xl:text-5xl xl:leading-normal font-extrabold text-center lg:text-start md:w-full py-1 text-transparent bg-gradient-to-br from-gradientMain via-gradientVia to-gradientTo bg-clip-text">
+				Contact
 			</h2>
-			<EmailForm />
+			<div className="flex flex-col lg:flex-row gap-10 items-center lg:items-start lg:w-full  justify-center mx-auto">
+				<div className="px-5 lg:px-0">
+					<h3 className="text-2xl font-bold ">Let&apos;s connect</h3>
+					<p className="max-w-md md:max-w-sm">
+						I&apos;m currently looking for new opportunities, projects to
+						contribute to, great companies to work for. My inbox is always open,
+						if you have any questions, want to say hi or have a business
+						proposition. I&apos;ll try my best to get back to you as soon as
+						possible!
+					</p>
+				</div>
+				<EmailForm />
+			</div>
 			{/* <ToastDemo /> */}
 		</section>
 	);
