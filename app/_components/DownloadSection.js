@@ -13,7 +13,7 @@ export default function DownloadSection() {
 		<>
 			<Button
 				onClick={handleOpenSheet}
-				className="bg-[#121212] text-stone-100 gradient-button flex items-center justify-center  hover:bg-[#1f1f1f] hover:shadow-3xl rounded-full after:rounded-full px-6 py-3 transition-all ease-in-out duration-300 w-full md:w-[40%] lg:w-[30%] max-w-[250px] text-center  "
+				className="bg-[#121212] text-stone-100 gradient-outline flex items-center justify-center  hover:bg-[#1f1f1f] hover:shadow-3xl rounded-full after:rounded-full px-6 py-3 transition-all ease-in-out duration-300 w-full md:w-[40%] lg:w-[30%] max-w-[250px] text-center hover:bg-bgHover  "
 			>
 				Dowload CV
 			</Button>

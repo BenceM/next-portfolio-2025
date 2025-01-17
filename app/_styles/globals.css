@@ -5,13 +5,13 @@
 :root {
 	--background: #ffffff;
 	--foreground: #171717;
-	--textSecondary: #b4bec5;
-	--gradientMain: #075985;
-	--gradientVia: #155e75;
-	--gradientOff: #115e59;
+	--textSecondary: rgb(168 162 158);
+	--gradientMain: hwb(201 3% 48%);
+	--gradientVia: #0891b2;
+	--gradientTo: #115e59;
 	--bgHover: #1f1f1f;
 	--hover: #1f1f1f;
-	--imageBg: hsla(24, 10%, 10%, 0.3);
+	--imageBg: rgba(28, 25, 23, 0.3);
 	--card: 0 0% 100%;
 	--card-foreground: 0 0% 3.9%;
 	--popover: 0 0% 100%;
@@ -36,12 +36,9 @@
 	--chart-5: 27 87% 67%;
 	--radius: 0.5rem;
 	/* testing */
-	--clr-1: #115e59;
-	--clr-2: #0891b2;
-	--clr-3: #075985;
-	/* /* --clr-4: #2d8f85;
-	--clr-5: #637c54; */
-	--transition-speed: 0.5s;
+	--clr-1: #115e59; /* teal-800 */
+	--clr-2: #0891b2; /* cyan-600 */
+	--clr-3: #075985; /* sky-800 */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -50,7 +47,7 @@
 		--foreground: #ededed;
 		--textSecondary: #a8a29e;
 		--gradientMain: #075985;
-		--gradientVia: #155e75;
+		--gradientVia: #0891b2;
 		--gradientOff: #115e59;
 		--bgHover: #1f1f1f;
 		--hover: #bbbbbb;
@@ -108,23 +105,23 @@ input:-webkit-autofill:active {
 	transition: background-color 0s ease-in-out 0s !important;
 }
 
-/* //gradient button */
+/* //gradient outline */
 @property --gradient-angle {
 	syntax: "<angle>";
 	initial-value: 0deg;
 	inherits: false;
 }
 
-.gradient-button {
+.gradient-outline {
 	background: var(--background);
 
 	position: relative;
 }
-.gradient-button:hover {
+/* .gradient-button:hover {
 	background: var(--bgHover);
-}
+} */
 
-.gradient-button::after {
+.gradient-outline::after {
 	content: "";
 	position: absolute;
 	inset: -0.2rem;
@@ -148,4 +145,15 @@ input:-webkit-autofill:active {
 	100% {
 		--gradient-angle: 360deg;
 	}
+}
+/* //gradient */
+
+.gradient-full {
+	background: linear-gradient(
+		to bottom right,
+
+		var(--clr-3),
+		var(--clr-2),
+		var(--clr-1)
+	);
 }

@@ -31,7 +31,7 @@ export function ComboBox({ selectedValues, handleSelect, frameworks }) {
 					role="combobox"
 					aria-expanded={open}
 					aria-label="Technology filter button for the projects"
-					className="relative flex items-center justify-center w-[200px]  hover:shadow-xl after:h-[110%] after:w-[102%] after:absolute after:bg-gradient-to-br after:from-sky-800 after:to-teal-800 after:-z-10 after:rounded-md "
+					className="relative flex items-center justify-center w-[200px]  hover:shadow-xl after:h-[110%] after:w-[102%] after:absolute after:bg-gradient-to-br after:from-gradientMain after:via-gradientVia  after:to-gradientTo after:-z-10 after:rounded-md "
 				>
 					<div className="w-full flex justify-between">
 						{selectedValues.length > 0
@@ -58,7 +58,7 @@ export function ComboBox({ selectedValues, handleSelect, frameworks }) {
 						);
 					})}
 			</div>
-			<PopoverContent className="w-[200px] p-0 bg-background border-none relative flex items-center justify-center after:h-[101%] after:w-[101%] after:absolute after:bg-gradient-to-br after:from-sky-800 after:to-teal-800 after:-z-10 after:rounded-md ">
+			<PopoverContent className="w-[200px] p-0 bg-background border-none relative flex items-center justify-center after:h-[101%] after:w-[101%] after:absolute after:bg-gradient-to-br after:from-gradientMain after:via-gradientVia  after:to-gradientTo after:-z-10 after:rounded-md ">
 				<Command>
 					<CommandInput placeholder="Search framework..." />
 					<CommandList className="max-h-[200px] overflow-y-auto scrollbar-thumb-only">
@@ -69,7 +69,7 @@ export function ComboBox({ selectedValues, handleSelect, frameworks }) {
 									key={framework.value}
 									value={framework.value}
 									onSelect={handleSelect}
-									className="hover:bg-bgHover border-t border-sky-800/20 first:border-t-0"
+									className="hover:bg-bgHover border-t border-gradientMain first:border-t-0"
 								>
 									<div
 										className={cn(

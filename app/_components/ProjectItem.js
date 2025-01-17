@@ -7,7 +7,7 @@ export default function ProjectItem({ project }) {
 	const { img, name, tech, github, site, id } = project;
 
 	return (
-		<li className="shadow-md shadow-gradientOff bg-background flex flex-col items-start rounded-md p-3 hover:bg-bgHover  duration-300 relative justify-center after:-inset-[0.1rem] after:absolute after:bg-gradient-to-br after:from-sky-800 after:to-teal-700 after:rounded-md after:-z-[1]">
+		<li className="shadow-md shadow-gradientOff bg-background flex flex-col items-start rounded-md p-3 hover:bg-bgHover  duration-300 relative justify-center after:-inset-[0.1rem] after:absolute after:bg-gradient-to-br after:from-gradientMain  after:to-gradientTo after:rounded-md after:-z-[1]">
 			<Link
 				href={`/projects/${id}`}
 				className="relative w-[256px] h-44 rounded-lg "

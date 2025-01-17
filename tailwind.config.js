@@ -9,6 +9,14 @@ module.exports = {
 	],
 	theme: {
 		extend: {
+			gradientColorStops: {
+				skin: {
+					main: "var(--gradientMain)",
+				},
+			},
+			backgroundImage: {
+				"gradient-custom": `linear-gradient(to bottom right, var(--gradientMain), var(--gradientVia), var(--gradientTo))`,
+			},
 			boxShadow: {
 				"3xl": "0px 0px 15px 0px rgb(17 94 89/ 0.5)",
 			},
@@ -18,7 +26,7 @@ module.exports = {
 				textSecondary: "var(--textSecondary)",
 				gradientMain: "var(--gradientMain)",
 				gradientVia: "var(--gradientVia)",
-				gradientOff: "var(--gradientOff)",
+				gradientTo: "var(--gradientTo)",
 				bgHover: "var(--bgHover)",
 				hover: "var(--hover)",
 				imageBg: "var(--imageBg)",
