@@ -10,7 +10,9 @@ export function DownloadHoverCard({ text, date, desc }) {
 	return (
 		<HoverCard>
 			<HoverCardTrigger asChild>
-				<Button variant="link">{text}</Button>
+				<Button variant="link" className="hover:text-hover hover:no-underline ">
+					{text}
+				</Button>
 			</HoverCardTrigger>
 			<HoverCardContent className="w-80">
 				<div className="flex justify-between space-x-4">

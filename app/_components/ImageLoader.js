@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { listImagesInFolder } from "../_lib/utils";
+import SpinnerMini from "./SpinnerMini";
 
 export default function ImageLoader({ projectId, className }) {
 	const [images, setImages] = useState([]);
@@ -73,7 +74,11 @@ export default function ImageLoader({ projectId, className }) {
 	}, []);
 
 	if (images.length === 0) {
-		return <div>Loading...</div>;
+		return (
+			<div className="flex items-center justify-center w-full h-full">
+				<SpinnerMini />
+			</div>
+		);
 	}
 
 	return (

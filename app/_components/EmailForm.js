@@ -36,8 +36,8 @@ export function EmailForm() {
 		}
 	}, [state, toast, actualState]);
 	return (
-		<div className="relative w-[90%] md:w-full h-full z-10 md:h-fit max-w-md flex items-center justify-center rounded-xl after:h-[102%] after:w-[102%] after:absolute after:bg-gradient-to-br after:from-gradientMain after:to-gradientTo after:-z-10 after:rounded-xl  ">
-			<Card className="w-full max-w-md z-20 ">
+		<div className="relative w-[90%] md:w-full h-full z-10 md:h-fit max-w-md lg:max-w-2xl flex items-center justify-center rounded-xl after:h-[102%] after:w-[102%] after:absolute after:bg-gradient-to-br after:from-gradientMain after:to-gradientTo after:-z-10 after:rounded-xl  ">
+			<Card className="w-full max-w-md lg:max-w-2xl z-20 ">
 				<CardHeader>
 					<CardTitle className="text-gradientVia brightness-110 text-xl leading-relaxed tracking-wide">
 						Get in touch
