@@ -29,8 +29,8 @@ export function MobileMenuOverlay({ open, onOpenChange }) {
 					</SheetFooter>
 				</div>
 
-				<ul className="flex flex-col h-full justify-evenly items-center flex-grow gap-5">
-					<li>
+				<ul className="flex flex-col h-fit justify-evenly items-center flex-grow gap-12 pt-16">
+					<li className=" w-full text-center">
 						<Link
 							href={"#/"}
 							onClick={() => onOpenChange(false)}
@@ -39,7 +39,7 @@ export function MobileMenuOverlay({ open, onOpenChange }) {
 							Home
 						</Link>
 					</li>
-					<li>
+					<li className=" w-full text-center">
 						<Link
 							href={"/#skills"}
 							onClick={() => onOpenChange(false)}
@@ -48,7 +48,7 @@ export function MobileMenuOverlay({ open, onOpenChange }) {
 							Skills
 						</Link>
 					</li>
-					<li>
+					<li className=" w-full text-center">
 						<Link
 							href={"/#projects"}
 							onClick={() => onOpenChange(false)}
@@ -57,7 +57,7 @@ export function MobileMenuOverlay({ open, onOpenChange }) {
 							Projects
 						</Link>
 					</li>
-					<li>
+					<li className=" w-full text-center">
 						<Link
 							href={"/#contact"}
 							onClick={() => onOpenChange(false)}
