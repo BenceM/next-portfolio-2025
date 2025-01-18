@@ -14,7 +14,7 @@ const BubbleMap = ({ data }) => {
 		const handleResize = () => {
 			const parent = svgRef.current.parentNode;
 			const newDimensions = {
-				width: parent.clientWidth < 334 ? 320 : parent.clientWidth,
+				width: parent.clientWidth < 334 ? 320 : parent.clientWidth - 10,
 				height: parent.clientHeight,
 			};
 			if (!newDimensions.width || !newDimensions.height) return;

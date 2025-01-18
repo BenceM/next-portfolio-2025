@@ -21,10 +21,7 @@ export function EmailForm() {
 		success: false,
 		message: "",
 	});
-	// const state = {
-	// 	success: false,
-	// 	message: "",
-	// };
+
 	const [actualState, setActualState] = useState(state);
 	const { toast } = useToast();
 
@@ -39,11 +36,11 @@ export function EmailForm() {
 		}
 	}, [state, toast, actualState]);
 	return (
-		<div className="relative w-[90%] md:w-full h-full z-10 md:h-fit max-w-md mx-auto flex items-center justify-center rounded-xl after:h-[102%] after:w-[102%] after:absolute after:bg-gradient-to-br after:from-gradientMain  after:to-gradientTo after:-z-10 after:rounded-xl  ">
+		<div className="relative w-[90%] md:w-full h-full z-10 md:h-fit max-w-md flex items-center justify-center rounded-xl after:h-[102%] after:w-[102%] after:absolute after:bg-gradient-to-br after:from-gradientMain after:to-gradientTo after:-z-10 after:rounded-xl  ">
 			<Card className="w-full max-w-md z-20 ">
 				<CardHeader>
 					<CardTitle className="text-gradientVia brightness-110 text-xl leading-relaxed tracking-wide">
-						Let&apos;s get in touch
+						Get in touch
 					</CardTitle>
 					<CardDescription>
 						Send me a message and I&apos;ll get back to you as soon as I can.
@@ -88,38 +85,3 @@ export function EmailForm() {
 		</div>
 	);
 }
-// <CardFooter className="flex items-center justify-center -z-10">
-// 					<Button
-// type="submit"
-// className="relative w-full md:w-[40%] bg-[#121212] h-full rounded-md
-// flex justify-center items-center whitespace-nowrap
-// transition-colors duration-500
-// before:absolute before:h-[107%] before:w-[104%] before:bg-gradient-to-br before:from-sky-800 before:to-teal-700 before:rounded-md before:z-[-10]
-// after:absolute after:h-[107%] after:w-[104%] after:bg-gradient-to-br after:from-teal-700 after:to-sky-700 after:rounded-md after:z-[-10] after:opacity-0
-// hover:after:opacity-100 after:transition-opacity after:duration-500 "
-// >
-// {isPending ? "Sending..." : "Send Message"}
-// </Button>
-// 					</CardFooter>
-
-// w-full md:w-[40%] bg-[#121212] h-full rounded-md relative flex justify-center items-center after:h-[107%] after:w-[104%] after:absolute after:bg-gradient-to-br after:from-sky-800 after:to-teal-700 after:rounded-md after:transition-colors after:-z-10 whitespace-nowrap after:hover:from-teal-700 after:hover:to-sky-800 after:duration-300
-
-// <Button
-// 	type="submit"
-// 	className="relative w-full md:w-[40%] bg-[#121212] h-full rounded-md
-//         flex justify-center items-center whitespace-nowrap
-//          transition-colors duration-500
-//         before:absolute before:h-[107%] before:w-[104%] before:bg-gradient-to-br before:from-sky-800 before:to-teal-700 before:rounded-md before:z-[-10]
-//         after:absolute after:h-[107%] after:w-[104%] after:bg-gradient-to-br after:from-teal-700 after:to-sky-700 after:rounded-md after:z-[-10] after:opacity-0
-//         hover:after:opacity-100 after:transition-opacity after:duration-500 "
-// >
-// 	{isPending ? "Sending..." : "Send Message"}
-// </Button>;
-
-// <Button
-// 							type="submit"
-// 							className="
-// 					w-full md:w-[40%] bg-[#121212] h-full rounded-md relative flex justify-center items-center after:h-[107%] after:w-[104%] after:absolute after:bg-gradient-to-br after:from-sky-800 transition-colors after:to-teal-700 after:rounded-md after:transition-colors after:-z-10 whitespace-nowrap after:hover:from-teal-700 after:hover:to-sky-800 after:duration-300"
-// 						>
-// 							{isPending ? "Sending..." : "Send Message"}
-// 						</Button>

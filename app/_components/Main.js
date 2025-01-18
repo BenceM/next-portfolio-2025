@@ -30,12 +30,12 @@ export default function Main() {
 			exit="exit" // Exit state (used later) to variants.exit
 			transition={{ type: "linear" }}
 			id="/"
-			className="max-w-[90rem] mx-auto py-4 md:py-0 px-4 sm:px-8 lg:px-12  md:flex  md:justify-center"
+			className="max-w-[90rem] mx-auto py-4 md:py-0 px-4 sm:px-8 lg:px-12  md:flex  md:justify-center xl:min-h-screen 2xl:min-h-0"
 		>
 			<div className="flex flex-col justify-center items-center md:grid md:grid-cols-12 md:grid-rows-auto gap-y-2 md:h-full pt-12">
 				{/* md:grid-cols-12 lg:grid-rows-[auto_1fr_auto_auto] */}
 				<div className="col-span-7 md:text-left md:row-span-4 md:grid md:grid-rows-subgrid ">
-					<h1 className="flex flex-col justify-center md:justify-start items-center mb-4 md:mb-0 text-4xl sm:text-5xl xl:text-7xl xl:leading-normal font-extrabold md:row-start-1 md:row-end-3 md:grid md:grid-rows-subgrid">
+					<h1 className="flex flex-col justify-center md:justify-start items-center mb-4 lg:mb-0 text-4xl sm:text-5xl xl:text-7xl xl:leading-normal font-extrabold md:row-start-1 md:row-end-3 md:grid md:grid-rows-subgrid">
 						<div className="flex flex-col">
 							<span className="text-transparent  bg-gradient-to-br from-gradientMain via-gradientVia to-gradientTo pb-2 w-fit bg-clip-text md:row-start-1 text-3xl sm:text-4xl xl:text-6xl">
 								Hi, I&apos;m

@@ -22,7 +22,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en" className="scroll-smooth">
-			<body className="">
+			<body className="w-full">
 				{/* flex flex-col justify-center items-center */}
 				<Header />
 

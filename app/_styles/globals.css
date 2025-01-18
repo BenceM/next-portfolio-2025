@@ -87,6 +87,22 @@
 		border-right-color: theme("colors.primary.200");
 		animation: rotate 1s infinite linear;
 	}
+
+	.spinner-mini {
+		margin: 0;
+		width: 20px;
+		aspect-ratio: 1;
+		border-radius: 50%;
+		border: 2px solid theme("colors.primary.200");
+		border-right-color: transparent;
+		animation: rotate 1s infinite linear;
+	}
+
+	@keyframes rotate {
+		to {
+			transform: rotate(1turn);
+		}
+	}
 }
 
 body {
@@ -117,9 +133,6 @@ input:-webkit-autofill:active {
 
 	position: relative;
 }
-/* .gradient-button:hover {
-	background: var(--bgHover);
-} */
 
 .gradient-outline::after {
 	content: "";

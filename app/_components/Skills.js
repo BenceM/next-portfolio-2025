@@ -1,5 +1,5 @@
 import { skillsData } from "../_data/data";
-import BubbleMap from "./_charts/BubbleMap";
+import { LazyBubbleMap } from "./_charts/LazyBubbleMap";
 import SkillsFilter from "./SkillsFilter";
 
 export default function Skills() {
@@ -14,7 +14,7 @@ export default function Skills() {
 
 			<div className="grid grid-rows-auto md:grid-cols-2 gap-2 items-center md:items-start justify-center">
 				<div className="relative w-full min-h-[600px] md:min-h-[500px] h-full order-2 overflow-hidden flex items-center justify-center">
-					<BubbleMap data={skillsData} />
+					<LazyBubbleMap data={skillsData} />
 				</div>
 
 				<div className="w-full px-4 md:px-0 order-1 md:order-none flex flex-col justify-center xl:justify-normal items-center gap-8 md:gap-16 ">
@@ -30,7 +30,7 @@ export default function Skills() {
 							with new technologies.
 						</p>
 					</div>
-					<div className="flex flex-col justify-center w-full gap-6">
+					<div className="flex flex-col justify-center w-full gap-6 overflow-hidden">
 						<h3 className="text-2xl font-bold">Technologies</h3>
 
 						<SkillsFilter skills={skillsData.nodes} />
