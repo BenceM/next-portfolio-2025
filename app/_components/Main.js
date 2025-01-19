@@ -5,9 +5,9 @@ import Button from "./Button";
 import TypingAnimaton from "./TypingAnimaton";
 import DownloadSection from "./DownloadSection";
 import * as motion from "motion/react-client";
+import AnimatedContainer from "./AnimatedContainer";
 
 export default function Main() {
-	const color = "sky-800";
 	const texts = {
 		baseText: [
 			"Bence",
@@ -19,11 +19,9 @@ export default function Main() {
 	const variants = {
 		hidden: { opacity: 0, x: -200, y: 0 },
 		enter: { opacity: 1, x: 0, y: 0 },
-		// exit: { opacity: 0, x: 0, y: -100 },
 	};
 	return (
-		//min-h-screen
-		<motion.section
+		<AnimatedContainer
 			variants={variants}
 			initial="hidden"
 			animate="enter"
@@ -72,7 +70,7 @@ export default function Main() {
 					</div>
 				</div>
 			</div>
-		</motion.section>
+		</AnimatedContainer>
 	);
 }
 // Adjust for darkmode, Oled mode

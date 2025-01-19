@@ -23,7 +23,7 @@ export default function Logo() {
 				e.preventDefault();
 				scrollTop();
 			}}
-			className={`hover:text-hover text-4xl `}
+			className={`hover:text-hover text-4xl duration-300 `}
 		>
 			MB
 		</Link>

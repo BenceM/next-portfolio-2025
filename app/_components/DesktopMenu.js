@@ -30,7 +30,7 @@ export default function DesktopMenu({ navRef }) {
 							e.preventDefault();
 							scrollToSection("skills");
 						}}
-						className={`hover:text-hover`}
+						className={`hover:text-hover duration-300`}
 					>
 						Skills
 					</Link>
@@ -42,7 +42,7 @@ export default function DesktopMenu({ navRef }) {
 							e.preventDefault();
 							scrollToSection("projects");
 						}}
-						className={`hover:text-hover `}
+						className={`hover:text-hover duration-300 `}
 					>
 						Projects
 					</Link>
@@ -55,7 +55,7 @@ export default function DesktopMenu({ navRef }) {
 							e.preventDefault();
 							scrollToSection("contact");
 						}}
-						className={`hover:text-hover `}
+						className={`hover:text-hover duration-300`}
 					>
 						Contact
 					</Link>
