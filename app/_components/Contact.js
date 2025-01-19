@@ -12,7 +12,10 @@ export default function Contact() {
 			<div className=" flex flex-col lg:flex-row gap-10 items-center lg:items-start lg:w-full  justify-center lg:justify-between ">
 				<div className="px-5 lg:px-0 flex flex-col gap-2 ">
 					<h3 className="text-2xl font-bold ">Let&apos;s connect</h3>
-					<p className="max-w-md md:max-w-sm">
+
+					{/* copy styling from skills section for p */}
+
+					<p className="max-w-md md:max-w-sm text-base lg:text-lg">
 						I&apos;m currently looking for new opportunities, projects to
 						contribute to, great companies to work for. My inbox is always open,
 						if you have any questions, want to say hi or have a business

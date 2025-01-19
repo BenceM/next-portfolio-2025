@@ -1,5 +1,5 @@
 import Image from "next/image";
-import benceImage from "@/public/benceImage.png";
+import benceImage from "@/public/benceImage.webp";
 import Button from "./Button";
 
 import TypingAnimaton from "./TypingAnimaton";

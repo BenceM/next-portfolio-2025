@@ -23,11 +23,11 @@ export default function Skills() {
 						<p className="text-base lg:text-lg">
 							I&apos;m a logistics manager turned front-end web developer. My
 							passion is coding, thinking of different ways to make something
-							work optimally. I&apos;m interested in Ai,
-							blockchain,optimalisation, nutrition, training and gardening.
-							I&apos;m a team player, a fast learner and I&apos;m quick to
-							adapt. I&apos;m always looking to expand my skillset and knowledge
-							with new technologies.
+							work optimally. I&apos;m interested in Ai, blockchain,
+							optimalisation, nutrition, training and gardening. I&apos;m a team
+							player, a fast learner and I&apos;m quick to adapt. I&apos;m
+							always looking to expand my skillset and knowledge with new
+							technologies.
 						</p>
 					</div>
 					<div className="flex flex-col justify-center w-full gap-6 overflow-hidden">
