@@ -18,10 +18,7 @@ export async function listImagesInFolder(bucketName, folderId) {
 		? data.filter(
 				(item) =>
 					typeof item.name === "string" &&
-					(item.name.toLowerCase().endsWith(".png") ||
-						item.name.toLowerCase().endsWith(".jpg") ||
-						item.name.toLowerCase().endsWith(".jpeg") ||
-						item.name.toLowerCase().endsWith(".webp")),
+					item.name.toLowerCase().endsWith(".webp"),
 		  )
 		: [];
 }

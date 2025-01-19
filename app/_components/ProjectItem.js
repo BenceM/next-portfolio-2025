@@ -11,12 +11,15 @@ export default function ProjectItem({ project }) {
 			<Link
 				href={`/projects/${id}`}
 				className=" block w-[256px] rounded-lg pb-4"
+				prefetch={true}
 			>
 				<ImageWithOverlay src={img} alt={`Picture of ${name}'s website`} />
 			</Link>
 			<div className="flex flex-col items-start mt-2 bg-opacity-50 gap-3 pb-1">
 				<h3 className="text-lg font-bold hover:cursor-pointer ">
-					<Link href={`/projects/${id}`}>{name}</Link>
+					<Link href={`/projects/${id}`} prefetch={true}>
+						{name}
+					</Link>
 				</h3>
 
 				<div className="flex flex-col gap-1 mb-4">
