@@ -1,12 +1,18 @@
+import * as motion from "motion/react-client";
 import { skillsData } from "../_data/data";
 import { LazyBubbleMap } from "./_charts/LazyBubbleMap";
 import SkillsFilter from "./SkillsFilter";
+import AnimatedContainer from "./AnimatedContainer";
 
 export default function Skills() {
 	return (
-		<section
-			id="skills"
+		<AnimatedContainer
 			className="flex flex-col w-full items-center gap-16 md:gap-10 md:px-8 max-w-[90rem] mx-auto "
+			id="skills"
+			variants={{
+				hidden: { opacity: 0, x: 0, y: 100 },
+				enter: { opacity: 1, x: 0, y: 0 },
+			}}
 		>
 			<h2 className="text-4xl xl:text-5xl xl:leading-normal font-extrabold text-center md:text-start md:w-full py-1 text-transparent bg-gradient-to-br from-gradientMain via-gradientVia to-gradientTo bg-clip-text">
 				My Skills
@@ -37,6 +43,6 @@ export default function Skills() {
 					</div>
 				</div>
 			</div>
-		</section>
+		</AnimatedContainer>
 	);
 }

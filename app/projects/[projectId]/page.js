@@ -11,7 +11,7 @@ export default async function Page({ params }) {
 	);
 
 	return (
-		<main className="mt-2 lg:mt-28 flex flex-col gap-1 lg:gap-6 px-2 lg:px-10 max-w-[90rem] py-4 lg:py-0  sm:px-8 xl:px-12 min-h-screen">
+		<main className="mt-2 md:mt-28 flex flex-col gap-1 lg:gap-6 px-2 lg:px-10 max-w-[90rem] py-4 lg:py-0  sm:px-8 xl:px-12 min-h-screen">
 			<BackButton />
 			<h1 className="text-3xl pt-10 lg:pt-6 pb-6 lg:pb-0 text-foreground">
 				{project.name}

@@ -1,10 +1,16 @@
+import AnimatedContainer from "./AnimatedContainer";
 import { EmailForm } from "./EmailForm";
 
 export default function Contact() {
 	return (
-		<section
+		<AnimatedContainer
 			id="contact"
 			className="flex flex-col w-full items-center  gap-16 md:gap-10 md:px-8 max-w-[90rem] mx-auto min-h-screen"
+			variants={{
+				hidden: { opacity: 0, x: 200, y: 0 },
+				enter: { opacity: 1, x: 0, y: 0 },
+			}}
+			transition={{ duration: 1, type: "linear" }}
 		>
 			<h2 className="text-4xl xl:text-5xl xl:leading-normal font-extrabold text-center lg:text-start md:w-full py-1 text-transparent bg-gradient-to-br from-gradientMain via-gradientVia to-gradientTo bg-clip-text">
 				Contact
@@ -26,6 +32,6 @@ export default function Contact() {
 				<EmailForm />
 				{/* add zod --force */}
 			</div>
-		</section>
+		</AnimatedContainer>
 	);
 }
