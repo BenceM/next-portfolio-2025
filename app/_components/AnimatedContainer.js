@@ -26,7 +26,7 @@ export default function AnimatedContainer({
 			// exit="exit"
 			transition={transition}
 			id={id}
-			className={className}
+			className={` ${className}`}
 		>
 			{children}
 		</motion.section>

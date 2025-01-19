@@ -7,7 +7,7 @@ export default function Contact() {
 			id="contact"
 			className="flex flex-col w-full items-center  gap-16 md:gap-10 md:px-8 max-w-[90rem] mx-auto min-h-screen"
 			variants={{
-				hidden: { opacity: 0, x: 200, y: 0 },
+				hidden: { opacity: 0, x: 0, y: 200 },
 				enter: { opacity: 1, x: 0, y: 0 },
 			}}
 			transition={{ duration: 1, type: "linear" }}
@@ -30,7 +30,6 @@ export default function Contact() {
 					</p>
 				</div>
 				<EmailForm />
-				{/* add zod --force */}
 			</div>
 		</AnimatedContainer>
 	);
