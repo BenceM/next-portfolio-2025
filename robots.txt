@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Disallow crawling of specific resource files (adjust paths accordingly)
+Disallow: /assets/
+Disallow: /images/
+Disallow: /scripts/
+Disallow: /styles/
+
+# Disallow crawling of server-side scripts or temporary files
+Disallow: /cgi-bin/
+Disallow: /temp/
+Disallow: /private/
+
+# Optional: Block specific crawlers
+User-agent: BadBot
+Disallow: /
