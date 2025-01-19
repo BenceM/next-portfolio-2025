@@ -11,7 +11,7 @@ import {
 	CardFooter,
 } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
-import { useActionState, useEffect, useState } from "react";
+import { useActionState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { sendEmail } from "../_actions/actions";
 import Button from "./Button";
@@ -22,19 +22,19 @@ export function EmailForm() {
 		message: "",
 	});
 
-	const [actualState, setActualState] = useState(state);
 	const { toast } = useToast();
 
 	useEffect(() => {
 		if (state && state.message !== "") {
+			console.log("trueeeee");
+
 			toast({
 				variant: state.success ? "default" : "destructive",
 				title: state.success ? "Success" : "Error",
 				description: state.message,
 			});
-			setActualState(state);
 		}
-	}, [state, toast, actualState]);
+	}, [state, toast]);
 	return (
 		<div className="relative w-[90%] md:w-full h-full z-10 md:h-fit max-w-md lg:max-w-2xl flex items-center justify-center rounded-xl after:h-[102%] after:w-[102%] after:absolute after:bg-gradient-to-br after:from-gradientMain after:to-gradientTo after:-z-10 after:rounded-xl  ">
 			<Card className="w-full max-w-md lg:max-w-2xl z-20 ">
@@ -51,6 +51,9 @@ export function EmailForm() {
 						<div className="space-y-2">
 							<Label htmlFor="name">Name</Label>
 							<Input id="name" name="name" placeholder="Your Name" required />
+							{state?.errors?.name && (
+								<p className="text-sm text-red-500">{state.errors.name[0]}</p>
+							)}
 						</div>
 						<div className="space-y-2">
 							<Label htmlFor="email">Email</Label>
@@ -61,6 +64,9 @@ export function EmailForm() {
 								placeholder="your@email.com"
 								required
 							/>
+							{state?.errors?.email && (
+								<p className="text-sm text-red-500">{state.errors.email[0]}</p>
+							)}
 						</div>
 						<div className="space-y-2">
 							<Label htmlFor="message">Message</Label>
@@ -70,6 +76,11 @@ export function EmailForm() {
 								placeholder="The message comes here ..."
 								required
 							/>
+							{state?.errors?.message && (
+								<p className="text-sm text-red-500">
+									{state.errors.message[0]}
+								</p>
+							)}
 						</div>
 					</CardContent>
 					<CardFooter className="flex items-center justify-center z-10">

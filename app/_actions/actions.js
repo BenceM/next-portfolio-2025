@@ -1,6 +1,7 @@
 "use server";
 
 import { Resend } from "resend";
+import { contactFormSchema } from "../_lib/schema";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -10,6 +11,16 @@ export async function sendEmail(previousState, formData) {
 	const message = formData.get("message");
 
 	try {
+		//zod validation
+		const result = contactFormSchema.safeParse({ name, email, message });
+		if (!result.success) {
+			return {
+				success: false,
+				message: "There is something wrong with your input!",
+				errors: result.error.flatten().fieldErrors,
+			};
+		}
+
 		const data = await resend.emails.send({
 			from: "Acme <onboarding@resend.dev>",
 			to: ["delivered@resend.dev"],

@@ -10,7 +10,7 @@ export default function ImageLoader({ projectId, className }) {
 	const [activeIndex, setActiveIndex] = useState(0);
 	const [isFullscreen, setIsFullscreen] = useState(false);
 	const carouselRef = useRef(null);
-
+	// to save on vercel fees unfortunately have to fetch the images on the client. This is a security vurnerability, but protects the wallet
 	useEffect(() => {
 		async function fetchImages() {
 			const fetchedImages = await listImagesInFolder(
