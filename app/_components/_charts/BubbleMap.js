@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
 import useMediaQuery from "@/app/_hooks/useMediaQuery";
-
+//add a context for colors and dark mode and depending on darkmode or not set the colors
 const BubbleMap = ({ data }) => {
 	const svgRef = useRef();
 	const isDesktop = useMediaQuery("(min-width: 768px)");
@@ -68,6 +68,7 @@ const BubbleMap = ({ data }) => {
 			.join("g") // group elements to combine image and text
 			.attr("class", "node")
 			.call(drag(simulation)); // drag functionality
+		node.style("cursor", "pointer");
 
 		node
 			.append("circle")

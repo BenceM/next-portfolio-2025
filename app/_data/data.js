@@ -15,7 +15,7 @@ export const projectsData = [
 			"Vercel",
 		],
 		github: "https://github.com/BenceM/next-portfolio-2025",
-		site: "https://holiday-cabin-app-bencems-projects.vercel.app/",
+		site: "We are here",
 	},
 	{
 		name: "Cabin User App",
@@ -77,7 +77,7 @@ export const projectsData = [
 		name: "Pizza Ordering App",
 		img: "/projects/pizza-co-2.webp",
 		id: 6,
-		desc: "This is a smaller project, with a decent minimalistic ui, demonstrating react and redux.",
+		desc: "This is a smaller project, with a decent minimalistic ui, demonstrating react and redux. The user can add multiple items to the cart, change their order, use the geolocation api to provide location, finalize order and track it with the order number. No payment system included.",
 		tech: ["React", "Redux", "CSS", "Vite"],
 
 		github: "https://github.com/BenceM/fast-react-pizza-co",
@@ -91,7 +91,7 @@ export const projectsData = [
 		tech: ["React", "Redux", "CSS", "Vite"],
 
 		github: "https://github.com/BenceM/worldwise",
-		site: "",
+		site: "Not currently hosted",
 	},
 	{
 		name: "Movie Rating App",

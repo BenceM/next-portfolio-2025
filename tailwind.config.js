@@ -23,6 +23,7 @@ module.exports = {
 			colors: {
 				background: "var(--background)",
 				foreground: "var(--foreground)",
+				fillButtonText: "var(--fillButtonText)",
 				textSecondary: "var(--textSecondary)",
 				gradientMain: "var(--gradientMain)",
 				gradientVia: "var(--gradientVia)",
@@ -31,7 +32,9 @@ module.exports = {
 				hover: "var(--hover)",
 				imageBg: "var(--imageBg)",
 				borderC: "var(--borderC)",
-
+				loader: "var(--loader)",
+				colorText: "var(--colorText)",
+				hoverImageBg: "var(--hoverImageBg)",
 				primary: {
 					50: "#E1E8EF",
 					100: "#D4DEE7",

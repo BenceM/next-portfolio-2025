@@ -3,15 +3,20 @@
 @tailwind utilities;
 
 :root {
-	--background: #e6eeed;
-	--foreground: #171717;
-	--textSecondary: rgb(168 162 158);
-	--gradientMain: hwb(201 3% 48%);
-	--gradientVia: #0891b2;
-	--gradientTo: #115e59;
-	--bgHover: #aeaeae;
-	--hover: #1f1f1f;
-	--imageBg: rgba(28, 25, 23, 0.3);
+	--background: #f5f6fa;
+	--foreground: #1e293b;
+	--fillButtonText: #f5f6fa;
+	--textSecondary: #475569;
+	--gradientMain: #2c3f68;
+	--gradientVia: #26344a;
+	--gradientTo: #234e76;
+	--colorText: rgb(4, 59, 75);
+	--bgHover: #c3cbd8;
+	--hover: #747474;
+	--imageBg: #1e293b;
+	--borderC: #2f2d2d;
+	--hoverImageBg: hsla(24, 10%, 10%, 0.3);
+	--loader: #1e293b;
 	--card: 0 0% 100%;
 	--card-foreground: 0 0% 3.9%;
 	--popover: 0 0% 100%;
@@ -36,15 +41,16 @@
 	--chart-5: 27 87% 67%;
 	--radius: 0.5rem;
 	/* testing */
-	--clr-1: #115e59; /* teal-800 */
-	--clr-2: #0891b2; /* cyan-600 */
-	--clr-3: #075985; /* sky-800 */
+	--clr-1: #1d325f; /* teal-800 */
+	--clr-2: #568bac; /* cyan-600 */
+	--clr-3: #18426a; /* sky-800 */
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
 		--background: #121212;
 		--foreground: #ededed;
+		--fillButtonText: #ededed;
 		--textSecondary: #a8a29e;
 		--gradientMain: #075985;
 		--gradientVia: #0891b2;
@@ -52,7 +58,9 @@
 		--bgHover: #1f1f1f;
 		--hover: #bbbbbb;
 		--imageBg: hsla(24, 10%, 10%, 0.3);
+		--hoverImageBg: hsla(24, 10%, 10%, 0.3);
 		--borderC: #2f2d2d;
+		--loader: #1e293b;
 		--card: 0 0% 3.9%;
 		--card-foreground: 0 0% 98%;
 		--popover: 0 0% 3.9%;
@@ -75,6 +83,9 @@
 		--chart-3: 30 80% 55%;
 		--chart-4: 280 65% 60%;
 		--chart-5: 340 75% 55%;
+		--clr-1: #115e59; /* teal-800 */
+		--clr-2: #0891b2; /* cyan-600 */
+		--clr-3: #075985; /* sky-800 */
 	}
 }
 @layer components {

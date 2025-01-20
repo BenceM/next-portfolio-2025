@@ -7,7 +7,7 @@ export default function ProjectFilterPills({ value, handleSelect, label }) {
 			onClick={() => handleSelect(value)}
 		>
 			<p className="group-hover:opacity-0 duration-100 ">{label}</p>
-			<div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-imageBg">
+			<div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-imageBg rounded-full">
 				<div className="font-bold ">
 					<XMarkIcon className="w-6 h-6 text-white" />
 				</div>

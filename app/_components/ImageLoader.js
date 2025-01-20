@@ -93,7 +93,7 @@ export default function ImageLoader({ projectId, className }) {
 			<div
 				className={`relative ${
 					isFullscreen ? "w-full h-full" : "w-full h-[450px]"
-				} max-h-full overflow-hidden bg-slate-800`}
+				} max-h-full overflow-hidden bg-loader`}
 			>
 				{images.map((image, index) => (
 					<div

@@ -23,18 +23,24 @@ export default function ProjectItem({ project }) {
 				</h3>
 
 				<div className="flex flex-col gap-1 mb-4">
-					{site ? (
-						<Link href={site ?? ""} className="inline-flex hover:text-hover">
+					{site.includes("https") ? (
+						<Link
+							href={site}
+							className="inline-flex hover:text-hover duration-300"
+						>
 							Live Site
 							<span>
 								<ArrowTopRightOnSquareIcon className="size-4" />
 							</span>
 						</Link>
 					) : (
-						"Not currently hosted"
+						<p>{site}</p>
 					)}
 
-					<Link href={github ?? ""} className="inline-flex hover:text-hover">
+					<Link
+						href={github ?? ""}
+						className="inline-flex hover:text-hover duration-300"
+					>
 						GitHub
 						<span className="">
 							<ArrowTopRightOnSquareIcon className="size-4" />

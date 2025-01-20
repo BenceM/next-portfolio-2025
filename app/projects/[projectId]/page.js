@@ -40,14 +40,28 @@ export default async function Page({ params }) {
 								Links:
 							</h3>
 							<div className="flex flex-col">
-								<Link className="text-sm lg:text-lg" href={project.github}>
+								<Link
+									className="text-sm lg:text-lg hover:text-hover duration-300"
+									href={project.github}
+								>
 									Github
 								</Link>
-								<Link className="text-sm lg:text-lg" href={project.site}>
-									Live website
-								</Link>
+								{project.site.includes("https") ? (
+									<Link
+										className="text-sm lg:text-lg hover:text-hover duration-300"
+										href={project.site}
+									>
+										Live website
+									</Link>
+								) : (
+									<p className="text-sm lg:text-lg">{project.site}</p>
+								)}
+
 								{project?.extra && (
-									<Link className="text-sm lg:text-lg" href={project.extra}>
+									<Link
+										className="text-sm lg:text-lg hover:text-hover duration-300"
+										href={project.extra}
+									>
 										Hugging Face
 									</Link>
 								)}
