@@ -14,7 +14,7 @@ export function DownloadHoverCard({ text, date, desc }) {
 					{text}
 				</Button>
 			</HoverCardTrigger>
-			<HoverCardContent className="w-80">
+			<HoverCardContent className="w-80 bg-background border-gradientMain">
 				<div className="flex justify-between space-x-4">
 					<div className="space-y-1">
 						<h4 className="text-sm font-semibold">{text}</h4>

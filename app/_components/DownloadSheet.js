@@ -33,7 +33,11 @@ export function DownloadSheet({ open, onOpenChange }) {
 								desc="- React, Next.js, Redux & More by Jonas Schmedtmann"
 								date="November 2024"
 							/>
-							<Link href="">
+							<Link
+								href="https://drive.google.com/file/d/1tkXILSrffEflDV4kQiNHmw7cMBdjJXwO/view"
+								target="blank"
+								rel="noopener noreferrer"
+							>
 								<DownloadIcon className="size-4" />
 							</Link>
 						</div>
@@ -44,7 +48,11 @@ export function DownloadSheet({ open, onOpenChange }) {
 								desc="Blockchain, Hashing, Merkle tree, DEX, NFT - Chainlink"
 								date="November 2024"
 							/>
-							<Link href="">
+							<Link
+								href="https://drive.google.com/file/d/1tpDMcs38HOyErRuha3PZ7TbTg2eStVwj/view"
+								target="blank"
+								rel="noopener noreferrer"
+							>
 								<DownloadIcon className="size-4" />
 							</Link>
 						</div>
@@ -55,7 +63,11 @@ export function DownloadSheet({ open, onOpenChange }) {
 								desc="Master React and Redux, React Router, TailwindCSS, Context, and Hooks! by Stephen Grider"
 								date="June 2023"
 							/>
-							<Link href="">
+							<Link
+								href="https://drive.google.com/file/d/1tbWj44lT7PY-mqc1NMXkidWTt3fRtPcj/view"
+								target="blank"
+								rel="noopener noreferrer"
+							>
 								<DownloadIcon className="size-4" />
 							</Link>
 						</div>

@@ -51,7 +51,7 @@ export default function Main() {
 					<div className="flex flex-col md:flex-row gap-3 md:justify-start md:gap-4 justify-center items-center md:row-start-4">
 						<Button
 							href="#contact"
-							className="bg-gradient-to-br relative from-gradientMain  via-gradientVia to-gradientTo  hover:brightness-110  text-fillButtonText shadow shadow-blue-200/0 hover:shadow-3xl after:-inset-[0.2rem] after:bg-gradient-to-br after:from-gradientMain after:via-gradientVia after:to-gradientTo after:absolute after:rounded-full after:-z-[1]"
+							className="bg-gradient-to-br relative from-gradientMain  via-gradientVia to-gradientTo  hover:opacity-90  text-fillButtonText shadow shadow-blue-200/0 hover:shadow-3xl after:-inset-[0.2rem] after:bg-gradient-to-br after:from-gradientMain after:via-gradientVia after:to-gradientTo after:absolute after:rounded-full after:-z-[1]"
 						>
 							Hire me
 						</Button>
