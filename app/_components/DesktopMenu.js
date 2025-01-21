@@ -2,6 +2,7 @@
 import Logo from "./Logo";
 import Link from "next/link";
 import { useHashNavigation } from "../_hooks/useHashNavigation";
+// import ColorPicker from "./ColourPicker";
 
 export default function DesktopMenu({ navRef }) {
 	const moveSection = useHashNavigation();
@@ -61,6 +62,7 @@ export default function DesktopMenu({ navRef }) {
 					</Link>
 				</li>
 			</ul>
+			{/* <ColorPicker /> */}
 		</>
 	);
 }

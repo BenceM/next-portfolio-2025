@@ -2,10 +2,17 @@
 import React, { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
 import useMediaQuery from "@/app/_hooks/useMediaQuery";
-//add a context for colors and dark mode and depending on darkmode or not set the colors
+
 const BubbleMap = ({ data }) => {
 	const svgRef = useRef();
 	const isDesktop = useMediaQuery("(min-width: 768px)");
+	const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+	console.log(isDark);
+	const lineColor = isDark ? "#ccc" : "#1f1f1f";
+	const textColor = isDark ? "#fff" : "#121212";
+	const bgColorMain = isDark ? "#121212" : "#f5f6fa";
+	// const bgColorMain = isDark ? "#121212" : "#f5f6fa";
+
 	const INITIAL_STATE = isDesktop
 		? { width: 500, height: 500 }
 		: { width: 300, height: 600 };
@@ -59,7 +66,7 @@ const BubbleMap = ({ data }) => {
 			.data(data.links)
 			.join("line")
 			.attr("class", "link")
-			.attr("stroke", "#ccc")
+			.attr("stroke", lineColor)
 			.attr("stroke-width", 2);
 
 		const node = svg
@@ -74,9 +81,9 @@ const BubbleMap = ({ data }) => {
 			.append("circle")
 			.attr("r", 20)
 			.attr("fill", (d) => {
-				return d.bg ? "#fff" : "#121212";
+				return d.bg ? "#fff" : bgColorMain;
 			});
-
+		// "#fff" : "#121212"
 		// Add images to each node
 		node
 			.append("image")
@@ -92,7 +99,7 @@ const BubbleMap = ({ data }) => {
 			.attr("class", "node-label")
 			.attr("dy", -30)
 			.attr("text-anchor", "middle")
-			.attr("fill", "#fff")
+			.attr("fill", textColor)
 			.style("font-size", "12px")
 			.style("visibility", "hidden") // Initially hidden
 			.text((d) => d.id);
