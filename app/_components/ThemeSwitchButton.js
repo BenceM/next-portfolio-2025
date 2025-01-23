@@ -7,11 +7,11 @@ import { useCallback } from "react";
 import { useTheme } from "./ThemeContext";
 
 export function ThemeSwitchButton() {
-	const { theme, setTheme } = useTheme();
+	const { theme, updateTheme } = useTheme();
 
 	const toggleTheme = useCallback(() => {
-		setTheme(theme === "light" ? "dark" : "light");
-	}, [theme, setTheme]);
+		updateTheme(theme === "light" ? "dark" : "light");
+	}, [theme, updateTheme]);
 
 	return (
 		<Button
@@ -19,6 +19,7 @@ export function ThemeSwitchButton() {
 			size="icon"
 			onClick={toggleTheme}
 			aria-label="Toggle theme"
+			className="hover:bg-background hover:text-hover"
 		>
 			{theme === "light" ? (
 				<Moon className="h-5 w-5" />

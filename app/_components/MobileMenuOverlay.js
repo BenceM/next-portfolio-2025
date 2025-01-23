@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/sheet";
 import { DownloadHoverCard } from "./DownloadHoverCard";
 import Link from "next/link";
+import { ThemeSwitchButton } from "./ThemeSwitchButton";
 
 export function MobileMenuOverlay({ open, onOpenChange }) {
 	return (
@@ -65,6 +66,9 @@ export function MobileMenuOverlay({ open, onOpenChange }) {
 						>
 							Contact
 						</Link>
+					</li>
+					<li className=" w-full text-center">
+						<ThemeSwitchButton />
 					</li>
 				</ul>
 			</SheetContent>

@@ -2,6 +2,7 @@
 import Logo from "./Logo";
 import Link from "next/link";
 import { useHashNavigation } from "../_hooks/useHashNavigation";
+import { ThemeSwitchButton } from "./ThemeSwitchButton";
 // import ColorPicker from "./ColourPicker";
 
 export default function DesktopMenu({ navRef }) {
@@ -60,6 +61,9 @@ export default function DesktopMenu({ navRef }) {
 					>
 						Contact
 					</Link>
+				</li>
+				<li>
+					<ThemeSwitchButton />
 				</li>
 			</ul>
 			{/* <ColorPicker /> */}

@@ -46,48 +46,47 @@
 	--clr-3: #18426a; /* sky-800 */
 }
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		--background: #121212;
-		--foreground: #ededed;
-		--fillButtonText: #ededed;
-		--textSecondary: #a8a29e;
-		--gradientMain: #075985;
-		--gradientVia: #0891b2;
-		--gradientOff: #115e59;
-		--bgHover: #1f1f1f;
-		--hover: #bbbbbb;
-		--imageBg: hsla(24, 10%, 10%, 0.3);
-		--hoverImageBg: hsla(24, 10%, 10%, 0.3);
-		--borderC: #2f2d2d;
-		--loader: #1e293b;
-		--card: 0 0% 3.9%;
-		--card-foreground: 0 0% 98%;
-		--popover: 0 0% 3.9%;
-		--popover-foreground: 0 0% 98%;
-		--primary: 0 0% 98%;
-		--primary-foreground: 0 0% 9%;
-		--secondary: 0 0% 14.9%;
-		--secondary-foreground: 0 0% 98%;
-		--muted: 0 0% 14.9%;
-		--muted-foreground: 0 0% 63.9%;
-		--accent: 0 0% 14.9%;
-		--accent-foreground: 0 0% 98%;
-		--destructive: 0 62.8% 30.6%;
-		--destructive-foreground: 0 0% 98%;
-		--border: 0 0% 14.9%;
-		--input: 0 0% 14.9%;
-		--ring: 0 0% 83.1%;
-		--chart-1: 220 70% 50%;
-		--chart-2: 160 60% 45%;
-		--chart-3: 30 80% 55%;
-		--chart-4: 280 65% 60%;
-		--chart-5: 340 75% 55%;
-		--clr-1: #115e59; /* teal-800 */
-		--clr-2: #0891b2; /* cyan-600 */
-		--clr-3: #075985; /* sky-800 */
-	}
+.dark {
+	--background: #121212;
+	--foreground: #ededed;
+	--fillButtonText: #ededed;
+	--textSecondary: #a8a29e;
+	--gradientMain: #075985;
+	--gradientVia: #0891b2;
+	--gradientOff: #115e59;
+	--bgHover: #1f1f1f;
+	--hover: #bbbbbb;
+	--imageBg: hsla(24, 10%, 10%, 0.3);
+	--hoverImageBg: hsla(24, 10%, 10%, 0.3);
+	--borderC: #2f2d2d;
+	--loader: #1e293b;
+	--card: 0 0% 3.9%;
+	--card-foreground: 0 0% 98%;
+	--popover: 0 0% 3.9%;
+	--popover-foreground: 0 0% 98%;
+	--primary: 0 0% 98%;
+	--primary-foreground: 0 0% 9%;
+	--secondary: 0 0% 14.9%;
+	--secondary-foreground: 0 0% 98%;
+	--muted: 0 0% 14.9%;
+	--muted-foreground: 0 0% 63.9%;
+	--accent: 0 0% 14.9%;
+	--accent-foreground: 0 0% 98%;
+	--destructive: 0 62.8% 30.6%;
+	--destructive-foreground: 0 0% 98%;
+	--border: 0 0% 14.9%;
+	--input: 0 0% 14.9%;
+	--ring: 0 0% 83.1%;
+	--chart-1: 220 70% 50%;
+	--chart-2: 160 60% 45%;
+	--chart-3: 30 80% 55%;
+	--chart-4: 280 65% 60%;
+	--chart-5: 340 75% 55%;
+	--clr-1: #115e59; /* teal-800 */
+	--clr-2: #0891b2; /* cyan-600 */
+	--clr-3: #075985; /* sky-800 */
 }
+
 @layer components {
 	.spinner {
 		margin: 20rem auto 1.6rem;

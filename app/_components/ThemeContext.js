@@ -18,9 +18,9 @@ export function ThemeProvider({
 }) {
 	const [theme, setTheme] = useState(defaultTheme);
 	const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
+	//add the toggle to the menu
 
 	useEffect(() => {
-		const root = window.document.documentElement;
 		const storedTheme = localStorage.getItem(storageKey);
 
 		if (storedTheme) {
