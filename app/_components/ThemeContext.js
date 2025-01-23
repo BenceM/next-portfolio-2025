@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState } from "react";
-import useMediaQuery from "@/hooks/use-media-query";
+import useMediaQuery from "../_hooks/useMediaQuery";
 
 const initialState = {
 	theme: "system",
@@ -16,10 +16,19 @@ export function ThemeProvider({
 	storageKey = "theme",
 	...props
 }) {
-	const [theme, setTheme] = useState(
-		() => localStorage.getItem(storageKey) || defaultTheme,
-	);
+	const [theme, setTheme] = useState(defaultTheme);
 	const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
+
+	useEffect(() => {
+		const root = window.document.documentElement;
+		const storedTheme = localStorage.getItem(storageKey);
+
+		if (storedTheme) {
+			setTheme(storedTheme);
+		} else if (prefersDarkMode) {
+			setTheme("dark");
+		}
+	}, [storageKey, prefersDarkMode]);
 
 	useEffect(() => {
 		const root = window.document.documentElement;
@@ -34,9 +43,9 @@ export function ThemeProvider({
 		root.classList.add(theme);
 	}, [theme, prefersDarkMode]);
 
-	const updateTheme = (theme) => {
-		localStorage.setItem(storageKey, theme);
-		setTheme(theme);
+	const updateTheme = (newTheme) => {
+		localStorage.setItem(storageKey, newTheme);
+		setTheme(newTheme);
 	};
 
 	return (

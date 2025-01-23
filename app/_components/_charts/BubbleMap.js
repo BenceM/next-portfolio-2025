@@ -7,7 +7,7 @@ const BubbleMap = ({ data }) => {
 	const svgRef = useRef();
 	const isDesktop = useMediaQuery("(min-width: 768px)");
 	const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-	console.log(isDark);
+
 	const lineColor = isDark ? "#ccc" : "#1f1f1f";
 	const textColor = isDark ? "#fff" : "#121212";
 	const bgColorMain = isDark ? "#121212" : "#f5f6fa";
