@@ -1,6 +1,7 @@
 import { Toaster } from "@/components/ui/toaster";
 import Header from "./_components/Header";
 import "./_styles/globals.css";
+import { ThemeProvider } from "./_components/ThemeContext";
 
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
@@ -21,13 +22,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
 	return (
-		<html lang="en" className="scroll-smooth">
+		<html lang="en" className="scroll-smooth" suppressHydrationWarning>
 			<body className="w-full">
-				{/* flex flex-col justify-center items-center */}
-				<Header />
+				{/* don't forget to change tailwind config  also change logic in bubblemap*/}
+				<ThemeProvider defaultTheme="system" storageKey="theme">
+					<Header />
 
-				{children}
-				<Toaster />
+					{children}
+					<Toaster />
+				</ThemeProvider>
 			</body>
 		</html>
 	);

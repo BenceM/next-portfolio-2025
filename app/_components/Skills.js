@@ -27,13 +27,13 @@ export default function Skills() {
 					<div className="flex flex-col justify-center w-full gap-2">
 						<h3 className="text-2xl font-bold ">About me</h3>
 						<p className="text-base lg:text-lg">
-							I&apos;m a logistics manager turned front-end web developer. My
+							Previously from the logistics sector, now a Frontend Developer. My
 							passion is coding, thinking of different ways to make something
-							work optimally. I&apos;m interested in Ai, blockchain,
-							optimalisation, nutrition, training and gardening. I&apos;m a team
-							player, a fast learner and I&apos;m quick to adapt. I&apos;m
-							always looking to expand my skillset and knowledge with new
-							technologies.
+							work optimally. I&apos;m interested in creating user friendly
+							apps, AI, blockchain, optimisation as well as personal pursuits
+							like nutrition, training and gardening. I&apos;m a team player, a
+							fast learner and I&apos;m quick to adapt. I&apos;m always looking
+							to expand my skillset and knowledge with emerging technologies.
 						</p>
 					</div>
 					<div className="flex flex-col justify-center w-full gap-6 overflow-hidden">
