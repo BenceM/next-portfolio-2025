@@ -2,25 +2,40 @@
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import { listImagesInFolder } from "../_lib/utils";
 import SpinnerMini from "./SpinnerMini";
+import { listImagesInFolder } from "../_actions/actions";
 
 export default function ImageLoader({ projectId, className }) {
 	const [images, setImages] = useState([]);
 	const [activeIndex, setActiveIndex] = useState(0);
 	const [isFullscreen, setIsFullscreen] = useState(false);
 	const carouselRef = useRef(null);
-	// to save on vercel fees unfortunately have to fetch the images on the client. This is a security vurnerability, but protects the wallet
+
 	useEffect(() => {
 		async function fetchImages() {
-			const fetchedImages = await listImagesInFolder(
-				"project%20images",
-				projectId,
-			);
-			setImages(fetchedImages);
+			try {
+				const fetchedImages = await listImagesInFolder(
+					"project%20images",
+					projectId,
+				);
+				setImages(fetchedImages);
+			} catch (error) {
+				console.error("Error fetching images:", error);
+			}
 		}
 		fetchImages();
 	}, [projectId]);
+
+	// useEffect(() => {
+	// 	async function fetchImages() {
+	// 		const fetchedImages = await listImagesInFolder(
+	// 			"project%20images",
+	// 			projectId,
+	// 		);
+	// 		setImages(fetchedImages);
+	// 	}
+	// 	fetchImages();
+	// }, [projectId]);
 
 	const handlePrevious = () => {
 		setActiveIndex(

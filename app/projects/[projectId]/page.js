@@ -4,11 +4,15 @@ import ImageLoader from "@/app/_components/ImageLoader";
 import TechList from "@/app/_components/TechList";
 import { projectsData } from "@/app/_data/data";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 export default async function Page({ params }) {
 	const { projectId } = await params;
 	const project = projectsData.find(
 		(project) => project.id === Number(projectId),
 	);
+	if (!project) {
+		notFound();
+	}
 
 	return (
 		<main className="mt-2 md:mt-28 flex flex-col gap-1 lg:gap-6 px-2 lg:px-10 max-w-[90rem] py-4 lg:py-0  sm:px-8 xl:px-12 min-h-screen">
