@@ -152,7 +152,7 @@ const BubbleMap = ({ data }) => {
 				});
 		}
 		return () => {
-			simulation.stop(); // Stop the simulation
+			simulation.stop();
 			svg.selectAll("*").remove();
 		};
 	}, [data, dimensions.width, dimensions.height, isDark]);

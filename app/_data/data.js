@@ -3,7 +3,7 @@ export const projectsData = [
 		name: "Portfolio page",
 		img: "/projects/portfolio-1.webp",
 		id: 1,
-		desc: "This is the page you are on right now. Uses Next 15 with React 19. At the time of making some libraries (and their dependencies) I wanted to use weren't upgraded yet to support React 19, namely focus-lock and zod, will add eventually, when the upgrade happens. Built with the latest tech and methods. Next revamped their caching system from 14 to 15, that was the hardest to keep in mind. The page contains a Main component which is where you land, a skills section with certifications, all my recent bigger projects, with some smaller ones and older ones for comparison and a contact form. The main page uses motion for the typing effect. The skills section Bubblemap was made by using D3. The pages section is where I started to utilise shadcn. The contact form uses resend's service to send an email, the form itself is using a server action, with useActionState hook.                                                               Key concepts: useActionState, server actions, mediaQuery hook, shadcn, D3, motion",
+		desc: "Uses Next 15 with React 19. Built with the latest tech and methods. Next revamped their caching system from 14 to 15, that was the hardest to keep in mind, also prefetching is not a default anymore. The page contains a Main component which is where you land, a skills section, all my recent bigger projects, with some smaller ones and older ones for comparison and a contact form. The main page uses motion for the typing effect. The skills section Bubblemap was made by using D3. The projects section is where I started to utilise shadcn. The contact form uses resend's service to send an email, the form itself is using a server action, with useActionState hook. The images for the projects are fetched from Supabase. Key concepts: useActionState, server actions, mediaQuery hook, shadcn, D3, motion, dynamic imports",
 		tech: [
 			"Next.js",
 			"React",
@@ -13,6 +13,7 @@ export const projectsData = [
 			"Shadcn",
 			"Motion",
 			"Vercel",
+			"Supabase",
 		],
 		github: "https://github.com/BenceM/next-portfolio-2025",
 		site: "We are here",
@@ -21,7 +22,7 @@ export const projectsData = [
 		name: "Cabin User App",
 		img: "/projects/holiday-cabin-app-1.webp",
 		id: 2,
-		desc: "This is the customer facing page of the cabin project which I made the management app for. It uses the same data base. Users can browse the cabins and read a bit about the history of this place. They can browse the cabins and once they made up their mind they can book a stay. Users need to be logged in to make a booking, they can log in using their google account. Once logged in they can select a timeframe for the booking using a calendar, which only displays available dates. Once booked, they can check their reservations in the profile page, also delete or update them. On a separate tab they can change their details such as ID card number and name. Key concepts: useOptimistic, useTransition, server actions",
+		desc: "This is the customer facing page of the cabin project which I made the management app for. It uses the same data base. Users can browse the cabins and read a bit about the history of this place. They can browse the cabins and once they made up their mind they can book a stay. Users need to be logged in to make a booking, they can log in using their google account. Once logged in they can select a timeframe for the booking using a calendar, which only displays available dates. Once booked, they can check their reservations in the profile page, also delete or update them. On a separate tab they can change their details such as ID card number and name. Key concepts: useOptimistic, useTransition, server actions, AuthContext with Auth.js ",
 		tech: [
 			"Next.js",
 			"React",
@@ -38,7 +39,7 @@ export const projectsData = [
 		name: "Cabin Management App",
 		img: "/projects/management-2.webp",
 		id: 3,
-		desc: "This is an internal holiday resort management app designed exclusively for BOH employees and managers. Currently, it is intended solely for PC use, specifically at the reception desk or in the office.Users are required to log in, where they can access their profile to customize settings such as setting an avatar, changing their name, and updating their password. Once logged in, users can manage cabins, bookings, guests and settings, including creating new ones, editing details, and deleting them. Cabins and bookings are displayed in a table view, allowing users to manage individual entries. They can add guests, update guest information, and check guests in or out as needed.The landing page provides a summary of key metrics, including guests, bookings, stay durations, and cash flow. This information is presented both numerically and visually, using charts.Additionally, users can update hotel-wide settings, such as the breakfast price, the maximum number of guests per booking, and the maximum number of nights allowed per booking.The app also features a dark mode for enhanced usability. To check the live page drop an email for a new log in",
+		desc: "This is an internal holiday resort management app designed exclusively for BOH employees and managers. Currently, it is intended solely for PC use, specifically at the reception desk or in the office. Users are required to log in, where they can access their profile to customize settings such as setting an avatar, changing their name, and updating their password. Once logged in, users can manage cabins, bookings, guests and settings, including creating new ones, editing details, and deleting them. Cabins and bookings are displayed in a table view, allowing users to manage individual entries. They can add guests, update guest information, and check guests in or out as needed. The landing page provides a summary of key metrics, including guests, bookings, stay durations, and cash flow. This information is presented both numerically and visually, using charts. Additionally, users can update hotel-wide settings, such as the breakfast price, the maximum number of guests per booking, and the maximum number of nights allowed per booking. The app also features a dark mode for enhanced usability. To check the live page drop an email for a new log in",
 		tech: [
 			"React",
 			"Tailwind",
@@ -49,7 +50,7 @@ export const projectsData = [
 			"Recharts",
 			"Vite",
 		],
-		//update
+
 		github: "https://github.com/BenceM/cabin-app",
 		site: "https://holiday-cabin-app-bencems-projects.vercel.app/",
 	},
@@ -57,7 +58,7 @@ export const projectsData = [
 		name: "2D Platformer Game",
 		img: "/projects/2d-game-1.webp",
 		id: 4,
-		desc: "A 2D Platformer game created in plain ES7+, CSS, HTML using canvas. This was my first attempt at creating a game. It was a steep learning curve, but it turned out okay. Canvas has some limitations and if I were to create a game again I'd probably use an engine, so I wouldn't have to create everything again from 0. The camera size is different on different screens depending on resolution and pixel density, to fix this the whole camera system would need a rework and most of the game. This I'd defintiely do differently in another iteration.",
+		desc: "A 2D Platformer game created in plain ES7+, CSS, HTML using canvas. This was my first attempt at creating a game. It was a steep learning curve, but it turned out okay. Canvas has some limitations and if I were to create a game again I'd probably use an engine, so I wouldn't have to create everything again from 0. The camera size is different on different screens depending on resolution and pixel density, to fix this the whole camera system would need a rework and most of the game. This I'd defintiely do differently in another iteration. The rendering order also needs to be looked at.",
 		tech: ["JavaScript", "CSS"],
 		github: "https://github.com/BenceM/2d-platformer",
 		site: "https://bencem.github.io/2d-platformer/",
@@ -87,7 +88,7 @@ export const projectsData = [
 		name: "WorldWise",
 		img: "/projects/world-5.webp",
 		id: 7,
-		desc: "This is a smaller project, with a decent minimalistic ui, demonstrating react and redux.",
+		desc: "This is a smaller project, with a decent minimalistic ui, demonstrating react and redux. The map uses leaflet.",
 		tech: ["React", "Redux", "CSS", "Vite"],
 
 		github: "https://github.com/BenceM/worldwise",
@@ -97,7 +98,7 @@ export const projectsData = [
 		name: "Movie Rating App",
 		img: "/projects/movie-1.webp",
 		id: 8,
-		desc: "This is a smaller project, with a decent minimalistic ui, demonstrating react and redux.",
+		desc: "This is a smaller project, with a decent minimalistic ui, demonstrating react and redux. You can rate movies, which are fetched from an api, rate them and the app will display the movies average rating and total watch time. Could add localStorage use for persisting data.",
 		tech: ["React", "Redux", "CSS", "Vite"],
 
 		github: "https://github.com/BenceM/movie-rating",
