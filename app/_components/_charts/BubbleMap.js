@@ -2,15 +2,14 @@
 import React, { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
 import useMediaQuery from "@/app/_hooks/useMediaQuery";
+import { useTheme } from "../ThemeContext";
 
 const BubbleMap = ({ data }) => {
 	const svgRef = useRef();
 	const isDesktop = useMediaQuery("(min-width: 768px)");
-	const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+	const { theme } = useTheme();
+	const isDark = theme === "dark";
 
-	const lineColor = isDark ? "#ccc" : "#1f1f1f";
-	const textColor = isDark ? "#fff" : "#121212";
-	const bgColorMain = isDark ? "#121212" : "#f5f6fa";
 	// const bgColorMain = isDark ? "#121212" : "#f5f6fa";
 
 	const INITIAL_STATE = isDesktop
@@ -37,9 +36,13 @@ const BubbleMap = ({ data }) => {
 		handleResize(); // Set initial size
 		return () => window.removeEventListener("resize", handleResize);
 	}, []);
+
 	useEffect(() => {
 		const width = dimensions.width;
 		const height = dimensions.height;
+		const lineColor = isDark ? "#ccc" : "#1f1f1f";
+		const textColor = isDark ? "#fff" : "#121212";
+		const bgColorMain = isDark ? "#121212" : "#f5f6fa";
 		const svg = d3
 			.select(svgRef.current)
 			.attr("width", width)
@@ -148,7 +151,11 @@ const BubbleMap = ({ data }) => {
 					event.subject.fy = null;
 				});
 		}
-	}, [data, dimensions.width, dimensions.height]);
+		return () => {
+			simulation.stop(); // Stop the simulation
+			svg.selectAll("*").remove();
+		};
+	}, [data, dimensions.width, dimensions.height, isDark]);
 
 	return <svg ref={svgRef}></svg>;
 };
