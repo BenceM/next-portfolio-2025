@@ -3,17 +3,6 @@ import Header from "./_components/Header";
 import "./_styles/globals.css";
 import { ThemeProvider } from "./_components/ThemeContext";
 
-// const geistSans = localFont({
-//   src: "./fonts/GeistVF.woff",
-//   variable: "--font-geist-sans",
-//   weight: "100 900",
-// });
-// const geistMono = localFont({
-//   src: "./fonts/GeistMonoVF.woff",
-//   variable: "--font-geist-mono",
-//   weight: "100 900",
-// });
-
 export const metadata = {
 	title: "Bence's Portfolio",
 	description:
@@ -24,8 +13,7 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang="en" className="scroll-smooth" suppressHydrationWarning>
 			<body className="w-full">
-				{/* don't forget to change tailwind config  also change logic in bubblemap*/}
-				<ThemeProvider defaultTheme="system" storageKey="theme">
+				<ThemeProvider>
 					<Header />
 
 					{children}

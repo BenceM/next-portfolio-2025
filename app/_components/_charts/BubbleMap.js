@@ -161,3 +161,4 @@ const BubbleMap = ({ data }) => {
 };
 
 export default BubbleMap;
+//make the isdark a separate useEffect where you define the colors and update the existing node groups instead of rerendering, it causes issues on boot because the themeprovider boots up with a dark mode then after load time it changes to the actual one

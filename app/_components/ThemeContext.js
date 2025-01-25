@@ -18,7 +18,6 @@ export function ThemeProvider({
 }) {
 	const [theme, setTheme] = useState(defaultTheme);
 	const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
-	//add the toggle to the menu
 
 	useEffect(() => {
 		const storedTheme = localStorage.getItem(storageKey);
@@ -32,15 +31,15 @@ export function ThemeProvider({
 
 	useEffect(() => {
 		const root = window.document.documentElement;
-		root.classList.remove("light", "dark");
+		console.log("running");
+		const oldTheme = root.classList.contains("dark") ? "dark" : "light";
+		const newTheme =
+			theme === "system" ? (prefersDarkMode ? "dark" : "light") : theme;
 
-		if (theme === "system") {
-			const systemTheme = prefersDarkMode ? "dark" : "light";
-			root.classList.add(systemTheme);
-			return;
+		if (oldTheme !== newTheme) {
+			root.classList.remove(oldTheme);
+			root.classList.add(newTheme);
 		}
-
-		root.classList.add(theme);
 	}, [theme, prefersDarkMode]);
 
 	const updateTheme = (newTheme) => {

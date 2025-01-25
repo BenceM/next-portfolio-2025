@@ -26,8 +26,6 @@ export function EmailForm() {
 
 	useEffect(() => {
 		if (state && state.message !== "") {
-			console.log("trueeeee");
-
 			toast({
 				variant: state.success ? "default" : "destructive",
 				title: state.success ? "Success" : "Error",
