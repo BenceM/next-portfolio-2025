@@ -31,7 +31,6 @@ export function ThemeProvider({
 
 	useEffect(() => {
 		const root = window.document.documentElement;
-		console.log("running");
 		const oldTheme = root.classList.contains("dark") ? "dark" : "light";
 		const newTheme =
 			theme === "system" ? (prefersDarkMode ? "dark" : "light") : theme;
