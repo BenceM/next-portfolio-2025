@@ -46,6 +46,7 @@ export default async function Page({ params }) {
 							<div className="flex flex-col">
 								<Link
 									className="text-sm lg:text-lg hover:text-hover duration-300"
+									target="blank"
 									href={project.github}
 								>
 									Github
@@ -53,6 +54,7 @@ export default async function Page({ params }) {
 								{project.site.includes("https") ? (
 									<Link
 										className="text-sm lg:text-lg hover:text-hover duration-300"
+										target="blank"
 										href={project.site}
 									>
 										Live website
@@ -64,6 +66,7 @@ export default async function Page({ params }) {
 								{project?.extra && (
 									<Link
 										className="text-sm lg:text-lg hover:text-hover duration-300"
+										target="blank"
 										href={project.extra}
 									>
 										Hugging Face

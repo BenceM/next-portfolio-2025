@@ -26,6 +26,7 @@ export default function ProjectItem({ project }) {
 					{site.includes("https") ? (
 						<Link
 							href={site}
+							target="blank"
 							className="inline-flex hover:text-hover duration-300"
 						>
 							Live Site
@@ -39,6 +40,7 @@ export default function ProjectItem({ project }) {
 
 					<Link
 						href={github ?? ""}
+						target="blank"
 						className="inline-flex hover:text-hover duration-300"
 					>
 						GitHub

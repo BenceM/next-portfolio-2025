@@ -51,8 +51,8 @@ export const projectsData = [
 			"Vite",
 		],
 
-		github: "https://github.com/BenceM/cabin-app",
-		site: "https://holiday-cabin-app-bencems-projects.vercel.app/",
+		github: "https://github.com/BenceM/cabin-management-app",
+		site: "https://bence-cabin-management.netlify.app/",
 	},
 	{
 		name: "2D Platformer Game",

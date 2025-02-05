@@ -22,11 +22,11 @@ export default function Contact() {
 					{/* copy styling from skills section for p */}
 
 					<p className="max-w-md md:max-w-sm text-base lg:text-lg">
-						I&apos;m currently looking for new opportunities, projects to
-						contribute to, great companies to work for. My inbox is always open,
-						if you have any questions, want to say hi or have a business
-						proposition. I&apos;ll try my best to get back to you as soon as
-						possible!
+						I&apos;m open to new opportunities, projects to contribute to, great
+						companies to collaborate with. My inbox is always open, if you have
+						any questions, want to say hi or have a business proposition, feel
+						free to reach out. I&apos;ll try my best to get back to you as soon
+						as possible!
 					</p>
 				</div>
 				<EmailForm />
