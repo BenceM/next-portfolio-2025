@@ -45,7 +45,7 @@ export default function Main() {
 					</h1>
 
 					<p className="text-textSecondary max-w-xl text-center md:text-left text-base sm:text-sm lg:text-lg xl:text-xl mb-6 md:mb-2 md:row-start-3 ">
-						Frontend dev with 2+ years of experience in React. Currently
+						Frontend dev with 3+ years of experience in React. Currently
 						specialising in Next.js
 					</p>
 					<div className="flex flex-col md:flex-row gap-3 md:justify-start md:gap-4 justify-center items-center md:row-start-4">

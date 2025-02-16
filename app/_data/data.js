@@ -3,7 +3,7 @@ export const projectsData = [
 		name: "Portfolio page",
 		img: "/projects/portfolio-1.webp",
 		id: 1,
-		desc: "Uses Next 15 with React 19. Built with the latest tech and methods. Next revamped their caching system from 14 to 15, that was the hardest to keep in mind, also prefetching is not a default anymore. The page contains a Main component which is where you land, a skills section, all my recent bigger projects, with some smaller ones and older ones for comparison and a contact form. The main page uses motion for the typing effect. The skills section Bubblemap was made by using D3. The projects section is where I started to utilise shadcn. The contact form uses resend's service to send an email, the form itself is using a server action, with useActionState hook. The images for the projects are fetched from Supabase. Key concepts: useActionState, server actions, mediaQuery hook, shadcn, D3, motion, dynamic imports",
+		desc: "Uses Next 15 with React 19. Built with the latest tech and methods. Next revamped their caching system from 14 to 15, that was the hardest to keep in mind, also prefetching is not a default anymore. The page contains a Main component which is where you land, a skills section, all my recent bigger projects, with some smaller ones and older ones for comparison and a contact form. The main page uses motion for the typing effect. The skills section's interactive Bubblemap was made by using D3. The projects section is where I started to utilise shadcn. The contact form uses resend's service to send an email, the form itself is using a server action, with useActionState hook and zod for data validation. The images for the projects are fetched from Supabase. Key concepts: useActionState, server actions, mediaQuery hook, shadcn, D3, motion, dynamic imports",
 		tech: [
 			"Next.js",
 			"React",
@@ -39,10 +39,10 @@ export const projectsData = [
 		name: "Cabin Management App",
 		img: "/projects/management-2.webp",
 		id: 3,
-		desc: "This is an internal holiday resort management app designed exclusively for BOH employees and managers. Currently, it is intended solely for PC use, specifically at the reception desk or in the office. Users are required to log in, where they can access their profile to customize settings such as setting an avatar, changing their name, and updating their password. Once logged in, users can manage cabins, bookings, guests and settings, including creating new ones, editing details, and deleting them. Cabins and bookings are displayed in a table view, allowing users to manage individual entries. They can add guests, update guest information, and check guests in or out as needed. The landing page provides a summary of key metrics, including guests, bookings, stay durations, and cash flow. This information is presented both numerically and visually, using charts. Additionally, users can update hotel-wide settings, such as the breakfast price, the maximum number of guests per booking, and the maximum number of nights allowed per booking. The app also features a dark mode for enhanced usability. To check the live page drop an email for a new log in",
+		desc: "This is an internal holiday resort management app designed exclusively for BOH employees and managers. Currently, it is intended solely for PC use, specifically at the reception desk or in the office. Users are required to log in, where they can access their profile to customize settings such as setting an avatar, changing their name, and updating their password. Once logged in, users can manage cabins, bookings, guests and settings, including creating new users, editing details, and deleting them. Cabins and bookings are displayed in a table view, allowing users to manage individual entries. They can add guests, update guest information, and check guests in or out as needed. The landing page provides a summary of key metrics, including guests, bookings, stay durations, and cash flow. This information is presented both numerically and visually, using charts. Additionally, users can update hotel-wide settings, such as the breakfast price, the maximum number of guests per booking, and the maximum number of nights allowed per booking. The app also features a dark mode for enhanced usability.",
 		tech: [
 			"React",
-			"Tailwind",
+			"Router",
 			"TanStack Query",
 			"Context API",
 			"Supabase",
@@ -79,7 +79,7 @@ export const projectsData = [
 		img: "/projects/pizza-co-2.webp",
 		id: 6,
 		desc: "This is a smaller project, with a decent minimalistic ui, demonstrating react and redux. The user can add multiple items to the cart, change their order, use the geolocation api to provide location, finalize order and track it with the order number. No payment system included.",
-		tech: ["React", "Redux", "CSS", "Vite"],
+		tech: ["React", "Redux", "Router", "Tailwind", "Vite"],
 
 		github: "https://github.com/BenceM/fast-react-pizza-co",
 		site: "https://bence-pizza-co.netlify.app/",
@@ -89,7 +89,7 @@ export const projectsData = [
 		img: "/projects/world-5.webp",
 		id: 7,
 		desc: "This is a smaller project, with a decent minimalistic ui, demonstrating react and redux. The map uses leaflet.",
-		tech: ["React", "Redux", "CSS", "Vite"],
+		tech: ["React", "Router", "CSS", "Vite"],
 
 		github: "https://github.com/BenceM/worldwise",
 		site: "Not currently hosted",
@@ -99,7 +99,7 @@ export const projectsData = [
 		img: "/projects/movie-1.webp",
 		id: 8,
 		desc: "This is a smaller project, with a decent minimalistic ui, demonstrating react and redux. You can rate movies, which are fetched from an api, rate them and the app will display the movies average rating and total watch time. Could add localStorage use for persisting data.",
-		tech: ["React", "Redux", "CSS", "Vite"],
+		tech: ["React", "CSS", "Vite"],
 
 		github: "https://github.com/BenceM/movie-rating",
 		site: "https://bence-rate-movies.netlify.app/",
